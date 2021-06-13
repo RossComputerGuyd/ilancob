@@ -7,5 +7,7 @@
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/tools/bitmap/pictest/CirclView.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/tools/bitmap/pictest/CutPicActivity.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/tools/bitmap/pictest/ImageBucket.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/tools/bitmap/pictest/ImageBucketAdapter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/tools/bitmap/pictest/ImageItem.java" charset="UTF-8" />
   </component>
 </project>

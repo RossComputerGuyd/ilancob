@@ -3,7 +3,7 @@ package com.tools.bitmap.pictest;
 import java.io.Serializable;
 
 /**
- * Ò»¸öÍ¼Æ¬¶ÔÏó
+ * ä¸€ä¸ªå›¾ç‰‡å¯¹è±¡
  * @author talos001
  *
  */

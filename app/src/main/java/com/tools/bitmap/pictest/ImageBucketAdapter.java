@@ -19,7 +19,7 @@ public class ImageBucketAdapter extends BaseAdapter {
 
 	Activity act;
 	/**
-	 * Í¼Æ¬¼¯ÁÐ±í
+	 * å›¾ç‰‡é›†åˆ—è¡¨
 	 */
 	List<ImageBucket> dataList;
 	BitmapCache cache;
@@ -70,7 +70,7 @@ public class ImageBucketAdapter extends BaseAdapter {
 		private TextView count;
 	}
     /**
-     * ÊµÀý»¯¿Ø¼þ²¢¸³Öµ
+     * å®žä¾‹åŒ–æŽ§ä»¶å¹¶èµ‹å€¼
      */
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {

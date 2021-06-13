@@ -35,10 +35,11 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
     }
 
     private void init() {
-        adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_expandable_list_item_1);
+        adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1);
         adapter.add("拍照和相册选择图片裁剪后更换头像demo");
         listView = (ListView) view.findViewById(R.id.listView);
         listView.setOnItemClickListener(this);
+        listView.setAdapter(adapter);
     }
 
     @Override
