@@ -63,7 +63,7 @@ public class Util {
 	        paint.setXfermode(new PorterDuffXfermode(Mode.SRC_IN));
 		    canvas.drawBitmap(bitmap, src, dst, paint);
 		    
-		    //����ɫԲȦ
+		    //画白色圆圈
 		    paint.reset();
 		    paint.setColor(Color.WHITE);
 		    paint.setStyle(Paint.Style.STROKE);

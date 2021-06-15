@@ -24,13 +24,13 @@ public class PictestMainActivity extends Activity implements OnClickListener{
 //	private RelativeLayout rlSc,rlNhxx,rlJkda,rlYjfk;
 	private ImageView ivHead;
 	public  Drawable drawable;
-	//±£´æµÄÎÄ¼şµÄÂ·¾¶
+	//ä¿å­˜çš„æ–‡ä»¶çš„è·¯å¾„
 	private String filepath = "/sdcard/myheader";
 	private String filepathimg="";
 	private String picname="newpic";
-	private static final int PHOTO_REQUEST_CAMERA = 1;// ÅÄÕÕ
-	private static final int PHOTO_REQUEST_CUT = 2;// ½á¹û
-	private static final int PHOTO_REQUEST_ALBUM = 3;// Ïà²á
+	private static final int PHOTO_REQUEST_CAMERA = 1;// æ‹ç…§
+	private static final int PHOTO_REQUEST_CUT = 2;// ç»“æœ
+	private static final int PHOTO_REQUEST_ALBUM = 3;// ç›¸å†Œ
 	 
 
 	@SuppressWarnings("deprecation")
@@ -51,19 +51,19 @@ public class PictestMainActivity extends Activity implements OnClickListener{
 
 	@Override
 	public void onClick(View v) {
-		if(v==ivHead){//µã»÷¸ü»»Í·Ïñ°´Å¥
+		if(v==ivHead){//ç‚¹å‡»æ›´æ¢å¤´åƒæŒ‰é’®
 			ShowPickDialog();
 		}
 		
 	}
 	
 	/**
-	 * Ñ¡ÔñÌáÊ¾¶Ô»°¿ò
+	 * é€‰æ‹©æç¤ºå¯¹è¯æ¡†
 	 */
 	private void ShowPickDialog() {
 		new AlertDialog.Builder(this)
-				.setTitle("ÉèÖÃÍ·Ïñ...")
-				.setNegativeButton("Ïà²á", new DialogInterface.OnClickListener() {
+				.setTitle("è®¾ç½®å¤´åƒ...")
+				.setNegativeButton("ç›¸å†Œ", new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
 						dialog.dismiss();
 						Intent intent = new Intent(PictestMainActivity.this, TestPicActivity.class);
@@ -72,16 +72,16 @@ public class PictestMainActivity extends Activity implements OnClickListener{
 
 					}
 				})
-				.setPositiveButton("ÅÄÕÕ", new DialogInterface.OnClickListener() {
+				.setPositiveButton("æ‹ç…§", new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int whichButton) {
 						dialog.dismiss();
 						/**
-						 * ÏÂÃæÕâ¾ä»¹ÊÇÀÏÑù×Ó£¬µ÷ÓÃ¿ìËÙÅÄÕÕ¹¦ÄÜ£¬ÖÁÓÚÎªÊ²Ã´½Ğ¿ìËÙÅÄÕÕ£¬´ó¼Ò¿ÉÒÔ²Î¿¼ÈçÏÂ¹Ù·½
-						 * ÎÄµµ£¬you_sdk_path/docs/guide/topics/media/camera.html
+						 * ä¸‹é¢è¿™å¥è¿˜æ˜¯è€æ ·å­ï¼Œè°ƒç”¨å¿«é€Ÿæ‹ç…§åŠŸèƒ½ï¼Œè‡³äºä¸ºä»€ä¹ˆå«å¿«é€Ÿæ‹ç…§ï¼Œå¤§å®¶å¯ä»¥å‚è€ƒå¦‚ä¸‹å®˜æ–¹
+						 * æ–‡æ¡£ï¼Œyou_sdk_path/docs/guide/topics/media/camera.html
 						 */
 						Intent intent = new Intent(
 								MediaStore.ACTION_IMAGE_CAPTURE);
-						//ÏÂÃæÕâ¾äÖ¸¶¨µ÷ÓÃÏà»úÅÄÕÕºóµÄÕÕÆ¬´æ´¢µÄÂ·¾¶
+						//ä¸‹é¢è¿™å¥æŒ‡å®šè°ƒç”¨ç›¸æœºæ‹ç…§åçš„ç…§ç‰‡å­˜å‚¨çš„è·¯å¾„
 						intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri
 								.fromFile(new File(Environment
 										.getExternalStorageDirectory(),
@@ -94,18 +94,18 @@ public class PictestMainActivity extends Activity implements OnClickListener{
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		switch (requestCode) {
-		case PHOTO_REQUEST_CAMERA:// µ±Ñ¡ÔñÅÄÕÕÊ±µ÷ÓÃ
+		case PHOTO_REQUEST_CAMERA:// å½“é€‰æ‹©æ‹ç…§æ—¶è°ƒç”¨
         	String path = Environment.getExternalStorageDirectory()
 					+ "/newpic.jpg";
 			Intent intent = new Intent(PictestMainActivity.this, CutPicActivity.class);
 			intent.putExtra("bitmappath",path);
 			startActivityForResult(intent, PHOTO_REQUEST_ALBUM);
             break;
-        case PHOTO_REQUEST_CUT:// ·µ»ØµÄ½á¹û
+        case PHOTO_REQUEST_CUT:// è¿”å›çš„ç»“æœ
             if (data != null)               
                 sentPicToNext(data);
             break; 
-        case PHOTO_REQUEST_ALBUM://Ïà²áÑ¡ÔñÍ¼Æ¬
+        case PHOTO_REQUEST_ALBUM://ç›¸å†Œé€‰æ‹©å›¾ç‰‡
         	filepathimg = filepath + "/" + picname + ".jpg";
     		File f = new File(filepathimg);
     		
@@ -128,21 +128,21 @@ public class PictestMainActivity extends Activity implements OnClickListener{
 
 	
 	/**
-	 * ±£´æ²Ã¼ôÖ®ºóµÄÍ¼Æ¬Êı¾İ
+	 * ä¿å­˜è£å‰ªä¹‹åçš„å›¾ç‰‡æ•°æ®
 	 * @param picdata
 	 */
 	@SuppressWarnings("deprecation")
 	private void sentPicToNext(Intent picdata) {
 		Bundle extras = picdata.getExtras();
 		if (extras != null) {
-			Bitmap photo = extras.getParcelable("data");//²Ã¼ôºóµÄÍ¼Æ¬
+			Bitmap photo = extras.getParcelable("data");//è£å‰ªåçš„å›¾ç‰‡
 			ivHead.setImageBitmap(photo);
 			storeImageToSDCARD(photo, picname, filepath);
 		}
 	}
 
 	/**
-	 * storeImageToSDCARD ½«bitmap´æ·Åµ½sdcardÖĞ
+	 * storeImageToSDCARD å°†bitmapå­˜æ”¾åˆ°sdcardä¸­
 	 * */
 	 public void storeImageToSDCARD(Bitmap colorImage, String ImageName,String path) {
 		File file = new File(path);

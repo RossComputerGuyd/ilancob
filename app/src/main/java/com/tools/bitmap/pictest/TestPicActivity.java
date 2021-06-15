@@ -18,11 +18,11 @@ import java.io.Serializable;
 import java.util.List;
 
 public class TestPicActivity extends Activity {
-	// ÓÃÀ´×°ÔØÊı¾İÔ´µÄÁĞ±í
+	// ç”¨æ¥è£…è½½æ•°æ®æºçš„åˆ—è¡¨
 	private List<ImageBucket> dataList;
-	// ÊÓÍ¼ÈİÆ÷
+	// è§†å›¾å®¹å™¨
 	private GridView gridView;
-	// ×Ô¶¨ÒåµÄÊÊÅäÆ÷
+	// è‡ªå®šä¹‰çš„é€‚é…å™¨
 	private ImageBucketAdapter adapter;
 	private AlbumHelper helper;
 	public static final String EXTRA_IMAGE_LIST = "imagelist";
@@ -42,7 +42,7 @@ public class TestPicActivity extends Activity {
 	}
 
 	/**
-	 * ³õÊ¼»¯Êı¾İ
+	 * åˆå§‹åŒ–æ•°æ®
 	 */
 	private void initData() {		
 		dataList = helper.getImagesBucketList(false);	
@@ -50,7 +50,7 @@ public class TestPicActivity extends Activity {
 	}
 
 	/**
-	 *³õÊ¼»¯viewÊÓÍ¼
+	 *åˆå§‹åŒ–viewè§†å›¾
 	 */
 	private void initView() {
 		gridView = (GridView) findViewById(R.id.gridview);
@@ -63,8 +63,8 @@ public class TestPicActivity extends Activity {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				/**
-				 * ¸ù¾İposition²ÎÊı£¬¿ÉÒÔ»ñµÃ¸úGridViewµÄ×ÓViewÏà°ó¶¨µÄÊµÌåÀà£¬È»ºó¸ù¾İËüµÄisSelected×´Ì¬£¬
-				 * À´ÅĞ¶ÏÊÇ·ñÏÔÊ¾Ñ¡ÖĞĞ§¹û¡£ ÖÁÓÚÑ¡ÖĞĞ§¹ûµÄ¹æÔò£¬ÏÂÃæÊÊÅäÆ÷µÄ´úÂëÖĞ»áÓĞËµÃ÷
+				 * æ ¹æ®positionå‚æ•°ï¼Œå¯ä»¥è·å¾—è·ŸGridViewçš„å­Viewç›¸ç»‘å®šçš„å®ä½“ç±»ï¼Œç„¶åæ ¹æ®å®ƒçš„isSelectedçŠ¶æ€ï¼Œ
+				 * æ¥åˆ¤æ–­æ˜¯å¦æ˜¾ç¤ºé€‰ä¸­æ•ˆæœã€‚ è‡³äºé€‰ä¸­æ•ˆæœçš„è§„åˆ™ï¼Œä¸‹é¢é€‚é…å™¨çš„ä»£ç ä¸­ä¼šæœ‰è¯´æ˜
 				 */
 //				 if(dataList.get(position).isSelected()){
 //				 dataList.get(position).setSelected(false);
@@ -72,7 +72,7 @@ public class TestPicActivity extends Activity {
 //				 dataList.get(position).setSelected(true);
 //				 }
 				
-				//»ñÈ¡µ±Ç°ÎÄ¼ş¼ĞµÄÃû×Ö
+				//è·å–å½“å‰æ–‡ä»¶å¤¹çš„åå­—
 				TextView mTextView = (TextView) view.findViewById(R.id.name);
 				String str = mTextView.getText().toString();
 				Intent intent = new Intent(TestPicActivity.this, ImageGridActivity.class);
@@ -84,7 +84,7 @@ public class TestPicActivity extends Activity {
 
 		});
 		/**
-		 * ·µ»ØÊÂ¼ş
+		 * è¿”å›äº‹ä»¶
 		 */
 		mBack = (Button) findViewById(R.id.test_pic_back);
 		mBack.setOnClickListener(new OnClickListener() {
