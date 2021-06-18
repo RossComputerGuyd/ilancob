@@ -10,7 +10,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.tools.bitmap.circle.CircleActivity;
+import com.tools.bitmap.photoview.activity.LauncherActivity;
 import com.tools.bitmap.pictest.PictestMainActivity;
+import com.tools.bitmap.rounded.activity.ExampleActivity;
 
 
 /**
@@ -37,6 +40,9 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
     private void init() {
         adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1);
         adapter.add("拍照和相册选择图片裁剪后更换头像demo");
+        adapter.add("git圆角图片");
+        adapter.add("git圆角图片");
+        adapter.add("支持双击或双指缩放的ImageView，在ViewPager等Scrolling view中正常使用，相比上面的AndroidTouchGallery，不仅支持ViewPager，同时支持单个ImageView");
         listView = (ListView) view.findViewById(R.id.listView);
         listView.setOnItemClickListener(this);
         listView.setAdapter(adapter);
@@ -48,6 +54,15 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
         switch (position) {
             case 0:
                 cls = PictestMainActivity.class;
+                break;
+            case 1:
+                cls = CircleActivity.class;
+                break;
+            case 2:
+                cls = ExampleActivity.class;
+                break;
+            case 3:
+                cls = LauncherActivity.class;
                 break;
         }
         if (cls != null) {
