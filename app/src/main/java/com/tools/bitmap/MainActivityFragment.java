@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.tools.bitmap.circle.CircleActivity;
+import com.tools.bitmap.colorart.activity.ColorArtActivity;
 import com.tools.bitmap.photoview.activity.LauncherActivity;
 import com.tools.bitmap.pictest.PictestMainActivity;
 import com.tools.bitmap.rounded.activity.ExampleActivity;
@@ -40,9 +41,10 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
     private void init() {
         adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1);
         adapter.add("拍照和相册选择图片裁剪后更换头像demo");
-        adapter.add("git圆角图片");
-        adapter.add("git圆角图片");
+        adapter.add("git圆形的ImageView");
+        adapter.add("git带圆角的ImageView");
         adapter.add("支持双击或双指缩放的ImageView，在ViewPager等Scrolling view中正常使用，相比上面的AndroidTouchGallery，不仅支持ViewPager，同时支持单个ImageView");
+        adapter.add("根据图片的均色设置背景色显示文字和图片，类似itune11中效果");
         listView = (ListView) view.findViewById(R.id.listView);
         listView.setOnItemClickListener(this);
         listView.setAdapter(adapter);
@@ -63,6 +65,9 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
                 break;
             case 3:
                 cls = LauncherActivity.class;
+                break;
+            case 4:
+                cls = ColorArtActivity.class;
                 break;
         }
         if (cls != null) {

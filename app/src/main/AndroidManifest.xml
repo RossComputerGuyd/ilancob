@@ -33,11 +33,14 @@
 
         <activity android:name=".rounded.activity.ExampleActivity" />
 
-        <activity android:name=".photoview.activity.AUILSampleActivity"/>
-        <activity android:name=".photoview.activity.LauncherActivity"/>
-        <activity android:name=".photoview.activity.RotationSampleActivity"/>
-        <activity android:name=".photoview.activity.SimpleSampleActivity"/>
-        <activity android:name=".photoview.activity.ViewPagerActivity"/>
+        <activity android:name=".photoview.activity.AUILSampleActivity" />
+        <activity android:name=".photoview.activity.LauncherActivity" />
+        <activity android:name=".photoview.activity.RotationSampleActivity" />
+        <activity android:name=".photoview.activity.SimpleSampleActivity" />
+        <activity android:name=".photoview.activity.ViewPagerActivity" />
+
+        <activity android:name=".colorart.activity.ColorArtActivity" />
+        <activity android:name=".colorart.activity.DetailsActivity" />
     </application>
 
 </manifest>
