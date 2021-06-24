@@ -3,6 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/app/build.gradle" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/tools/bitmap/colorart/activity/ColorArtActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/tools/bitmap/custom/SamplesActivity.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/tools/bitmap/ken/activity/KenMainActivity.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/tools/bitmap/ken/activity/SingleImageActivity.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/tools/bitmap/photoview/activity/AUILSampleActivity.java" charset="UTF-8" />

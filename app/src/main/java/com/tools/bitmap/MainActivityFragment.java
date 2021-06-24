@@ -12,6 +12,7 @@ import android.widget.ListView;
 
 import com.tools.bitmap.circle.CircleActivity;
 import com.tools.bitmap.colorart.activity.ColorArtActivity;
+import com.tools.bitmap.custom.SamplesActivity;
 import com.tools.bitmap.ken.activity.KenMainActivity;
 import com.tools.bitmap.photoview.activity.LauncherActivity;
 import com.tools.bitmap.pictest.PictestMainActivity;
@@ -47,6 +48,7 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
         adapter.add("支持双击或双指缩放的ImageView，在ViewPager等Scrolling view中正常使用，相比上面的AndroidTouchGallery，不仅支持ViewPager，同时支持单个ImageView");
         adapter.add("根据图片的均色设置背景色显示文字和图片，类似itune11中效果");
         adapter.add("实现Ken Burns effect效果，达到身临其境效果的ImageView");
+        adapter.add("各种形状的ImageView, 相比上面的圆形ImageView，多了更多形状");
         listView = (ListView) view.findViewById(R.id.listView);
         listView.setOnItemClickListener(this);
         listView.setAdapter(adapter);
@@ -73,6 +75,9 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
                 break;
             case 5:
                 cls = KenMainActivity.class;
+                break;
+            case 6:
+                cls = SamplesActivity.class;
                 break;
         }
         if (cls != null) {

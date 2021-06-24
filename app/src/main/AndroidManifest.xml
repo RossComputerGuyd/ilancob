@@ -46,6 +46,8 @@
         <activity android:name=".ken.activity.FromURLActivity" />
         <activity android:name=".ken.activity.MultiImageActivity" />
         <activity android:name=".ken.activity.SingleImageActivity" />
+
+        <activity android:name=".custom.SamplesActivity"/>
     </application>
 
 </manifest>
