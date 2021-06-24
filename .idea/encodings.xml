@@ -2,11 +2,15 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/app/build.gradle" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/tools/bitmap/colorart/activity/ColorArtActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/tools/bitmap/ken/activity/KenMainActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/tools/bitmap/ken/activity/SingleImageActivity.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/tools/bitmap/photoview/activity/AUILSampleActivity.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/tools/bitmap/photoview/activity/LauncherActivity.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/tools/bitmap/photoview/gestures/EclairGestureDetector.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/tools/bitmap/photoview/log/LogManager.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/tools/bitmap/rounded/activity/PicassoFragment.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/tools/bitmap/rounded/imageview/Corner.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/settings.gradle" charset="UTF-8" />
   </component>
 </project>

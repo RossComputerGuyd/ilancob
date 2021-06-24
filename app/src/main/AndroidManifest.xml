@@ -41,6 +41,11 @@
 
         <activity android:name=".colorart.activity.ColorArtActivity" />
         <activity android:name=".colorart.activity.DetailsActivity" />
+
+        <activity android:name=".ken.activity.KenMainActivity" />
+        <activity android:name=".ken.activity.FromURLActivity" />
+        <activity android:name=".ken.activity.MultiImageActivity" />
+        <activity android:name=".ken.activity.SingleImageActivity" />
     </application>
 
 </manifest>
