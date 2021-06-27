@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ImageProcesTools.iml" filepath="$PROJECT_DIR$/ImageProcesTools.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/imageLib/imageLib.iml" filepath="$PROJECT_DIR$/imageLib/imageLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/roundImageLib/roundImageLib.iml" filepath="$PROJECT_DIR$/roundImageLib/roundImageLib.iml" />
     </modules>
   </component>

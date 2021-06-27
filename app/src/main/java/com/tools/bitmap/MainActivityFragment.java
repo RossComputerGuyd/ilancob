@@ -17,6 +17,7 @@ import com.tools.bitmap.ken.activity.KenMainActivity;
 import com.tools.bitmap.photoview.activity.LauncherActivity;
 import com.tools.bitmap.pictest.PictestMainActivity;
 import com.tools.bitmap.rounded.activity.ExampleActivity;
+import com.tools.bitmap.shape.SampleActivity;
 
 
 /**
@@ -49,6 +50,7 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
         adapter.add("根据图片的均色设置背景色显示文字和图片，类似itune11中效果");
         adapter.add("实现Ken Burns effect效果，达到身临其境效果的ImageView");
         adapter.add("各种形状的ImageView, 相比上面的圆形ImageView，多了更多形状");
+        adapter.add("可以自定义各种形状的ImageView, 并且支持边框");
         listView = (ListView) view.findViewById(R.id.listView);
         listView.setOnItemClickListener(this);
         listView.setAdapter(adapter);
@@ -78,6 +80,9 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
                 break;
             case 6:
                 cls = SamplesActivity.class;
+                break;
+            case 7:
+                cls = SampleActivity.class;
                 break;
         }
         if (cls != null) {
