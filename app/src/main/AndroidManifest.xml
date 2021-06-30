@@ -55,6 +55,13 @@
         <activity android:name=".custom.SamplesActivity" />
 
         <activity android:name=".shape.SampleActivity" />
+
+        <activity android:name=".cropper.CropperMainActivity" />
+
+        <activity
+            android:theme="@style/CustomTheme"
+            android:name=".crop.CropActivity" />
+        <activity android:name="com.soundcloud.android.crop.CropImageActivity" />
     </application>
 
 </manifest>

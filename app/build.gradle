@@ -28,4 +28,5 @@ dependencies {
     compile project(':roundImageLib')
     compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
     compile project(':imageLib')
+    compile project(':cropImage')
 }

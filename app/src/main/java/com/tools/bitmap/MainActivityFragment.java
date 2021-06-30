@@ -12,6 +12,8 @@ import android.widget.ListView;
 
 import com.tools.bitmap.circle.CircleActivity;
 import com.tools.bitmap.colorart.activity.ColorArtActivity;
+import com.tools.bitmap.crop.CropActivity;
+import com.tools.bitmap.cropper.CropperMainActivity;
 import com.tools.bitmap.custom.SamplesActivity;
 import com.tools.bitmap.ken.activity.KenMainActivity;
 import com.tools.bitmap.photoview.activity.LauncherActivity;
@@ -51,6 +53,8 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
         adapter.add("实现Ken Burns effect效果，达到身临其境效果的ImageView");
         adapter.add("各种形状的ImageView, 相比上面的圆形ImageView，多了更多形状");
         adapter.add("可以自定义各种形状的ImageView, 并且支持边框");
+        adapter.add("图片局部剪切工具，可触摸控制选择区域或旋转");
+        adapter.add("图片裁剪Activity");
         listView = (ListView) view.findViewById(R.id.listView);
         listView.setOnItemClickListener(this);
         listView.setAdapter(adapter);
@@ -83,6 +87,12 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
                 break;
             case 7:
                 cls = SampleActivity.class;
+                break;
+            case 8:
+                cls = CropperMainActivity.class;
+                break;
+            case 9:
+                cls = CropActivity.class;
                 break;
         }
         if (cls != null) {
