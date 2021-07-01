@@ -1,1 +1,1 @@
-include ':app', ':roundImageLib', ':imageLib', ':cropImage'
+include ':app', ':roundImageLib', ':imageLib', ':cropImage', ':FaceCrop-Lib'
