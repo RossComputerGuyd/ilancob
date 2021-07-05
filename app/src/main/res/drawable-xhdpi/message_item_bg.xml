@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:zhy="http://schemas.android.com/apk/res/com.tools.bitmap">
+
+    <item android:drawable="@android:color/transparent" android:state_pressed="true"></item>
+    <item android:drawable="@color/color_accent" zhy:state_message_readed="true"></item>
+
+</selector>

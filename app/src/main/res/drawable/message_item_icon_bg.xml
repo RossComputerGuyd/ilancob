@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:zhy="http://schemas.android.com/apk/res/com.tools.bitmap">
+
+    <item android:drawable="@drawable/message_read_status_read" zhy:state_message_readed="true"></item>
+    <item android:drawable="@drawable/message_read_status_unread"></item>
+
+</selector>

@@ -64,6 +64,11 @@
         <activity android:name="com.soundcloud.android.crop.CropImageActivity" />
 
         <activity android:name=".face.FaceMainActivity" />
+
+        <activity android:name=".drawable.DrawbleActivity" />
+        <activity android:name=".drawable.CircleImageDrawableActivity" />
+        <activity android:name=".drawable.CustomStateDrawableActivity" />
+        <activity android:name=".drawable.RoundImageDrawableActivity" />
     </application>
 
 </manifest>

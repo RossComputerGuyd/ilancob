@@ -15,6 +15,7 @@ import com.tools.bitmap.colorart.activity.ColorArtActivity;
 import com.tools.bitmap.crop.CropActivity;
 import com.tools.bitmap.cropper.CropperMainActivity;
 import com.tools.bitmap.custom.SamplesActivity;
+import com.tools.bitmap.drawable.DrawbleActivity;
 import com.tools.bitmap.face.FaceMainActivity;
 import com.tools.bitmap.ken.activity.KenMainActivity;
 import com.tools.bitmap.photoview.activity.LauncherActivity;
@@ -57,6 +58,7 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
         adapter.add("图片局部剪切工具，可触摸控制选择区域或旋转");
         adapter.add("图片裁剪Activity");
         adapter.add("图片脸部自动识别，将识别后的局部图片返回");
+        adapter.add("非常简单的圆形图片处理工具(zhx)");
         listView = (ListView) view.findViewById(R.id.listView);
         listView.setOnItemClickListener(this);
         listView.setAdapter(adapter);
@@ -98,6 +100,9 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
                 break;
             case 10:
                 cls = FaceMainActivity.class;
+                break;
+            case 11:
+                cls = DrawbleActivity.class;
                 break;
         }
 

@@ -10,6 +10,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/FaceCrop-Lib" />
+            <option value="$PROJECT_DIR$/Loader-Lib" />
+            <option value="$PROJECT_DIR$/android-common-master" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/cropImage" />
             <option value="$PROJECT_DIR$/imageLib" />
