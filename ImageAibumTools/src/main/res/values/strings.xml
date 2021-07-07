@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">图片相册工具类</string>
+    <string name="hello_world">图片相册</string>
+    <string name="action_settings">Settings</string>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="ring" >
+
+    <!--
+    矩形：默认矩形 
+    shape="line"是线行
+    -->
+
+
+    <!-- 定义填充渐变颜色 -->
+    <gradient
+        android:angle="45"
+        android:endColor="@color/bg_color10"
+        android:startColor="@color/bg_color1"
+        android:type="sweep" />
+
+    <stroke
+        android:width="5dp"
+        android:color="#06B8D9" />
+
+    <solid android:color="@color/bg_color1" />
+
+</shape>

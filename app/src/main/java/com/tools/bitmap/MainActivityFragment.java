@@ -17,10 +17,15 @@ import com.tools.bitmap.cropper.CropperMainActivity;
 import com.tools.bitmap.custom.SamplesActivity;
 import com.tools.bitmap.drawable.DrawbleActivity;
 import com.tools.bitmap.face.FaceMainActivity;
+import com.tools.bitmap.getphoto.GetPhotoMainActivity;
+import com.tools.bitmap.imagescan.ScanMainActivity;
 import com.tools.bitmap.ken.activity.KenMainActivity;
+import com.tools.bitmap.login.LoginActivity;
+import com.tools.bitmap.photocat.PhotoCatMainActivity;
 import com.tools.bitmap.photoview.activity.LauncherActivity;
 import com.tools.bitmap.pictest.PictestMainActivity;
 import com.tools.bitmap.rounded.activity.ExampleActivity;
+import com.tools.bitmap.running.RuningManActivity;
 import com.tools.bitmap.shape.SampleActivity;
 
 
@@ -59,6 +64,11 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
         adapter.add("图片裁剪Activity");
         adapter.add("图片脸部自动识别，将识别后的局部图片返回");
         adapter.add("非常简单的圆形图片处理工具(zhx)");
+        adapter.add("Android自定义圆形+圆角控件(修改布局样式)");
+        adapter.add("图片裁剪，代码精简(带拍照，简单实用)");
+        adapter.add("ImageScan");
+        adapter.add("拍照和相册获取图片并进行裁剪(带大图片处理)");
+        adapter.add("圆形，圆角图片，已经封装好的方法，直接调用！");
         listView = (ListView) view.findViewById(R.id.listView);
         listView.setOnItemClickListener(this);
         listView.setAdapter(adapter);
@@ -103,6 +113,21 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
                 break;
             case 11:
                 cls = DrawbleActivity.class;
+                break;
+            case 12:
+                cls = RuningManActivity.class;
+                break;
+            case 13:
+                cls = PhotoCatMainActivity.class;
+                break;
+            case 14:
+                cls = ScanMainActivity.class;
+                break;
+            case 15:
+                cls = GetPhotoMainActivity.class;
+                break;
+            case 16:
+                cls = LoginActivity.class;
                 break;
         }
 

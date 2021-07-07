@@ -69,6 +69,17 @@
         <activity android:name=".drawable.CircleImageDrawableActivity" />
         <activity android:name=".drawable.CustomStateDrawableActivity" />
         <activity android:name=".drawable.RoundImageDrawableActivity" />
+
+        <activity android:name=".running.RuningManActivity" />
+
+        <activity android:name=".photocat.PhotoCatMainActivity" />
+
+        <activity android:name=".imagescan.ScanMainActivity" />
+        <activity android:name=".imagescan.ShowImageActivity" />
+
+        <activity android:name=".getphoto.GetPhotoMainActivity" />
+
+        <activity android:name=".login.LoginActivity" />
     </application>
 
 </manifest>
