@@ -6,7 +6,6 @@
       <module fileurl="file://$PROJECT_DIR$/ImageAibumTools/ImageAibumTools.iml" filepath="$PROJECT_DIR$/ImageAibumTools/ImageAibumTools.iml" />
       <module fileurl="file://$PROJECT_DIR$/ImageProcesTools.iml" filepath="$PROJECT_DIR$/ImageProcesTools.iml" />
       <module fileurl="file://$PROJECT_DIR$/Loader-Lib/Loader-Lib.iml" filepath="$PROJECT_DIR$/Loader-Lib/Loader-Lib.iml" />
-      <module fileurl="file://$PROJECT_DIR$/RoundImageViewLib/RoundImageViewLib.iml" filepath="$PROJECT_DIR$/RoundImageViewLib/RoundImageViewLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/android-common-master/android-common-master.iml" filepath="$PROJECT_DIR$/android-common-master/android-common-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/cropImage/cropImage.iml" filepath="$PROJECT_DIR$/cropImage/cropImage.iml" />

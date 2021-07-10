@@ -80,6 +80,10 @@
         <activity android:name=".getphoto.GetPhotoMainActivity" />
 
         <activity android:name=".login.LoginActivity" />
+
+        <activity android:name=".rview.RoudExampleActivity" />
+
+        <activity android:name=".header.HeaderMainActivity" />
     </application>
 
 </manifest>

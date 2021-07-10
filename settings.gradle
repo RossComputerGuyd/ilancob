@@ -1,1 +1,1 @@
-include ':app', ':roundImageLib', ':imageLib', ':cropImage', ':FaceCrop-Lib', ':Loader-Lib', ':android-common-master', ':ImageAibumTools', ':RoundImageViewLib'
+include ':app', ':roundImageLib', ':imageLib', ':cropImage', ':FaceCrop-Lib', ':Loader-Lib', ':android-common-master', ':ImageAibumTools'

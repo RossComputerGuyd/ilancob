@@ -18,6 +18,7 @@ import com.tools.bitmap.custom.SamplesActivity;
 import com.tools.bitmap.drawable.DrawbleActivity;
 import com.tools.bitmap.face.FaceMainActivity;
 import com.tools.bitmap.getphoto.GetPhotoMainActivity;
+import com.tools.bitmap.header.HeaderMainActivity;
 import com.tools.bitmap.imagescan.ScanMainActivity;
 import com.tools.bitmap.ken.activity.KenMainActivity;
 import com.tools.bitmap.login.LoginActivity;
@@ -26,6 +27,7 @@ import com.tools.bitmap.photoview.activity.LauncherActivity;
 import com.tools.bitmap.pictest.PictestMainActivity;
 import com.tools.bitmap.rounded.activity.ExampleActivity;
 import com.tools.bitmap.running.RuningManActivity;
+import com.tools.bitmap.rview.RoudExampleActivity;
 import com.tools.bitmap.shape.SampleActivity;
 
 
@@ -69,6 +71,8 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
         adapter.add("ImageScan");
         adapter.add("拍照和相册获取图片并进行裁剪(带大图片处理)");
         adapter.add("圆形，圆角图片，已经封装好的方法，直接调用！");
+        adapter.add("Android创建抗锯齿透明背景圆角图像");
+        adapter.add("带自定义编辑功能的圆形头像");
         listView = (ListView) view.findViewById(R.id.listView);
         listView.setOnItemClickListener(this);
         listView.setAdapter(adapter);
@@ -128,6 +132,12 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
                 break;
             case 16:
                 cls = LoginActivity.class;
+                break;
+            case 17:
+                cls = RoudExampleActivity.class;
+                break;
+            case 18:
+                cls = HeaderMainActivity.class;
                 break;
         }
 

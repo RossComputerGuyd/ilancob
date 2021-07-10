@@ -30,4 +30,5 @@ dependencies {
     compile project(':imageLib')
     compile project(':cropImage')
     compile project(':FaceCrop-Lib')
+    compile files('libs/disklrucache-2.0.1.jar')
 }
