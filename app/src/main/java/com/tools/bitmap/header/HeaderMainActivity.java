@@ -59,14 +59,12 @@ public class HeaderMainActivity extends ActionBarActivity {
 		initHeadCache();
 
 		if (savedInstanceState == null) {
-			getSupportFragmentManager().beginTransaction()
-					.add(R.id.container, new PlaceholderFragment()).commit();
+			getSupportFragmentManager().beginTransaction().add(R.id.container, new PlaceholderFragment()).commit();
 		}
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.menu_main, menu);
 		return true;
@@ -200,13 +198,10 @@ public class HeaderMainActivity extends ActionBarActivity {
 				mRvClip.setSelected(false);// 重置头像背景为透明
 				ImageCacheManager.getInstance().putBitmap("http://testurl", bm);
 				mHvHead.setHeadBitmap(bm);
-				
-				
+
 				mRlHead.setVisibility(View.GONE);
 				break;
-
 			}
-
 		}
 
 		/**

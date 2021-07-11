@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.tools.bitmap.circle.CircleActivity;
+import com.tools.bitmap.circleheader.CHeaderMainActivity;
 import com.tools.bitmap.colorart.activity.ColorArtActivity;
 import com.tools.bitmap.crop.CropActivity;
 import com.tools.bitmap.cropper.CropperMainActivity;
@@ -73,6 +74,7 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
         adapter.add("圆形，圆角图片，已经封装好的方法，直接调用！");
         adapter.add("Android创建抗锯齿透明背景圆角图像");
         adapter.add("带自定义编辑功能的圆形头像");
+        adapter.add("高仿qq我的资料头像裁剪");
         listView = (ListView) view.findViewById(R.id.listView);
         listView.setOnItemClickListener(this);
         listView.setAdapter(adapter);
@@ -138,6 +140,9 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
                 break;
             case 18:
                 cls = HeaderMainActivity.class;
+                break;
+            case 19:
+                cls = CHeaderMainActivity.class;
                 break;
         }
 

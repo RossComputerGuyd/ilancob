@@ -84,6 +84,9 @@
         <activity android:name=".rview.RoudExampleActivity" />
 
         <activity android:name=".header.HeaderMainActivity" />
+
+        <activity android:name=".circleheader.ClipActivity" />
+        <activity android:name=".circleheader.CHeaderMainActivity"/>
     </application>
 
 </manifest>
