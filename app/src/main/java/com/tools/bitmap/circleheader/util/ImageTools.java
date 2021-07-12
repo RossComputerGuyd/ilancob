@@ -80,29 +80,29 @@ public final class ImageTools {
 	}
 	
 	/**
-	 * ¸ù¾ÝÂ·¾¶¼ÓÔØbitmap
+	 * æ ¹æ®è·¯å¾„åŠ è½½bitmap
 	 * 
 	 * @param path
-	 *            Â·¾¶
+	 *            è·¯å¾„
 	 * @param w
-	 *            ¿î
+	 *            æ¬¾
 	 * @param h
-	 *            ³¤
+	 *            é•¿
 	 * @return
 	 */
 	public static final Bitmap convertToBitmap(String path, int w, int h) {
 		try {
 			BitmapFactory.Options opts = new BitmapFactory.Options();
-			// ÉèÖÃÎªtureÖ»»ñÈ¡Í¼Æ¬´óÐ¡
+			// è®¾ç½®ä¸ºtureåªèŽ·å–å›¾ç‰‡å¤§å°
 			opts.inJustDecodeBounds = true;
 			opts.inPreferredConfig = Bitmap.Config.ARGB_8888;
-			// ·µ»ØÎª¿Õ
+			// è¿”å›žä¸ºç©º
 			BitmapFactory.decodeFile(path, opts);
 			int width = opts.outWidth;
 			int height = opts.outHeight;
 			float scaleWidth = 0.f, scaleHeight = 0.f;
 			if (width > w || height > h) {
-				// Ëõ·Å
+				// ç¼©æ”¾
 				scaleWidth = ((float) width) / w;
 				scaleHeight = ((float) height) / h;
 			}

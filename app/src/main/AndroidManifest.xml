@@ -86,7 +86,11 @@
         <activity android:name=".header.HeaderMainActivity" />
 
         <activity android:name=".circleheader.ClipActivity" />
-        <activity android:name=".circleheader.CHeaderMainActivity"/>
+        <activity android:name=".circleheader.CHeaderMainActivity" />
+
+        <activity android:name=".EasyRoundActivity" />
+
+        <activity android:name=".CuterActivity" />
     </application>
 
 </manifest>

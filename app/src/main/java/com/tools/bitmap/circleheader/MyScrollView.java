@@ -24,7 +24,7 @@ public class MyScrollView extends ScrollView {
 	
 	
 	/**
-	 * ÉèÖÃ¹ö¶¯½Ó¿Ú
+	 * è®¾ç½®æ»šåŠ¨æ¥å£
 	 * @param onScrollListener
 	 */
 	public void setOnScrollListener(OnScrollListener onScrollListener) {
@@ -58,7 +58,7 @@ public class MyScrollView extends ScrollView {
 
 
 	/**
-	 * ¹ö¶¯µÄ»Øµ÷½Ó¿Ú
+	 * æ»šåŠ¨çš„å›è°ƒæ¥å£
 	 */
 	public interface OnScrollListener{
 		public void onScroll(int scrollY);

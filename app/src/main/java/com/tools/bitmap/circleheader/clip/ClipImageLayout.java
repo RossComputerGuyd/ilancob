@@ -30,14 +30,14 @@ public class ClipImageLayout extends RelativeLayout
 		this.addView(mClipImageView, lp);
 
 		
-		// ¼ÆËãpaddingµÄpx
+		// è®¡ç®—paddingçš„px
 		mHorizontalPadding = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, mHorizontalPadding, getResources().getDisplayMetrics());
 		mZoomImageView.setHorizontalPadding(mHorizontalPadding);
 		mClipImageView.setHorizontalPadding(mHorizontalPadding);
 	}
 
 	/**
-	 * ¶ÔÍâ¹«²¼ÉèÖÃ±ß¾àµÄ·½·¨,µ¥Î»Îªdp
+	 * å¯¹å¤–å…¬å¸ƒè®¾ç½®è¾¹è·çš„æ–¹æ³•,å•ä½ä¸ºdp
 	 * 
 	 * @param mHorizontalPadding
 	 */
@@ -47,7 +47,7 @@ public class ClipImageLayout extends RelativeLayout
 	}
 
 	/**
-	 * ²ÃÇĞÍ¼Æ¬
+	 * è£åˆ‡å›¾ç‰‡
 	 * 
 	 * @return
 	 */

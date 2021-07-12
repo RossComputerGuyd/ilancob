@@ -33,24 +33,24 @@ public class ClipZoomImageView extends ImageView implements
 	private static float SCALE_MID = 2.0f;
 
 	/**
-	 * ³õÊ¼»¯Ê±µÄËõ·Å±ÈÀı£¬Èç¹ûÍ¼Æ¬¿í»ò¸ß´óÓÚÆÁÄ»£¬´ËÖµ½«Ğ¡ÓÚ0
+	 * åˆå§‹åŒ–æ—¶çš„ç¼©æ”¾æ¯”ä¾‹ï¼Œå¦‚æœå›¾ç‰‡å®½æˆ–é«˜å¤§äºå±å¹•ï¼Œæ­¤å€¼å°†å°äº0
 	 */
 	private float initScale = 1.0f;
 	private boolean once = true;
 
 	/**
-	 * ÓÃÓÚ´æ·Å¾ØÕóµÄ9¸öÖµ
+	 * ç”¨äºå­˜æ”¾çŸ©é˜µçš„9ä¸ªå€¼
 	 */
 	private final float[] matrixValues = new float[9];
 
 	/**
-	 * Ëõ·ÅµÄÊÖÊÆ¼ì²â
+	 * ç¼©æ”¾çš„æ‰‹åŠ¿æ£€æµ‹
 	 */
 	private ScaleGestureDetector mScaleGestureDetector = null;
 	private final Matrix mScaleMatrix = new Matrix();
 
 	/**
-	 * ÓÃÓÚË«»÷¼ì²â
+	 * ç”¨äºåŒå‡»æ£€æµ‹
 	 */
 	private GestureDetector mGestureDetector;
 	private boolean isAutoScale;
@@ -104,7 +104,7 @@ public class ClipZoomImageView extends ImageView implements
 	}
 
 	/**
-	 * ×Ô¶¯Ëõ·ÅµÄÈÎÎñ
+	 * è‡ªåŠ¨ç¼©æ”¾çš„ä»»åŠ¡
 	 * 
 	 * @author zhy
 	 * 
@@ -117,13 +117,13 @@ public class ClipZoomImageView extends ImageView implements
 		private float tmpScale;
 
 		/**
-		 * Ëõ·ÅµÄÖĞĞÄ
+		 * ç¼©æ”¾çš„ä¸­å¿ƒ
 		 */
 		private float x;
 		private float y;
 
 		/**
-		 * ´«ÈëÄ¿±êËõ·ÅÖµ£¬¸ù¾İÄ¿±êÖµÓëµ±Ç°Öµ£¬ÅĞ¶ÏÓ¦¸Ã·Å´ó»¹ÊÇËõĞ¡
+		 * ä¼ å…¥ç›®æ ‡ç¼©æ”¾å€¼ï¼Œæ ¹æ®ç›®æ ‡å€¼ä¸å½“å‰å€¼ï¼Œåˆ¤æ–­åº”è¯¥æ”¾å¤§è¿˜æ˜¯ç¼©å°
 		 * 
 		 * @param targetScale
 		 */
@@ -145,19 +145,19 @@ public class ClipZoomImageView extends ImageView implements
 		@Override
 		public void run()
 		{
-			// ½øĞĞËõ·Å
+			// è¿›è¡Œç¼©æ”¾
 			mScaleMatrix.postScale(tmpScale, tmpScale, x, y);
 			checkBorder();
 			setImageMatrix(mScaleMatrix);
 
 			final float currentScale = getScale();
-			// Èç¹ûÖµÔÚºÏ·¨·¶Î§ÄÚ£¬¼ÌĞøËõ·Å
+			// å¦‚æœå€¼åœ¨åˆæ³•èŒƒå›´å†…ï¼Œç»§ç»­ç¼©æ”¾
 			if (((tmpScale > 1f) && (currentScale < mTargetScale))
 					|| ((tmpScale < 1f) && (mTargetScale < currentScale)))
 			{
 				ClipZoomImageView.this.postDelayed(this, 16);
 			} else
-			// ÉèÖÃÎªÄ¿±êµÄËõ·Å±ÈÀı
+			// è®¾ç½®ä¸ºç›®æ ‡çš„ç¼©æ”¾æ¯”ä¾‹
 			{
 				final float deltaScale = mTargetScale / currentScale;
 				mScaleMatrix.postScale(deltaScale, deltaScale, x, y);
@@ -179,13 +179,13 @@ public class ClipZoomImageView extends ImageView implements
 			return true;
 
 		/**
-		 * Ëõ·ÅµÄ·¶Î§¿ØÖÆ
+		 * ç¼©æ”¾çš„èŒƒå›´æ§åˆ¶
 		 */
 		if ((scale < SCALE_MAX && scaleFactor > 1.0f)
 				|| (scale > initScale && scaleFactor < 1.0f))
 		{
 			/**
-			 * ×î´óÖµ×îĞ¡ÖµÅĞ¶Ï
+			 * æœ€å¤§å€¼æœ€å°å€¼åˆ¤æ–­
 			 */
 			if (scaleFactor * scale < initScale)
 			{
@@ -196,7 +196,7 @@ public class ClipZoomImageView extends ImageView implements
 				scaleFactor = SCALE_MAX / scale;
 			}
 			/**
-			 * ÉèÖÃËõ·Å±ÈÀı
+			 * è®¾ç½®ç¼©æ”¾æ¯”ä¾‹
 			 */
 			mScaleMatrix.postScale(scaleFactor, scaleFactor,
 					detector.getFocusX(), detector.getFocusY());
@@ -208,7 +208,7 @@ public class ClipZoomImageView extends ImageView implements
 	}
 
 	/**
-	 * ¸ù¾İµ±Ç°Í¼Æ¬µÄMatrix»ñµÃÍ¼Æ¬µÄ·¶Î§
+	 * æ ¹æ®å½“å‰å›¾ç‰‡çš„Matrixè·å¾—å›¾ç‰‡çš„èŒƒå›´
 	 * 
 	 * @return
 	 */
@@ -245,9 +245,9 @@ public class ClipZoomImageView extends ImageView implements
 		mScaleGestureDetector.onTouchEvent(event);
 
 		float x = 0, y = 0;
-		// ÄÃµ½´¥ÃşµãµÄ¸öÊı
+		// æ‹¿åˆ°è§¦æ‘¸ç‚¹çš„ä¸ªæ•°
 		final int pointerCount = event.getPointerCount();
-		// µÃµ½¶à¸ö´¥ÃşµãµÄxÓëy¾ùÖµ
+		// å¾—åˆ°å¤šä¸ªè§¦æ‘¸ç‚¹çš„xä¸yå‡å€¼
 		for (int i = 0; i < pointerCount; i++)
 		{
 			x += event.getX(i);
@@ -257,7 +257,7 @@ public class ClipZoomImageView extends ImageView implements
 		y = y / pointerCount;
 
 		/**
-		 * Ã¿µ±´¥Ãşµã·¢Éú±ä»¯Ê±£¬ÖØÖÃmLasX , mLastY
+		 * æ¯å½“è§¦æ‘¸ç‚¹å‘ç”Ÿå˜åŒ–æ—¶ï¼Œé‡ç½®mLasX , mLastY
 		 */
 		if (pointerCount != lastPointerCount)
 		{
@@ -283,12 +283,12 @@ public class ClipZoomImageView extends ImageView implements
 				{
 
 					RectF rectF = getMatrixRectF();
-					// Èç¹û¿í¶ÈĞ¡ÓÚÆÁÄ»¿í¶È£¬Ôò½ûÖ¹×óÓÒÒÆ¶¯
+					// å¦‚æœå®½åº¦å°äºå±å¹•å®½åº¦ï¼Œåˆ™ç¦æ­¢å·¦å³ç§»åŠ¨
 					if (rectF.width() <= getWidth() - mHorizontalPadding * 2)
 					{
 						dx = 0;
 					}
-					// Èç¹û¸ß¶ÈĞ¡ÓêÆÁÄ»¸ß¶È£¬Ôò½ûÖ¹ÉÏÏÂÒÆ¶¯
+					// å¦‚æœé«˜åº¦å°é›¨å±å¹•é«˜åº¦ï¼Œåˆ™ç¦æ­¢ä¸Šä¸‹ç§»åŠ¨
 					if (rectF.height() <= getHeight() - mVerticalPadding * 2)
 					{
 						dy = 0;
@@ -312,7 +312,7 @@ public class ClipZoomImageView extends ImageView implements
 	}
 
 	/**
-	 * »ñµÃµ±Ç°µÄËõ·Å±ÈÀı
+	 * è·å¾—å½“å‰çš„ç¼©æ”¾æ¯”ä¾‹
 	 * 
 	 * @return
 	 */
@@ -337,13 +337,13 @@ public class ClipZoomImageView extends ImageView implements
 	}
 
 	/**
-	 * Ë®Æ½·½ÏòÓëViewµÄ±ß¾à
+	 * æ°´å¹³æ–¹å‘ä¸Viewçš„è¾¹è·
 	 */
-	private int mHorizontalPadding;//¡ª¡ªÆÁÄ»±ßÔµÀë½ØÍ¼ÇøµÄ¿í¶È
+	private int mHorizontalPadding;//â€”â€”å±å¹•è¾¹ç¼˜ç¦»æˆªå›¾åŒºçš„å®½åº¦
 	/**
-	 * ´¹Ö±·½ÏòÓëViewµÄ±ß¾à
+	 * å‚ç›´æ–¹å‘ä¸Viewçš„è¾¹è·
 	 */
-	private int mVerticalPadding;//¡ª¡ªÆÁÄ»¶¥²¿Àë½ØÍ¼ÇøµÄ¸ß¶È
+	private int mVerticalPadding;//â€”â€”å±å¹•é¡¶éƒ¨ç¦»æˆªå›¾åŒºçš„é«˜åº¦
 
 	@Override
 	public void onGlobalLayout()
@@ -353,27 +353,27 @@ public class ClipZoomImageView extends ImageView implements
 			Drawable d = getDrawable();
 			if (d == null)
 				return;
-			// ´¹Ö±·½ÏòµÄ±ß¾à
+			// å‚ç›´æ–¹å‘çš„è¾¹è·
 			mVerticalPadding = (getHeight() - (getWidth() - 2 * mHorizontalPadding)) / 2;
 
 			int width = getWidth();
 			int height = getHeight();
-			// ÄÃµ½Í¼Æ¬µÄ¿íºÍ¸ß
+			// æ‹¿åˆ°å›¾ç‰‡çš„å®½å’Œé«˜
 			int dw = d.getIntrinsicWidth();
 			int dh = d.getIntrinsicHeight();
 			float scale = 1.0f;
 			if (dw <= getWidth() - mHorizontalPadding * 2&& dh >=getHeight() - mVerticalPadding * 2)
-			{//Èç¹ûÍ¼Æ¬µÄ¿í¶È<½ØÍ¼Çø¿í¶È£¬²¢ÇÒÍ¼Æ¬¸ß¶È>½ØÍ¼Çø¸ß¶ÈÊ±
+			{//å¦‚æœå›¾ç‰‡çš„å®½åº¦<æˆªå›¾åŒºå®½åº¦ï¼Œå¹¶ä¸”å›¾ç‰‡é«˜åº¦>æˆªå›¾åŒºé«˜åº¦æ—¶
 				scale = (getWidth() * 1.0f - mHorizontalPadding * 2) / dw;
 			}
 
 			if (dh <= getHeight() - mVerticalPadding * 2&& dw >= getWidth() - mHorizontalPadding * 2)
-			{//Èç¹ûÍ¼Æ¬µÄ¸ß¶È<½ØÍ¼Çø¸ß¶È£¬²¢ÇÒÍ¼Æ¬¿í¶È>½ØÍ¼Çø¿í¶ÈÊ±
+			{//å¦‚æœå›¾ç‰‡çš„é«˜åº¦<æˆªå›¾åŒºé«˜åº¦ï¼Œå¹¶ä¸”å›¾ç‰‡å®½åº¦>æˆªå›¾åŒºå®½åº¦æ—¶
 				scale = (getHeight() * 1.0f - mVerticalPadding * 2) / dh;
 			}
 
 			if (dw <= getWidth() - mHorizontalPadding * 2&& dh <= getHeight() - mVerticalPadding * 2)
-			{//Èç¹ûÍ¼Æ¬µÄ¸ß¶È<½ØÍ¼Çø¸ß¶È£¬²¢ÇÒÍ¼Æ¬¿í¶È<½ØÍ¼Çø¿í¶ÈÊ±
+			{//å¦‚æœå›¾ç‰‡çš„é«˜åº¦<æˆªå›¾åŒºé«˜åº¦ï¼Œå¹¶ä¸”å›¾ç‰‡å®½åº¦<æˆªå›¾åŒºå®½åº¦æ—¶
 				float scaleW = (getWidth() * 1.0f - mHorizontalPadding * 2)/ dw;
 				float scaleH = (getHeight() * 1.0f - mVerticalPadding * 2) / dh;
 				scale = Math.max(scaleW, scaleH);
@@ -381,9 +381,9 @@ public class ClipZoomImageView extends ImageView implements
 			initScale = scale;
 			SCALE_MID = initScale * 2;
 			SCALE_MAX = initScale * 4;
-			mScaleMatrix.postTranslate((width - dw) / 2, (height - dh) / 2);//Æ½ÒÆÖÁÆÁÄ»ÖĞĞÄ
-			mScaleMatrix.postScale(scale, scale, getWidth() / 2,getHeight() / 2);//ÉèÖÃËõ·Å±ÈÀı
-			// Í¼Æ¬ÒÆ¶¯ÖÁÆÁÄ»ÖĞĞÄ
+			mScaleMatrix.postTranslate((width - dw) / 2, (height - dh) / 2);//å¹³ç§»è‡³å±å¹•ä¸­å¿ƒ
+			mScaleMatrix.postScale(scale, scale, getWidth() / 2,getHeight() / 2);//è®¾ç½®ç¼©æ”¾æ¯”ä¾‹
+			// å›¾ç‰‡ç§»åŠ¨è‡³å±å¹•ä¸­å¿ƒ
 			setImageMatrix(mScaleMatrix);
 			once = false;
 		}
@@ -391,7 +391,7 @@ public class ClipZoomImageView extends ImageView implements
 	}
 
 	/**
-	 * ¼ôÇĞÍ¼Æ¬£¬·µ»Ø¼ôÇĞºóµÄbitmap¶ÔÏó
+	 * å‰ªåˆ‡å›¾ç‰‡ï¼Œè¿”å›å‰ªåˆ‡åçš„bitmapå¯¹è±¡
 	 * 
 	 * @return
 	 */
@@ -400,14 +400,14 @@ public class ClipZoomImageView extends ImageView implements
 		Bitmap bitmap = Bitmap.createBitmap(getWidth(), getHeight(), Config.ARGB_8888);
 		Canvas canvas = new Canvas(bitmap);
 		draw(canvas);
-		//ÈôÎª²Ã¼ôÎª·½ĞÎÇøÓò£¬ÔòÈ¥µôgetCircleBitmap·½·¨¼´¿É
+		//è‹¥ä¸ºè£å‰ªä¸ºæ–¹å½¢åŒºåŸŸï¼Œåˆ™å»æ‰getCircleBitmapæ–¹æ³•å³å¯
 		return getCircleBitmap(Bitmap.createBitmap(bitmap, mHorizontalPadding,
 				mVerticalPadding, getWidth() - 2 * mHorizontalPadding,
 				getWidth() - 2 * mHorizontalPadding));
 	}
 
 	/**
-	 * ±ß½ç¼ì²â
+	 * è¾¹ç•Œæ£€æµ‹
 	 */
 	private void checkBorder()
 	{
@@ -418,7 +418,7 @@ public class ClipZoomImageView extends ImageView implements
 
 		int width = getWidth();
 		int height = getHeight();
-		// Èç¹û¿í»ò¸ß´óÓÚÆÁÄ»£¬Ôò¿ØÖÆ·¶Î§ ; ÕâÀïµÄ0.001ÊÇÒòÎª¾«¶È¶ªÊ§»á²úÉúÎÊÌâ£¬µ«ÊÇÎó²îÒ»°ãºÜĞ¡£¬ËùÒÔÎÒÃÇÖ±½Ó¼ÓÁËÒ»¸ö0.01
+		// å¦‚æœå®½æˆ–é«˜å¤§äºå±å¹•ï¼Œåˆ™æ§åˆ¶èŒƒå›´ ; è¿™é‡Œçš„0.001æ˜¯å› ä¸ºç²¾åº¦ä¸¢å¤±ä¼šäº§ç”Ÿé—®é¢˜ï¼Œä½†æ˜¯è¯¯å·®ä¸€èˆ¬å¾ˆå°ï¼Œæ‰€ä»¥æˆ‘ä»¬ç›´æ¥åŠ äº†ä¸€ä¸ª0.01
 		if (rect.width() + 0.01 >= width - 2 * mHorizontalPadding)
 		{
 			if (rect.left > mHorizontalPadding)
@@ -446,7 +446,7 @@ public class ClipZoomImageView extends ImageView implements
 	}
 
 	/**
-	 * ÊÇ·ñÊÇÍÏ¶¯ĞĞÎª
+	 * æ˜¯å¦æ˜¯æ‹–åŠ¨è¡Œä¸º
 	 * 
 	 * @param dx
 	 * @param dy
@@ -463,7 +463,7 @@ public class ClipZoomImageView extends ImageView implements
 	}
 	
 	/**
-	 * ½«·½ĞÎbitmap×ª»»ÎªÔ²ĞÎbitmap
+	 * å°†æ–¹å½¢bitmapè½¬æ¢ä¸ºåœ†å½¢bitmap
 	 * @param bitmap
 	 * @return
 	 */

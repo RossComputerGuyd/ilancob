@@ -75,6 +75,8 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
         adapter.add("Android创建抗锯齿透明背景圆角图像");
         adapter.add("带自定义编辑功能的圆形头像");
         adapter.add("高仿qq我的资料头像裁剪");
+        adapter.add("很多项目中用到了用户头像，但是系统的ImageView 是四方形的 ，自己写了个处理的方法， 把bitmap处理成圆角的 。很方便");
+        adapter.add("自定义图片剪切功能");
         listView = (ListView) view.findViewById(R.id.listView);
         listView.setOnItemClickListener(this);
         listView.setAdapter(adapter);
@@ -143,6 +145,12 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
                 break;
             case 19:
                 cls = CHeaderMainActivity.class;
+                break;
+            case 20:
+                cls = EasyRoundActivity.class;
+                break;
+            case 21:
+                cls = CuterActivity.class;
                 break;
         }
 
