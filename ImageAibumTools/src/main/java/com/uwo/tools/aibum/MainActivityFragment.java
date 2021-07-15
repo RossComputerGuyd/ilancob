@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.uwo.tools.aibum.imagescan.ScanMainActivity;
 import com.uwo.tools.aibum.photo.PhotoAlbumActivity;
 
 
@@ -33,6 +34,7 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
     private void init() {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1);
         adapter.add("Android例子源码本地相册图片一次性多选有注释");
+        adapter.add("相册");
         ListView listView = (ListView) view.findViewById(R.id.listView);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(this);
@@ -44,6 +46,9 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
         switch (position){
             case 0:
                 cls = PhotoAlbumActivity.class;
+                break;
+            case 1:
+                cls = ScanMainActivity.class;
                 break;
         }
         startAc(cls);
