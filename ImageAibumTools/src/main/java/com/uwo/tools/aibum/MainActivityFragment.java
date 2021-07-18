@@ -11,7 +11,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.uwo.tools.aibum.imagescan.ScanMainActivity;
+import com.uwo.tools.aibum.localphoto.AlbumActivity;
 import com.uwo.tools.aibum.photo.PhotoAlbumActivity;
+import com.uwo.tools.aibum.recylcler.HomeActivity;
 
 
 /**
@@ -35,6 +37,8 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1);
         adapter.add("Android例子源码本地相册图片一次性多选有注释");
         adapter.add("相册");
+        adapter.add("RecyclerView 瀑布流、ListView、GridView实例(zhx)");
+        adapter.add("照片墙画廊图库");
         ListView listView = (ListView) view.findViewById(R.id.listView);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(this);
@@ -49,6 +53,12 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
                 break;
             case 1:
                 cls = ScanMainActivity.class;
+                break;
+            case 2:
+                cls = HomeActivity.class;
+                break;
+            case 3:
+                cls = AlbumActivity.class;
                 break;
         }
         startAc(cls);

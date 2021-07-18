@@ -22,4 +22,6 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:23.0.1'
+    compile files('libs/android-support-v7-recyclerview.jar')
+    compile files('libs/universalimageloaderlibrary1.9.0.jar')
 }

@@ -2,4 +2,7 @@
     <string name="app_name">图片相册工具类</string>
     <string name="hello_world">图片相册</string>
     <string name="action_settings">Settings</string>
+    <string name="choose_photo">选择</string>
+    <string name="loadphoto_tip">相册加载中...</string>
+
 </resources>

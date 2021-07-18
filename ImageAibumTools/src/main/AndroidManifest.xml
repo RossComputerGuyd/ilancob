@@ -28,6 +28,11 @@
 
         <activity android:name=".imagescan.ScanMainActivity" />
         <activity android:name=".imagescan.ShowImageActivity" />
+
+        <activity android:name=".recylcler.HomeActivity" />
+        <activity android:name=".recylcler.StaggeredGridLayoutActivity" />
+
+        <activity android:name=".localphoto.AlbumActivity" />
     </application>
 
 </manifest>
