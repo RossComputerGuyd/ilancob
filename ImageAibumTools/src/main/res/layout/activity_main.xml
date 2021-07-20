@@ -1,4 +1,21 @@
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:id="@+id/fragment"
-    android:name="com.uwo.tools.aibum.MainActivityFragment" tools:layout="@layout/fragment_main"
-    android:layout_width="match_parent" android:layout_height="match_parent" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <GridView
+        android:paddingTop="5dip"
+        android:paddingBottom="5dip"
+        android:paddingLeft="3dip"
+        android:paddingRight="3dip"
+        android:id="@+id/photo_wall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnWidth="110dip"
+        android:gravity="center"
+        android:numColumns="auto_fit"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="5dip" >
+    </GridView>
+
+</LinearLayout>
