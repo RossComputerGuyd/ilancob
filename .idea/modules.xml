@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FaceCrop-Lib/FaceCrop-Lib.iml" filepath="$PROJECT_DIR$/FaceCrop-Lib/FaceCrop-Lib.iml" />
       <module fileurl="file://$PROJECT_DIR$/ImageAibumTools/ImageAibumTools.iml" filepath="$PROJECT_DIR$/ImageAibumTools/ImageAibumTools.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ImageAsynchronousLoad/ImageAsynchronousLoad.iml" filepath="$PROJECT_DIR$/ImageAsynchronousLoad/ImageAsynchronousLoad.iml" />
       <module fileurl="file://$PROJECT_DIR$/ImageProcesTools.iml" filepath="$PROJECT_DIR$/ImageProcesTools.iml" />
       <module fileurl="file://$PROJECT_DIR$/Loader-Lib/Loader-Lib.iml" filepath="$PROJECT_DIR$/Loader-Lib/Loader-Lib.iml" />
       <module fileurl="file://$PROJECT_DIR$/android-common-master/android-common-master.iml" filepath="$PROJECT_DIR$/android-common-master/android-common-master.iml" />

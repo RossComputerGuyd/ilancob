@@ -4,7 +4,7 @@
     android:layout_width="100dp"
     android:layout_height="100dp">
 
-    <ImageView
+    <com.android.volley.toolbox.NetworkImageView
         android:id="@+id/photo"
         android:layout_margin="1dp"
         android:scaleType="fitXY"

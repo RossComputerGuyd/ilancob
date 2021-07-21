@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "com.uwo.tools.aibum"
+        applicationId "com.uwo.tools.load"
         minSdkVersion 8
         targetSdkVersion 23
         versionCode 1
@@ -22,7 +22,4 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:23.0.1'
-    compile files('libs/android-support-v7-recyclerview.jar')
-    compile files('libs/universalimageloaderlibrary1.9.0.jar')
-    compile files('libs/volley.jar')
 }

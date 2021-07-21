@@ -15,6 +15,7 @@ import com.uwo.tools.aibum.localphoto.AlbumActivity;
 import com.uwo.tools.aibum.photo.PhotoAlbumActivity;
 import com.uwo.tools.aibum.photos.PhotosMainActivity;
 import com.uwo.tools.aibum.recylcler.HomeActivity;
+import com.uwo.tools.aibum.volley.VolleyActivity;
 
 
 /**
@@ -41,6 +42,7 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
         adapter.add("RecyclerView 瀑布流、ListView、GridView实例(zhx)");
         adapter.add("照片墙画廊图库");
         adapter.add("照片墙");
+        adapter.add("Volley框架获取网络图片");
         ListView listView = (ListView) view.findViewById(R.id.listView);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(this);
@@ -64,6 +66,9 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
                 break;
             case 4:
                 cls = PhotosMainActivity.class;
+                break;
+            case 5:
+                cls = VolleyActivity.class;
                 break;
         }
         startAc(cls);
