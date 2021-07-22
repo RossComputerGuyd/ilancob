@@ -1,4 +1,4 @@
-package com.uwo.tools.aibum.volley;
+package com.uwo.tools.load.volley;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,8 +10,8 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 import com.android.volley.toolbox.Volley;
-import com.uwo.tools.aibum.R;
-import com.uwo.tools.aibum.photos.Images;
+import com.uwo.tools.load.R;
+import com.uwo.tools.load.utils.Images;
 
 /**
  * Created by SRain on 2015/11/30.
@@ -47,9 +47,18 @@ public class VolleyGridNetAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        convertView = mInflater.inflate(R.layout.item_volley_net, null);
-        com.android.volley.toolbox.NetworkImageView imageView = (com.android.volley.toolbox.NetworkImageView) convertView.findViewById(R.id.photo);
+//        ViewHolder holder = null;
+//        if (convertView == null) {
+//            holder = new ViewHolder();
+//            convertView = mInflater.inflate(R.layout.item_volley_net, null);
+//            holder.imageView = (NetworkImageView) convertView.findViewById(R.id.photo);
+//            convertView.setTag(holder.imageView);
+//        } else {
+//            holder = (ViewHolder) convertView.getTag();
+//        }
 
+        convertView = mInflater.inflate(R.layout.item_volley_net, null);
+        NetworkImageView imageView = (NetworkImageView) convertView.findViewById(R.id.photo);
         LruImageCache lruImageCache = LruImageCache.instance();
         ImageLoader imageLoader = new ImageLoader(mRequestQueue, lruImageCache);
         imageView.setImageUrl(Images.imageUrls[position], imageLoader);
@@ -57,6 +66,6 @@ public class VolleyGridNetAdapter extends BaseAdapter {
     }
 
     private class ViewHolder {
-        com.android.volley.toolbox.NetworkImageView imageView;
+        NetworkImageView imageView;
     }
 }
