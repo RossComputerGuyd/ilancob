@@ -12,6 +12,7 @@ import android.widget.ListView;
 
 import com.uwo.tools.load.okhttp.OkMainActivity;
 import com.uwo.tools.load.volley.VolleyActivity;
+import com.uwo.tools.load.xutils.XUtilsMainActivity;
 
 
 /**
@@ -36,6 +37,7 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
         adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1);
         adapter.add("Volley框架使用");
         adapter.add("OKHttp");
+        adapter.add("xutils");
         ListView listView = (ListView) view.findViewById(R.id.listview);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(this);
@@ -52,6 +54,7 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
                 cls = OkMainActivity.class;
                 break;
             case 2:
+                cls = XUtilsMainActivity.class;
                 break;
         }
         staActivity(cls);

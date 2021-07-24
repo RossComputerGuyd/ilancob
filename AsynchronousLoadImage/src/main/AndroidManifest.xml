@@ -32,6 +32,8 @@
         <activity android:name=".volley.VolleyActivity" />
 
         <activity android:name=".okhttp.OkMainActivity" />
+
+        <activity android:name=".xutils.XUtilsMainActivity" />
     </application>
 
 </manifest>
