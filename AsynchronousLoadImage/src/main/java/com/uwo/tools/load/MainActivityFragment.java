@@ -10,7 +10,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.uwo.tools.load.fresco.FrescoMainActivity;
 import com.uwo.tools.load.okhttp.OkMainActivity;
+import com.uwo.tools.load.picasso.PicassoMainActivity;
 import com.uwo.tools.load.volley.VolleyActivity;
 import com.uwo.tools.load.xutils.XUtilsMainActivity;
 
@@ -38,6 +40,8 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
         adapter.add("Volley框架使用");
         adapter.add("OKHttp");
         adapter.add("xutils");
+        adapter.add("fresco:facebook推出的一款强大的android图片处理库");
+        adapter.add("Picasso");
         ListView listView = (ListView) view.findViewById(R.id.listview);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(this);
@@ -55,6 +59,12 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
                 break;
             case 2:
                 cls = XUtilsMainActivity.class;
+                break;
+            case 3:
+                cls = FrescoMainActivity.class;
+                break;
+            case 4:
+                cls = PicassoMainActivity.class;
                 break;
         }
         staActivity(cls);

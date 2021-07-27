@@ -2,6 +2,7 @@ package com.uwo.tools.load;
 
 import android.app.Application;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.uwo.tools.load.okhttp.utils.OkHttpClientManager;
 
 import java.io.InputStream;
@@ -35,5 +36,6 @@ public class MyApplication extends Application
         super.onCreate();
         OkHttpClientManager.getInstance().setCertificates(new InputStream[]{new Buffer().writeUtf8(CER_12306).inputStream()});
         OkHttpClientManager.getInstance().getOkHttpClient().setConnectTimeout(100000, TimeUnit.MILLISECONDS);
+        Fresco.initialize(this.getApplicationContext());
     }
 }

@@ -38,7 +38,7 @@ public class VolleyActivity extends Activity implements View.OnClickListener {
     }
 
     private void initData() {
-        adapter = new VolleyGridAdapter(this, 1);
+        
     }
 
     private void initView() {
@@ -52,6 +52,9 @@ public class VolleyActivity extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.header:
+                if (adapter != null) {
+                    adapter = null;
+                }
                 String[] strs = new String[]{"Volley使用ImageRequest下载图片", "Volley使用ImageLoader", "Volley使用NetworkImageView加载图片"};
                 final Dialog alertDialog = new AlertDialog.Builder(this).
                         setTitle("请选择查看方式")

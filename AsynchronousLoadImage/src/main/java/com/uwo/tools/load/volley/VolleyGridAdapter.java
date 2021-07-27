@@ -16,6 +16,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.Volley;
+import com.squareup.picasso.Picasso;
 import com.uwo.tools.load.R;
 import com.uwo.tools.load.utils.Images;
 import com.uwo.tools.load.utils.ViewHolderUtils;
@@ -108,6 +109,9 @@ public class VolleyGridAdapter extends BaseAdapter {
                 // 第三个参数是请求失败时候的资源id，可以指定为0
                 ImageLoader.ImageListener listener = ImageLoader.getImageListener(imageView, android.R.drawable.ic_secure, android.R.drawable.ic_delete);
                 mImageLoader.get(Images.imageUrls[i], listener);
+                break;
+            case 3:
+                Picasso.with(context).load(Images.imageUrls[i]).into(imageView);
                 break;
         }
     }
