@@ -43,6 +43,8 @@
         <activity android:name=".fresco.FrescoMainActivity" />
 
         <activity android:name=".picasso.PicassoMainActivity" />
+
+        <activity android:name=".hy.HYMainActivity" />
     </application>
 
 </manifest>
