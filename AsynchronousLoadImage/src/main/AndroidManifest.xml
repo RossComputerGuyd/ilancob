@@ -45,6 +45,42 @@
         <activity android:name=".picasso.PicassoMainActivity" />
 
         <activity android:name=".hy.HYMainActivity" />
+
+        <activity android:name=".smart.SmartActivity" />
+
+        <activity android:name=".lazy.LazyMainActivity" />
+
+        <activity android:name=".asimplecache.ASimpleCacheMainActivity" />
+        <activity android:name=".asimplecache.SaveObjectActivity" />
+        <activity android:name=".asimplecache.SaveStringActivity" />
+        <activity android:name=".asimplecache.SaveMediaActivity" />
+        <activity android:name=".asimplecache.SaveJsonObjectActivity" />
+        <activity android:name=".asimplecache.SaveJsonArrayActivity" />
+        <activity android:name=".asimplecache.SaveDrawableActivity" />
+        <activity android:name=".asimplecache.SaveBitmapActivity" />
+        <activity android:name=".asimplecache.AboutActivity" />
+
+
+        <activity
+            android:name=".uninversa.activity.HomeActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".uninversa.activity.SimpleImageActivity"
+            android:label="@string/ac_name_image_list" />
+        <activity
+            android:name=".uninversa.activity.ComplexImageActivity"
+            android:label="@string/ac_name_complex" />
+
+        <!-- Widget -->
+        <receiver android:name=".uninversa.widget.UILWidgetProvider" >
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_provider" />
+
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

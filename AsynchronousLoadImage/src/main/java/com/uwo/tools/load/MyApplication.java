@@ -1,20 +1,30 @@
 package com.uwo.tools.load;
 
+import android.annotation.TargetApi;
 import android.app.Application;
+import android.content.Context;
+import android.os.Build;
+import android.os.StrictMode;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.uwo.tools.load.okhttp.utils.OkHttpClientManager;
+import com.uwo.tools.load.uninversa.Constants;
 
 import java.io.InputStream;
 import java.util.concurrent.TimeUnit;
+
 import okio.Buffer;
 
 
 /**
  * Created by zhy on 15/8/25.
  */
-public class MyApplication extends Application
-{
+public class MyApplication extends Application {
+    @SuppressWarnings("unused")
     private String CER_12306 = "-----BEGIN CERTIFICATE-----\n" +
             "MIICmjCCAgOgAwIBAgIIbyZr5/jKH6QwDQYJKoZIhvcNAQEFBQAwRzELMAkGA1UEBhMCQ04xKTAn\n" +
             "BgNVBAoTIFNpbm9yYWlsIENlcnRpZmljYXRpb24gQXV0aG9yaXR5MQ0wCwYDVQQDEwRTUkNBMB4X\n" +
@@ -31,11 +41,32 @@ public class MyApplication extends Application
             "-----END CERTIFICATE-----";
 
     @Override
-    public void onCreate()
-    {
+    public void onCreate() {
+        if (Constants.Config.DEVELOPER_MODE && Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) {
+            StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectAll().penaltyDialog().build());
+            StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectAll().penaltyDeath().build());
+        }
         super.onCreate();
         OkHttpClientManager.getInstance().setCertificates(new InputStream[]{new Buffer().writeUtf8(CER_12306).inputStream()});
         OkHttpClientManager.getInstance().getOkHttpClient().setConnectTimeout(100000, TimeUnit.MILLISECONDS);
         Fresco.initialize(this.getApplicationContext());
+        initImageLoader(getApplicationContext());
+    }
+
+    public static void initImageLoader(Context context) {
+        // This configuration tuning is custom. You can tune every option, you may tune some of them,
+        // or you can create default configuration by
+        //  ImageLoaderConfiguration.createDefault(this);
+        // method.
+        ImageLoaderConfiguration.Builder config = new ImageLoaderConfiguration.Builder(context);
+        config.threadPriority(Thread.NORM_PRIORITY - 2);
+        config.denyCacheImageMultipleSizesInMemory();
+        config.diskCacheFileNameGenerator(new Md5FileNameGenerator());
+        config.diskCacheSize(50 * 1024 * 1024); // 50 MiB
+        config.tasksProcessingOrder(QueueProcessingType.LIFO);
+        config.writeDebugLogs(); // Remove for release app
+
+        // Initialize ImageLoader with configuration.
+        ImageLoader.getInstance().init(config.build());
     }
 }

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/AsynchronousLoadImage/src/main/java/com/uwo/tools/load/lazy/LazyMainActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AsynchronousLoadImage/src/main/java/com/uwo/tools/load/smart/SmartActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AsynchronousLoadImage/src/main/java/com/uwo/tools/load/uninversa/ext/HttpClientImageDownloader.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AsynchronousLoadImage/src/main/java/com/uwo/tools/load/uninversa/widget/UILWidgetProvider.java" charset="UTF-8" />
+  </component>
+</project>
