@@ -4,7 +4,10 @@ package com.tools.bitmap.cropper;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,18 +71,30 @@ public class CropperMainActivity extends Activity {
 
         // Initialize components of the app
         final CropImageView cropImageView = (CropImageView) findViewById(R.id.CropImageView);
+//        Uri uri = Uri.parse(this.getIntent().getStringExtra("uri"));
+        Uri uri = this.getIntent().getData();
+        Log.e("uri",uri.toString());
+        try {
+            // 读取uri所在的图片
+//            Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), uri);
+//            cropImageView.setImageBitmap(bitmap);
+            cropImageView.setImageURI(this, uri);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         final SeekBar aspectRatioXSeek = (SeekBar) findViewById(R.id.aspectRatioXSeek);
         final SeekBar aspectRatioYSeek = (SeekBar) findViewById(R.id.aspectRatioYSeek);
         final ToggleButton fixedAspectRatioToggle = (ToggleButton) findViewById(R.id.fixedAspectRatioToggle);
         Spinner showGuidelinesSpin = (Spinner) findViewById(R.id.showGuidelinesSpin);
-        
+
         // Sets sliders to be disabled until fixedAspectRatio is set
         aspectRatioXSeek.setEnabled(false);
         aspectRatioYSeek.setEnabled(false);
 
         // Set initial spinner value
         showGuidelinesSpin.setSelection(ON_TOUCH);
-        
+
         //Sets the rotate button
         final Button rotateButton = (Button) findViewById(R.id.Button_rotate);
         rotateButton.setOnClickListener(new View.OnClickListener() {
@@ -89,7 +104,7 @@ public class CropperMainActivity extends Activity {
                 cropImageView.rotateImage(ROTATE_NINETY_DEGREES);
             }
         });
-        
+
         // Sets fixedAspectRatio
         fixedAspectRatioToggle.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 
@@ -99,8 +114,7 @@ public class CropperMainActivity extends Activity {
                 if (isChecked) {
                     aspectRatioXSeek.setEnabled(true);
                     aspectRatioYSeek.setEnabled(true);
-                }
-                else {
+                } else {
                     aspectRatioXSeek.setEnabled(false);
                     aspectRatioYSeek.setEnabled(false);
                 }
@@ -174,6 +188,7 @@ public class CropperMainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 croppedImage = cropImageView.getCroppedImage();
+                Log.e("croppedImage", croppedImage.toString());
                 ImageView croppedImageView = (ImageView) findViewById(R.id.croppedImageView);
                 croppedImageView.setImageBitmap(croppedImage);
             }

@@ -15,7 +15,7 @@ import android.provider.MediaStore;
  */
 public class Ima {
     /**
-     * 根据Uri获取图片绝对路径，解决Android4.4以上版本Uri转换
+     * 鏍规嵁Uri鑾峰彇鍥剧墖缁濆璺緞锛岃В鍐矨ndroid4.4浠ヤ笂鐗堟湰Uri杞崲
      *
      * @param context
      * @param imageUri
@@ -114,4 +114,7 @@ public class Ima {
     public static boolean isGooglePhotosUri(Uri uri) {
         return "com.google.android.apps.photos.content".equals(uri.getAuthority());
     }
+
+
+
 }

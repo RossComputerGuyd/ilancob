@@ -15,6 +15,7 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
 import com.tools.bitmap.R;
+import com.tools.bitmap.cropper.CropperMainActivity;
 
 import java.io.File;
 
@@ -77,12 +78,9 @@ public class GetPhotoMainActivity extends Activity {
                     // 可以直接显示图片,或者进行其他处理(如压缩或裁剪等)
                     iv.setImageURI(ImageBitmapUtils.imageUriFromCamera);
                     // 对图片进行裁剪
-				ImageBitmapUtils.cropImage(this, ImageBitmapUtils.imageUriFromCamera);
+//                    ImageBitmapUtils.cropImage(this, ImageBitmapUtils.imageUriFromCamera);
+//                    uriToFilepath(ImageBitmapUtils.imageUriFromCamera);
 
-
-//				Bitmap bitmap = (Bitmap) data.getExtras().get("data");
-//				ImageView imageView = (ImageView) findViewById(R.id.image);
-//				imageView.setImageBitmap(bitmap);
                     break;
                 }
                 break;
@@ -90,10 +88,16 @@ public class GetPhotoMainActivity extends Activity {
             case ImageBitmapUtils.GET_IMAGE_FROM_PHONE:
                 if (data != null && data.getData() != null) {
                     // 可以直接显示图片,或者进行其他处理(如压缩或裁剪等)
-                    // iv.setImageURI(data.getData());
+                     iv.setImageURI(data.getData());
+
+                    Intent intent = new Intent(GetPhotoMainActivity.this, CropperMainActivity.class);
+//                    intent.putExtra("uri", data.getData().toString());
+                    intent.setData(data.getData());
+                    Log.e("uri", data.getData().toString());
+                    startActivity(intent);
 
                     // 对图片进行裁剪
-                    ImageBitmapUtils.cropImage(this, data.getData());
+//                    ImageBitmapUtils.cropImage(this, data.getData());
                 }
                 break;
             // 裁剪图片后结果
@@ -108,7 +112,13 @@ public class GetPhotoMainActivity extends Activity {
         }
     }
 
-    public void uriToFilepath(Uri uri){
+    /**
+     * 根据URI获取文件路径
+     *
+     * @param uri
+     * @return
+     */
+    public String uriToFilepath(Uri uri) {
         String[] proj = {MediaStore.Images.Media.DATA};
         Cursor cursor = managedQuery(uri, proj, null, null, null);
         int index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
@@ -116,5 +126,6 @@ public class GetPhotoMainActivity extends Activity {
         String img_path = cursor.getString(index);
         File file = new File(img_path);
         Log.e("file", file.isFile() + file.getPath());
+        return img_path;
     }
 }

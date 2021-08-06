@@ -97,8 +97,4 @@ public class ImageBitmapUtils {
         Log.i("imageFilePath", "生成的照片输出路径：" + imageFilePath.toString());
         return imageFilePath;
     }
-
-    public void outCropImage(Context context, Uri uri){
-
-    }
 }
