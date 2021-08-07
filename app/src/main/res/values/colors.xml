@@ -15,7 +15,6 @@
     <color name="chat_box_border">#BBB</color>
     <color name="chat_box_bg">#EEE</color>
     <color name="selector">#55000000</color>
-    <color name="black_translucent">#50000000</color>
 
     <color name="highlight">#f3f3f3</color>
 
@@ -37,5 +36,8 @@
     <color name="bg_color9">#EC87C0</color>
     <color name="bg_color10">#CCD1D9</color>
     <color name="bg_color11">#656D78</color>
+
+    <color name="white_translucent">#AAFFFFFF</color>
+    <color name="black_translucent">#B0000000</color>
 
 </resources>

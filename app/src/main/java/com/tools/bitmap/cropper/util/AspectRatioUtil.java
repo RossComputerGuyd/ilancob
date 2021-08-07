@@ -11,9 +11,10 @@
  * governing permissions and limitations under the License. 
  */
 
-package com.tools.bitmap.cropper.window.util;
+package com.tools.bitmap.cropper.util;
 
-import android.graphics.Rect;
+import android.graphics.RectF;
+import android.support.annotation.NonNull;
 
 /**
  * Utility class for handling calculations involving a fixed aspect ratio.
@@ -24,27 +25,21 @@ public class AspectRatioUtil {
      * Calculates the aspect ratio given a rectangle.
      */
     public static float calculateAspectRatio(float left, float top, float right, float bottom) {
-
         final float width = right - left;
         final float height = bottom - top;
-        final float aspectRatio = width / height;
-
-        return aspectRatio;
+        return width / height;
     }
 
     /**
      * Calculates the aspect ratio given a rectangle.
      */
-    public static float calculateAspectRatio(Rect rect) {
-
-        final float aspectRatio = (float) rect.width() / (float) rect.height();
-
-        return aspectRatio;
+    public static float calculateAspectRatio(@NonNull RectF rect) {
+        return rect.width() / rect.height();
     }
 
     /**
-     * Calculates the x-coordinate of the left edge given the other sides of the
-     * rectangle and an aspect ratio.
+     * Calculates the x-coordinate of the left edge given the other sides of the rectangle and an
+     * aspect ratio.
      */
     public static float calculateLeft(float top, float right, float bottom, float targetAspectRatio) {
 
@@ -52,14 +47,12 @@ public class AspectRatioUtil {
         // targetAspectRatio = width / height
         // width = targetAspectRatio * height
         // right - left = targetAspectRatio * height
-        final float left = right - (targetAspectRatio * height);
-
-        return left;
+        return right - (targetAspectRatio * height);
     }
 
     /**
-     * Calculates the y-coordinate of the top edge given the other sides of the
-     * rectangle and an aspect ratio.
+     * Calculates the y-coordinate of the top edge given the other sides of the rectangle and an
+     * aspect ratio.
      */
     public static float calculateTop(float left, float right, float bottom, float targetAspectRatio) {
 
@@ -68,14 +61,12 @@ public class AspectRatioUtil {
         // width = targetAspectRatio * height
         // height = width / targetAspectRatio
         // bottom - top = width / targetAspectRatio
-        final float top = bottom - (width / targetAspectRatio);
-
-        return top;
+        return bottom - (width / targetAspectRatio);
     }
 
     /**
-     * Calculates the x-coordinate of the right edge given the other sides of
-     * the rectangle and an aspect ratio.
+     * Calculates the x-coordinate of the right edge given the other sides of the rectangle and an
+     * aspect ratio.
      */
     public static float calculateRight(float left, float top, float bottom, float targetAspectRatio) {
 
@@ -83,14 +74,12 @@ public class AspectRatioUtil {
         // targetAspectRatio = width / height
         // width = targetAspectRatio * height
         // right - left = targetAspectRatio * height
-        final float right = (targetAspectRatio * height) + left;
-
-        return right;
+        return (targetAspectRatio * height) + left;
     }
 
     /**
-     * Calculates the y-coordinate of the bottom edge given the other sides of
-     * the rectangle and an aspect ratio.
+     * Calculates the y-coordinate of the bottom edge given the other sides of the rectangle and an
+     * aspect ratio.
      */
     public static float calculateBottom(float left, float top, float right, float targetAspectRatio) {
 
@@ -99,32 +88,20 @@ public class AspectRatioUtil {
         // width = targetAspectRatio * height
         // height = width / targetAspectRatio
         // bottom - top = width / targetAspectRatio
-        final float bottom = (width / targetAspectRatio) + top;
-
-        return bottom;
+        return (width / targetAspectRatio) + top;
     }
 
     /**
-     * Calculates the width of a rectangle given the top and bottom edges and an
-     * aspect ratio.
+     * Calculates the width of a rectangle given the top and bottom edges and an aspect ratio.
      */
-    public static float calculateWidth(float top, float bottom, float targetAspectRatio) {
-
-        final float height = bottom - top;
-        final float width = targetAspectRatio * height;
-
-        return width;
+    public static float calculateWidth(float height, float targetAspectRatio) {
+        return targetAspectRatio * height;
     }
 
     /**
-     * Calculates the height of a rectangle given the left and right edges and
-     * an aspect ratio.
+     * Calculates the height of a rectangle given the left and right edges and an aspect ratio.
      */
-    public static float calculateHeight(float left, float right, float targetAspectRatio) {
-
-        final float width = right - left;
-        final float height = width / targetAspectRatio;
-
-        return height;
+    public static float calculateHeight(float width, float targetAspectRatio) {
+        return width / targetAspectRatio;
     }
 }

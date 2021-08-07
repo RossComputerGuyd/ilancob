@@ -11,33 +11,33 @@
  * governing permissions and limitations under the License. 
  */
 
-package com.tools.bitmap.cropper.window.handle;
+package com.tools.bitmap.cropper.cropwindow.handle;
 
-import android.graphics.Rect;
+import android.graphics.RectF;
+import android.support.annotation.NonNull;
 
-import com.tools.bitmap.cropper.window.edge.Edge;
-import com.tools.bitmap.cropper.window.edge.EdgePair;
-
+import com.tools.bitmap.cropper.cropwindow.edge.Edge;
+import com.tools.bitmap.cropper.cropwindow.edge.EdgePair;
 
 /**
- * HandleHelper class to handle corner Handles (i.e. top-left, top-right,
- * bottom-left, and bottom-right handles).
+ * HandleHelper class to handle corner Handles (i.e. top-left, top-right, bottom-left, and
+ * bottom-right handles).
  */
 class CornerHandleHelper extends HandleHelper {
 
-    // Constructor /////////////////////////////////////////////////////////////
+    // Constructor /////////////////////////////////////////////////////////////////////////////////
 
     CornerHandleHelper(Edge horizontalEdge, Edge verticalEdge) {
         super(horizontalEdge, verticalEdge);
     }
 
-    // HandleHelper Methods ////////////////////////////////////////////////////
+    // HandleHelper Methods ////////////////////////////////////////////////////////////////////////
 
     @Override
     void updateCropWindow(float x,
                           float y,
                           float targetAspectRatio,
-                          Rect imageRect,
+                          @NonNull RectF imageRect,
                           float snapRadius) {
 
         final EdgePair activeEdges = getActiveEdges(x, y, targetAspectRatio);

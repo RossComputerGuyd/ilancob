@@ -11,30 +11,30 @@
  * governing permissions and limitations under the License. 
  */
 
-package com.tools.bitmap.cropper.window.handle;
+package com.tools.bitmap.cropper.cropwindow.handle;
 
-import android.graphics.Rect;
+import android.graphics.RectF;
+import android.support.annotation.NonNull;
 
-import com.tools.bitmap.cropper.window.edge.Edge;
-
+import com.tools.bitmap.cropper.cropwindow.edge.Edge;
 
 /**
  * HandleHelper class to handle the center handle.
  */
 class CenterHandleHelper extends HandleHelper {
 
-    // Constructor /////////////////////////////////////////////////////////////
+    // Constructor /////////////////////////////////////////////////////////////////////////////////
 
     CenterHandleHelper() {
         super(null, null);
     }
 
-    // HandleHelper Methods ////////////////////////////////////////////////////
+    // HandleHelper Methods ////////////////////////////////////////////////////////////////////////
 
     @Override
     void updateCropWindow(float x,
                           float y,
-                          Rect imageRect,
+                          @NonNull RectF imageRect,
                           float snapRadius) {
 
         float left = Edge.LEFT.getCoordinate();
@@ -77,7 +77,7 @@ class CenterHandleHelper extends HandleHelper {
     void updateCropWindow(float x,
                           float y,
                           float targetAspectRatio,
-                          Rect imageRect,
+                          @NonNull RectF imageRect,
                           float snapRadius) {
 
         updateCropWindow(x, y, imageRect, snapRadius);

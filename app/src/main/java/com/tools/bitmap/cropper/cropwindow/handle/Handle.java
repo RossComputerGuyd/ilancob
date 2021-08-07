@@ -11,12 +11,12 @@
  * governing permissions and limitations under the License. 
  */
 
-package com.tools.bitmap.cropper.window.handle;
+package com.tools.bitmap.cropper.cropwindow.handle;
 
-import android.graphics.Rect;
+import android.graphics.RectF;
+import android.support.annotation.NonNull;
 
-import com.tools.bitmap.cropper.window.edge.Edge;
-
+import com.tools.bitmap.cropper.cropwindow.edge.Edge;
 
 /**
  * Enum representing a pressable, draggable Handle on the crop window.
@@ -33,11 +33,11 @@ public enum Handle {
     BOTTOM(new HorizontalHandleHelper(Edge.BOTTOM)),
     CENTER(new CenterHandleHelper());
 
-    // Member Variables ////////////////////////////////////////////////////////
+    // Member Variables ////////////////////////////////////////////////////////////////////////////
 
     private HandleHelper mHelper;
 
-    // Constructors ////////////////////////////////////////////////////////////
+    // Constructors ////////////////////////////////////////////////////////////////////////////////
 
     Handle(HandleHelper helper) {
         mHelper = helper;
@@ -47,7 +47,7 @@ public enum Handle {
 
     public void updateCropWindow(float x,
                                  float y,
-                                 Rect imageRect,
+                                 @NonNull RectF imageRect,
                                  float snapRadius) {
 
         mHelper.updateCropWindow(x, y, imageRect, snapRadius);
@@ -56,7 +56,7 @@ public enum Handle {
     public void updateCropWindow(float x,
                                  float y,
                                  float targetAspectRatio,
-                                 Rect imageRect,
+                                 @NonNull RectF imageRect,
                                  float snapRadius) {
 
         mHelper.updateCropWindow(x, y, targetAspectRatio, imageRect, snapRadius);
