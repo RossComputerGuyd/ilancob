@@ -91,6 +91,8 @@
         <activity android:name=".EasyRoundActivity" />
 
         <activity android:name=".CuterActivity" />
+
+        <activity android:name=".mycropper.MyCropperActivity" />
     </application>
 
 </manifest>

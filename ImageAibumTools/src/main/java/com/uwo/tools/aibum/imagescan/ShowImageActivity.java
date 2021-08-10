@@ -2,15 +2,17 @@ package com.uwo.tools.aibum.imagescan;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
-
 import com.uwo.tools.aibum.R;
+import com.uwo.tools.aibum.cropper.MyCropperActivity;
 
 import java.util.List;
 
-public class ShowImageActivity extends Activity {
+public class ShowImageActivity extends Activity implements AdapterView.OnItemClickListener {
 	private GridView mGridView;
 	private List<String> list;
 	private ChildAdapter adapter;
@@ -25,7 +27,7 @@ public class ShowImageActivity extends Activity {
 		
 		adapter = new ChildAdapter(this, list, mGridView);
 		mGridView.setAdapter(adapter);
-		
+		mGridView.setOnItemClickListener(this);
 	}
 
 	@Override
@@ -33,8 +35,10 @@ public class ShowImageActivity extends Activity {
 		Toast.makeText(this, "选中 " + adapter.getSelectItems().size() + " item", Toast.LENGTH_LONG).show();
 		super.onBackPressed();
 	}
-	
-	
 
-	
+
+	@Override
+	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+		MyCropperActivity.actionStart(ShowImageActivity.this, list.get(position));
+	}
 }

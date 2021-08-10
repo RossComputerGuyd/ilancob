@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.uwo.tools.aibum.cropper.MyCropperActivity;
 import com.uwo.tools.aibum.imagescan.ScanMainActivity;
 import com.uwo.tools.aibum.localphoto.AlbumActivity;
 import com.uwo.tools.aibum.photo.PhotoAlbumActivity;
@@ -43,6 +44,7 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
         adapter.add("照片墙画廊图库");
         adapter.add("照片墙");
         adapter.add("Volley框架获取网络图片");
+        adapter.add("图片剪裁/lib");
         ListView listView = (ListView) view.findViewById(R.id.listView);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(this);
@@ -69,6 +71,9 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
                 break;
             case 5:
                 cls = VolleyActivity.class;
+                break;
+            case 6:
+                cls = MyCropperActivity.class;
                 break;
         }
         startAc(cls);

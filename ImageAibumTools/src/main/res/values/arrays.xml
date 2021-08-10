@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="showGuidelinesArray">
+        <item>Off</item>
+        <item>On Touch</item>
+        <item>On</item>
+    </string-array>
+</resources>

@@ -18,4 +18,40 @@
     <color name="red">#ff0000</color>
     <color name="red_1">#E70012</color>
     <color name="green_forlist">#49BA52</color>
+
+    <color name="dark">#FF222222</color>
+    <color name="light">#FFEEEEEE</color>
+
+    <color name="color_primary">#8BC34A</color>
+    <color name="color_primary_dark">#689F38</color>
+    <color name="color_accent">#4CAF50</color>
+
+    <color name="screen_bg">@color/white</color>
+    <color name="bordercolor">@color/darkgray</color>
+    <color name="transparent">#00000000</color>
+    <color name="darkgray">#666</color>
+    <color name="chat_box_border">#BBB</color>
+    <color name="chat_box_bg">#EEE</color>
+    <color name="selector">#55000000</color>
+
+    <color name="highlight">#f3f3f3</color>
+
+    <color name="home_blue">#40B2F9</color>
+    <color name="bg_gray">#C3B4A8</color>
+    <color name="green">#30587C3E</color>
+
+    <color name="bg_color1">#ED5565</color>
+    <color name="bg_color2">#FC6E51</color>
+    <color name="bg_color3">#FFCE54</color>
+    <color name="bg_color4">#A0D468</color>
+    <color name="bg_color5">#48CFAD</color>
+    <color name="bg_color6">#4FC1E9</color>
+    <color name="bg_color7">#5D9CEC</color>
+    <color name="bg_color8">#AC92EC</color>
+    <color name="bg_color9">#EC87C0</color>
+    <color name="bg_color10">#CCD1D9</color>
+    <color name="bg_color11">#656D78</color>
+
+    <color name="white_translucent">#AAFFFFFF</color>
+    <color name="black_translucent">#B0000000</color>
 </resources>

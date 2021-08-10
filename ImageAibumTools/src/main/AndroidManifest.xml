@@ -46,6 +46,8 @@
         <activity android:name=".photos.ImageDetailsActivity" />
 
         <activity android:name=".volley.VolleyActivity" />
+
+        <activity android:name=".cropper.MyCropperActivity" />
     </application>
 
 </manifest>

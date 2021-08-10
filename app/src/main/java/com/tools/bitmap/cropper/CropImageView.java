@@ -555,5 +555,4 @@ public class CropImageView extends ImageView {
         }
         invalidate();
     }
-
 }

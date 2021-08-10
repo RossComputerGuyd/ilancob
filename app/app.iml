@@ -100,6 +100,7 @@
     <orderEntry type="library" exported="" name="support-annotations-23.0.1" level="project" />
     <orderEntry type="library" exported="" name="universal-image-loader-1.9.3" level="project" />
     <orderEntry type="module" module-name="cropImage" exported="" />
+    <orderEntry type="module" module-name="cropper" exported="" />
     <orderEntry type="module" module-name="FaceCrop-Lib" exported="" />
     <orderEntry type="module" module-name="roundImageLib" exported="" />
     <orderEntry type="module" module-name="imageLib" exported="" />

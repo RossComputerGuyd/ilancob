@@ -16,6 +16,7 @@
             <option value="$PROJECT_DIR$/android-common-master" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/cropImage" />
+            <option value="$PROJECT_DIR$/cropper" />
             <option value="$PROJECT_DIR$/imageLib" />
             <option value="$PROJECT_DIR$/roundImageLib" />
           </set>

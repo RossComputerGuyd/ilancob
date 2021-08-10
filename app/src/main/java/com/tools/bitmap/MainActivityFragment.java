@@ -23,6 +23,7 @@ import com.tools.bitmap.header.HeaderMainActivity;
 import com.tools.bitmap.imagescan.ScanMainActivity;
 import com.tools.bitmap.ken.activity.KenMainActivity;
 import com.tools.bitmap.login.LoginActivity;
+import com.tools.bitmap.mycropper.MyCropperActivity;
 import com.tools.bitmap.photocat.PhotoCatMainActivity;
 import com.tools.bitmap.photoview.activity.LauncherActivity;
 import com.tools.bitmap.pictest.PictestMainActivity;
@@ -77,6 +78,7 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
         adapter.add("高仿qq我的资料头像裁剪");
         adapter.add("很多项目中用到了用户头像，但是系统的ImageView 是四方形的 ，自己写了个处理的方法， 把bitmap处理成圆角的 。很方便");
         adapter.add("自定义图片剪切功能");
+        adapter.add("图片剪切/旋转-lib");
         listView = (ListView) view.findViewById(R.id.listView);
         listView.setOnItemClickListener(this);
         listView.setAdapter(adapter);
@@ -151,6 +153,9 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
                 break;
             case 21:
                 cls = CuterActivity.class;
+                break;
+            case 22:
+                cls = MyCropperActivity.class;
                 break;
         }
 
