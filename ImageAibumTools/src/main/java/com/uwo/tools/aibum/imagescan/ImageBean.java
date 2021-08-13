@@ -1,6 +1,7 @@
 package com.uwo.tools.aibum.imagescan;
 
 /**
+ * 文件夹管理类
  * GridView的每个item的数据对象
  * 
  * @author len

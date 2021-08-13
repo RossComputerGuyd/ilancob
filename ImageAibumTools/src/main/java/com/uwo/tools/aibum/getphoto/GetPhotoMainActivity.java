@@ -1,4 +1,4 @@
-package com.tools.bitmap.getphoto;
+package com.uwo.tools.aibum.getphoto;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -13,7 +13,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
-import com.tools.bitmap.R;
+import com.uwo.tools.aibum.R;
 
 import java.io.File;
 
