@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="F:\Demo\Android\ImageTools\ImageProcesTools\cropper\res"><file name="crop_image_view" path="F:\Demo\Android\ImageTools\ImageProcesTools\cropper\res\layout\crop_image_view.xml" qualifiers="" type="layout"/><file path="F:\Demo\Android\ImageTools\ImageProcesTools\cropper\res\values\attrs.xml" qualifiers=""><declare-styleable name="CropImageView">
+<merger version="3"><dataSet config="main"><source path="/MainGIT/AndroidCode/ToolsDemo/ImageProcesTools/cropper/res"><file path="/MainGIT/AndroidCode/ToolsDemo/ImageProcesTools/cropper/res/values-v11/styles.xml" qualifiers="v11"><style name="AppBaseTheme" parent="android:Theme.Holo.Light">
+        <!-- API 11 theme customizations can go here. -->
+    </style></file><file name="crop_image_view" path="/MainGIT/AndroidCode/ToolsDemo/ImageProcesTools/cropper/res/layout/crop_image_view.xml" qualifiers="" type="layout"/><file path="/MainGIT/AndroidCode/ToolsDemo/ImageProcesTools/cropper/res/values/styles.xml" qualifiers=""><style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style><style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style></file><file path="/MainGIT/AndroidCode/ToolsDemo/ImageProcesTools/cropper/res/values/strings.xml" qualifiers=""><string name="app_name">Cropper</string></file><file path="/MainGIT/AndroidCode/ToolsDemo/ImageProcesTools/cropper/res/values/colors.xml" qualifiers=""><color name="black_translucent">#50000000</color></file><file path="/MainGIT/AndroidCode/ToolsDemo/ImageProcesTools/cropper/res/values/attrs.xml" qualifiers=""><declare-styleable name="CropImageView">
         <attr name="guidelines">
             <enum name="on" value="2"/>
             <enum name="onTouch" value="1"/>
@@ -9,16 +19,6 @@
         <attr format="integer" name="aspectRatioX"/>
         <attr format="integer" name="aspectRatioY"/>
         <attr format="reference" name="imageResource"/>
-    </declare-styleable></file><file path="F:\Demo\Android\ImageTools\ImageProcesTools\cropper\res\values\colors.xml" qualifiers=""><color name="black_translucent">#50000000</color></file><file path="F:\Demo\Android\ImageTools\ImageProcesTools\cropper\res\values\strings.xml" qualifiers=""><string name="app_name">Cropper</string></file><file path="F:\Demo\Android\ImageTools\ImageProcesTools\cropper\res\values\styles.xml" qualifiers=""><style name="AppBaseTheme" parent="android:Theme.Light">
-        <!--
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        -->
-    </style><style name="AppTheme" parent="AppBaseTheme">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
-    </style></file><file path="F:\Demo\Android\ImageTools\ImageProcesTools\cropper\res\values-v11\styles.xml" qualifiers="v11"><style name="AppBaseTheme" parent="android:Theme.Holo.Light">
-        <!-- API 11 theme customizations can go here. -->
-    </style></file><file path="F:\Demo\Android\ImageTools\ImageProcesTools\cropper\res\values-v14\styles.xml" qualifiers="v14"><style name="AppBaseTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+    </declare-styleable></file><file path="/MainGIT/AndroidCode/ToolsDemo/ImageProcesTools/cropper/res/values-v14/styles.xml" qualifiers="v14"><style name="AppBaseTheme" parent="android:Theme.Holo.Light.DarkActionBar">
         <!-- API 14 theme customizations can go here. -->
-    </style></file></source><source path="F:\Demo\Android\ImageTools\ImageProcesTools\cropper\build\generated\res\rs\release"/><source path="F:\Demo\Android\ImageTools\ImageProcesTools\cropper\build\generated\res\generated\release"/></dataSet><dataSet config="release"><source path="F:\Demo\Android\ImageTools\ImageProcesTools\cropper\build-types\release\res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="CropImageView"><attr name="guidelines"><enum name="on" value="2"/><enum name="onTouch" value="1"/><enum name="off" value="0"/></attr><attr format="boolean" name="fixAspectRatio"/><attr format="integer" name="aspectRatioX"/><attr format="integer" name="aspectRatioY"/><attr format="reference" name="imageResource"/></declare-styleable></configuration></mergedItems></merger>
+    </style></file></source><source path="/MainGIT/AndroidCode/ToolsDemo/ImageProcesTools/cropper/build/generated/res/rs/release"/><source path="/MainGIT/AndroidCode/ToolsDemo/ImageProcesTools/cropper/build/generated/res/generated/release"/></dataSet><dataSet config="release"><source path="/MainGIT/AndroidCode/ToolsDemo/ImageProcesTools/cropper/build-types/release/res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="CropImageView"><attr name="guidelines"><enum name="on" value="2"/><enum name="onTouch" value="1"/><enum name="off" value="0"/></attr><attr format="boolean" name="fixAspectRatio"/><attr format="integer" name="aspectRatioX"/><attr format="integer" name="aspectRatioY"/><attr format="reference" name="imageResource"/></declare-styleable></configuration></mergedItems></merger>
