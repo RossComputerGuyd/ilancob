@@ -17,6 +17,12 @@ import com.uwo.tools.aibum.R;
 
 import java.io.File;
 
+/**
+ * 通过Action实现
+ * 拍照
+ * 图片查找
+ * 图片剪切
+ */
 public class GetPhotoMainActivity extends Activity {
 
     private ImageView iv;
@@ -85,7 +91,7 @@ public class GetPhotoMainActivity extends Activity {
             case ImageBitmapUtils.GET_IMAGE_FROM_PHONE:
                 if (data != null && data.getData() != null) {
                     // 可以直接显示图片,或者进行其他处理(如压缩或裁剪等)
-                     iv.setImageURI(data.getData());
+                    iv.setImageURI(data.getData());
 
 //                    Intent intent = new Intent(GetPhotoMainActivity.this, CropperMainActivity.class);
 ////                    intent.putExtra("uri", data.getData().toString());

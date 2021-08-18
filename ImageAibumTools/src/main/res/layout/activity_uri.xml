@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Crop"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/bt_crop_capture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Capture from Camera &amp; Crop" />
+
+    <Button
+        android:id="@+id/bt_crop_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choose from Gallery &amp; Crop" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="None Crop"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/bt_capture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Capture from Camera" />
+
+    <Button
+        android:id="@+id/bt_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choose from Gallery" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Result"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f7f8f9"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher" />
+</LinearLayout>

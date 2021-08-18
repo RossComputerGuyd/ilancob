@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,14 +19,27 @@ import android.widget.ToggleButton;
 
 import com.edmodo.cropper.CropImageView;
 import com.uwo.tools.aibum.R;
+import com.uwo.tools.aibum.getphoto.ImageBitmapUtils;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 
 /**
  * Created by SRain on 2015/12/7.
  */
 public class MyCropperActivity extends Activity implements SeekBar.OnSeekBarChangeListener, CompoundButton.OnCheckedChangeListener, AdapterView.OnItemSelectedListener, View.OnClickListener {
+
+    /**
+     * 启动activity另一种写法
+     *
+     * @param context
+     * @param path
+     */
+    public static void actionStart(Context context, String path) {
+        Intent intent = new Intent();
+        intent.putExtra("filepath", path);
+        intent.setClass(context, MyCropperActivity.class);
+        context.startActivity(intent);
+    }
 
     private TextView back, title;
     private CropImageView cropImageView; //主图
@@ -126,6 +140,7 @@ public class MyCropperActivity extends Activity implements SeekBar.OnSeekBarChan
     private void initData() {
         try {
             pathString = this.getIntent().getStringExtra("filepath");
+            Log.e("filepath", pathString);
             File file = new File(pathString);
             if (file.exists()) {
                 bitmap = BitmapFactory.decodeFile(pathString);
@@ -140,12 +155,16 @@ public class MyCropperActivity extends Activity implements SeekBar.OnSeekBarChan
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.Button_crop:
-                croppedBtimap = cropImageView.getCroppedImage();
+                Uri uri = filepathToURI(pathString);
+                ImageBitmapUtils.cropImage(MyCropperActivity.this, uri);
 
-                // 将Bitmap转换成二进制数组
-                ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                croppedBtimap.compress(Bitmap.CompressFormat.PNG, 100, baos);
-                byte[] bitmapByte = baos.toByteArray();
+
+//                croppedBtimap = cropImageView.getCroppedImage();
+//
+//                // 将Bitmap转换成二进制数组
+//                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+//                croppedBtimap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+//                byte[] bitmapByte = baos.toByteArray();
 
 //                Intent intent = new Intent();
 //                intent.putExtra("photoFlag", this.getIntent().getIntExtra("photoFlag", 0));
@@ -154,6 +173,18 @@ public class MyCropperActivity extends Activity implements SeekBar.OnSeekBarChan
 //                startActivityForResult(intent, StaticCode.SELECT_PHOTO_CODE);
                 break;
         }
+    }
+
+    /**
+     * 将文件的绝对路径转换成URI
+     *
+     * @return
+     */
+    private Uri filepathToURI(String path) {
+        Uri uri = Uri.fromFile(new File(path));
+        Log.e("path", path);
+        Log.e("uri", uri.toString());
+        return uri;
     }
 
     @Override
@@ -224,16 +255,12 @@ public class MyCropperActivity extends Activity implements SeekBar.OnSeekBarChan
         }
     }
 
-    /**
-     * 启动activity另一种写法
-     *
-     * @param context
-     * @param path
-     */
-    public static void actionStart(Context context, String path) {
-        Intent intent = new Intent();
-        intent.putExtra("filepath", path);
-        intent.setClass(context, MyCropperActivity.class);
-        context.startActivity(intent);
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (data != null && data.getData() != null) {
+            cropImageView.setVisibility(View.VISIBLE);
+            cropImageView.setImageURI(data.getData());
+        }
     }
 }

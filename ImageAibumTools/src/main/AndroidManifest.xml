@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.uwo.tools.aibum">
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
     <!-- 往SDCard写入数据权限 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!-- 往SDCard读取数据权限 -->
@@ -52,6 +55,8 @@
         <activity android:name=".cropper.MyCropperActivity" />
 
         <activity android:name=".getphoto.GetPhotoMainActivity" />
+
+        <activity android:name=".uri.UriActivity" />
     </application>
 
 </manifest>

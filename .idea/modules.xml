@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/cropImage/cropImage.iml" filepath="$PROJECT_DIR$/cropImage/cropImage.iml" />
       <module fileurl="file://$PROJECT_DIR$/cropper/cropper.iml" filepath="$PROJECT_DIR$/cropper/cropper.iml" />
       <module fileurl="file://$PROJECT_DIR$/imageLib/imageLib.iml" filepath="$PROJECT_DIR$/imageLib/imageLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/imageUriLib/imageUriLib.iml" filepath="$PROJECT_DIR$/imageUriLib/imageUriLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/roundImageLib/roundImageLib.iml" filepath="$PROJECT_DIR$/roundImageLib/roundImageLib.iml" />
     </modules>
   </component>

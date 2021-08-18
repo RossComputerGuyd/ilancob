@@ -2,9 +2,11 @@ package com.uwo.tools.aibum.imagescan;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Point;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,9 +16,10 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.uwo.tools.aibum.R;
+import com.uwo.tools.aibum.imagescan.utils.MyImageView;
+import com.uwo.tools.aibum.imagescan.utils.NativeImageLoader;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -114,7 +117,6 @@ public class ChildAdapter extends BaseAdapter {
         if (bitmap != null) {
             viewHolder.mImageView.setImageBitmap(bitmap);
         } else {
-            Toast.makeText(context,"图片太大，没加载出来",Toast.LENGTH_SHORT).show();
             viewHolder.mImageView.setImageResource(R.drawable.friends_sends_pictures_no);
         }
 
@@ -126,6 +128,7 @@ public class ChildAdapter extends BaseAdapter {
      *
      * @param view
      */
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     private void addAnimation(View view) {
         float[] vaules = new float[]{0.5f, 0.6f, 0.7f, 0.8f, 0.9f, 1.0f, 1.1f, 1.2f, 1.3f, 1.25f, 1.2f, 1.15f, 1.1f, 1.0f};
         AnimatorSet set = new AnimatorSet();

@@ -1,4 +1,4 @@
-package com.uwo.tools.aibum.imagescan;
+package com.uwo.tools.aibum.imagescan.utils;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

@@ -13,6 +13,12 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+/**
+ * 通过Action实现
+ * 拍照
+ * 图片查找
+ * 图片剪切
+ */
 public class ImageBitmapUtils {
 
     public static final int GET_IMAGE_BY_CAMERA = 5001;
@@ -21,6 +27,11 @@ public class ImageBitmapUtils {
     public static Uri imageUriFromCamera;
     public static Uri cropImageUri;
 
+    /**
+     * 拍照功能
+     *
+     * @param activity
+     */
     public static void openCameraImage(final Activity activity) {
         ImageBitmapUtils.imageUriFromCamera = ImageBitmapUtils.createImagePathUri(activity);
 
@@ -32,6 +43,11 @@ public class ImageBitmapUtils {
         activity.startActivityForResult(intent, ImageBitmapUtils.GET_IMAGE_BY_CAMERA);
     }
 
+    /**
+     * 打开本地相册
+     *
+     * @param activity
+     */
     public static void openLocalImage(final Activity activity) {
         Intent intent = new Intent();
         intent.setType("image/*");
@@ -39,6 +55,12 @@ public class ImageBitmapUtils {
         activity.startActivityForResult(intent, ImageBitmapUtils.GET_IMAGE_FROM_PHONE);
     }
 
+    /**
+     * 图片剪切
+     *
+     * @param activity
+     * @param srcUri   图片的uri
+     */
     public static void cropImage(Activity activity, Uri srcUri) {
         ImageBitmapUtils.cropImageUri = ImageBitmapUtils.createImagePathUri(activity);
         Intent intent = new Intent("com.android.camera.action.CROP");

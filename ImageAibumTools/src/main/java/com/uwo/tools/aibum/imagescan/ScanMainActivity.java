@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 
 import com.uwo.tools.aibum.R;
+import com.uwo.tools.aibum.imagescan.utils.ImageBean;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -28,11 +29,13 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * 通过数据库查找图片文件路径
+ *
  * @author xiaanming
  * @blog http://blog.csdn.net/xiaanming
  */
 public class ScanMainActivity extends Activity {
-    private HashMap<String, List<String>> mGruopMap = new HashMap<String, List<String>>();
+    private HashMap<String, List<String>> mGruopMap = new HashMap<String, List<String>>(); // 存放图片文件所在的文件夹路径
     private List<ImageBean> list = new ArrayList<ImageBean>();
     private final static int SCAN_OK = 1;
     private ProgressDialog mProgressDialog;

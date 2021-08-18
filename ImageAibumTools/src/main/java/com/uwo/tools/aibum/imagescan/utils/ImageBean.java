@@ -1,4 +1,4 @@
-package com.uwo.tools.aibum.imagescan;
+package com.uwo.tools.aibum.imagescan.utils;
 
 /**
  * 文件夹管理类

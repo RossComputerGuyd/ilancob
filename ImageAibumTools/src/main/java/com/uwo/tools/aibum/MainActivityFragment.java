@@ -17,6 +17,7 @@ import com.uwo.tools.aibum.localphoto.AlbumActivity;
 import com.uwo.tools.aibum.photo.PhotoAlbumActivity;
 import com.uwo.tools.aibum.photos.PhotosMainActivity;
 import com.uwo.tools.aibum.recylcler.HomeActivity;
+import com.uwo.tools.aibum.uri.UriActivity;
 import com.uwo.tools.aibum.volley.VolleyActivity;
 
 
@@ -47,6 +48,7 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
         adapter.add("Volley框架获取网络图片");
         adapter.add("图片剪裁/lib");
         adapter.add("通过Action获取本地相册");
+        adapter.add("用URI处理大图片剪切");
         ListView listView = (ListView) view.findViewById(R.id.listView);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(this);
@@ -55,7 +57,7 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Class<?> cls = null;
-        switch (position){
+        switch (position) {
             case 0:
                 cls = PhotoAlbumActivity.class;
                 break;
@@ -80,12 +82,15 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
             case 7:
                 cls = GetPhotoMainActivity.class;
                 break;
+            case 8:
+                cls = UriActivity.class;
+                break;
         }
         startAc(cls);
     }
 
     private void startAc(Class<?> cls) {
-        if(cls != null){
+        if (cls != null) {
             Intent intent = new Intent();
             intent.setClass(getActivity(), cls);
             startActivity(intent);

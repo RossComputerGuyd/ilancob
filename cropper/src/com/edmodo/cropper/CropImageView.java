@@ -22,6 +22,7 @@ import android.graphics.Matrix;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.media.ExifInterface;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -493,5 +494,9 @@ public class CropImageView extends FrameLayout {
             spec = desiredSize;
         }
         return spec;
+    }
+
+    public void setImageURI(Uri uri) {
+        mImageView.setImageURI(uri);
     }
 }
