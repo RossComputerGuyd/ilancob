@@ -270,6 +270,7 @@ public class CropImageView extends FrameLayout {
      */
     public BitmapFactory.Options setOption(int inSampleSize) {
         BitmapFactory.Options opts = new BitmapFactory.Options();
+        opts.inPreferredConfig = Bitmap.Config.RGB_565;
         opts.inJustDecodeBounds = true;
         if (inSampleSize == 1) {
             opts.inSampleSize = ComuteSizeUtils.computeSampleSize(opts, -1, 128 * 128);
@@ -482,7 +483,16 @@ public class CropImageView extends FrameLayout {
     public void rotateImage(int degrees) {
         Matrix matrix = new Matrix();
         matrix.postRotate(degrees);
-        Bitmap bitmap = Bitmap.createBitmap(mBitmap, 0, 0, mBitmap.getWidth(), mBitmap.getHeight(), matrix, true);
+
+        BitmapFactory.Options opts = new BitmapFactory.Options();
+        opts.inJustDecodeBounds = true;
+        opts.inSampleSize = ComuteSizeUtils.computeSampleSize(opts, -1, 128 * 128);
+        opts.inJustDecodeBounds = false;
+        Bitmap bitmap = null;
+        try {
+            bitmap = Bitmap.createBitmap(mBitmap, 0, 0, mBitmap.getWidth(), mBitmap.getHeight(), matrix, true);
+        } catch (OutOfMemoryError err) {
+        }
         mBitmap.recycle();
         setImageBitmap(bitmap);
 
