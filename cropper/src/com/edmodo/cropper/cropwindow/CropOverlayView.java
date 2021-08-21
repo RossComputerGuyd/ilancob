@@ -216,7 +216,6 @@ public class CropOverlayView extends View {
      * Resets the crop overlay view.
      */
     public void resetCropOverlayView() {
-
         if (initializedCropWindow) {
             initCropWindow(mBitmapRect);
             invalidate();

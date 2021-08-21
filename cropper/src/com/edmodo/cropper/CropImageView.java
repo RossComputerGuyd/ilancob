@@ -27,6 +27,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,6 +36,7 @@ import android.widget.ImageView;
 
 import com.edmodo.cropper.cropwindow.CropOverlayView;
 import com.edmodo.cropper.cropwindow.edge.Edge;
+import com.edmodo.cropper.util.ComuteSizeUtils;
 import com.edmodo.cropper.util.ImageViewUtil;
 
 /**
@@ -43,12 +45,11 @@ import com.edmodo.cropper.util.ImageViewUtil;
 public class CropImageView extends FrameLayout {
 
     // Private Constants ///////////////////////////////////////////////////////
-
     private static final Rect EMPTY_RECT = new Rect();
 
     // Member Variables ////////////////////////////////////////////////////////
 
-    // Sets the default image guidelines to show when resizing
+    // Sets the default image guidelines to show when resizing 设置默认图像显示时调整指南
     public static final int DEFAULT_GUIDELINES = 1;
     public static final boolean DEFAULT_FIXED_ASPECT_RATIO = false;
     public static final int DEFAULT_ASPECT_RATIO_X = 1;
@@ -67,15 +68,14 @@ public class CropImageView extends FrameLayout {
     private int mLayoutWidth;
     private int mLayoutHeight;
 
-    // Instance variables for customizable attributes
+    // Instance variables for customizable attributes 可自定义属性的实例变量
     private int mGuidelines = DEFAULT_GUIDELINES;
     private boolean mFixAspectRatio = DEFAULT_FIXED_ASPECT_RATIO;
     private int mAspectRatioX = DEFAULT_ASPECT_RATIO_X;
     private int mAspectRatioY = DEFAULT_ASPECT_RATIO_Y;
     private int mImageResource = DEFAULT_IMAGE_RESOURCE;
 
-    // Constructors ////////////////////////////////////////////////////////////
-
+    // Constructors
     public CropImageView(Context context) {
         super(context);
         init(context);
@@ -83,9 +83,7 @@ public class CropImageView extends FrameLayout {
 
     public CropImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
-
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.CropImageView, 0, 0);
-
         try {
             mGuidelines = ta.getInteger(R.styleable.CropImageView_guidelines, DEFAULT_GUIDELINES);
             mFixAspectRatio = ta.getBoolean(R.styleable.CropImageView_fixAspectRatio, DEFAULT_FIXED_ASPECT_RATIO);
@@ -95,41 +93,43 @@ public class CropImageView extends FrameLayout {
         } finally {
             ta.recycle();
         }
-
         init(context);
     }
 
-    // View Methods ////////////////////////////////////////////////////////////
+    // Private Methods /////////////////////////////////////////////////////////
+    private void init(Context context) {
+        final LayoutInflater inflater = LayoutInflater.from(context);
+        final View v = inflater.inflate(R.layout.crop_image_view, this, true);
 
+        mImageView = (ImageView) v.findViewById(R.id.ImageView_image);
+
+        setImageResource(mImageResource);
+        mCropOverlayView = (CropOverlayView) v.findViewById(R.id.CropOverlayView);
+        mCropOverlayView.setInitialAttributeValues(mGuidelines, mFixAspectRatio, mAspectRatioX, mAspectRatioY);
+    }
+
+    // View Methods
     @Override
     public Parcelable onSaveInstanceState() {
-
         final Bundle bundle = new Bundle();
-
         bundle.putParcelable("instanceState", super.onSaveInstanceState());
         bundle.putInt(DEGREES_ROTATED, mDegreesRotated);
-
         return bundle;
-
     }
 
     @Override
     public void onRestoreInstanceState(Parcelable state) {
-
         if (state instanceof Bundle) {
-
             final Bundle bundle = (Bundle) state;
-
             if (mBitmap != null) {
                 // Fixes the rotation of the image when orientation changes.
+                // 修复方向变化时图像的旋转。
                 mDegreesRotated = bundle.getInt(DEGREES_ROTATED);
                 int tempDegrees = mDegreesRotated;
                 rotateImage(mDegreesRotated);
                 mDegreesRotated = tempDegrees;
             }
-
             super.onRestoreInstanceState(bundle.getParcelable("instanceState"));
-
         } else {
             super.onRestoreInstanceState(state);
         }
@@ -137,7 +137,6 @@ public class CropImageView extends FrameLayout {
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-
         if (mBitmap != null) {
             final Rect bitmapRect = ImageViewUtil.getBitmapRectCenterInside(mBitmap, this);
             mCropOverlayView.setBitmapRect(bitmapRect);
@@ -148,18 +147,15 @@ public class CropImageView extends FrameLayout {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-
         int widthMode = MeasureSpec.getMode(widthMeasureSpec);
         int widthSize = MeasureSpec.getSize(widthMeasureSpec);
         int heightMode = MeasureSpec.getMode(heightMeasureSpec);
         int heightSize = MeasureSpec.getSize(heightMeasureSpec);
 
         if (mBitmap != null) {
-
             super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-
-            // Bypasses a baffling bug when used within a ScrollView, where
-            // heightSize is set to 0.
+            // Bypasses a baffling bug when used within a ScrollView, where heightSize is set to 0.
+            // 绕过一个莫名其妙的错误时，用在ScrollView，其中高度尺寸设置为0。
             if (heightSize == 0)
                 heightSize = mBitmap.getHeight();
 
@@ -170,6 +166,7 @@ public class CropImageView extends FrameLayout {
             double viewToBitmapHeightRatio = Double.POSITIVE_INFINITY;
 
             // Checks if either width or height needs to be fixed
+            // 检查宽度或高度是否需要固定
             if (widthSize < mBitmap.getWidth()) {
                 viewToBitmapWidthRatio = (double) widthSize / (double) mBitmap.getWidth();
             }
@@ -177,8 +174,8 @@ public class CropImageView extends FrameLayout {
                 viewToBitmapHeightRatio = (double) heightSize / (double) mBitmap.getHeight();
             }
 
-            // If either needs to be fixed, choose smallest ratio and calculate
-            // from there
+            // If either needs to be fixed, choose smallest ratio and calculate from there
+            // 如果需要是固定的，选择最小的比例和计算从那里
             if (viewToBitmapWidthRatio != Double.POSITIVE_INFINITY || viewToBitmapHeightRatio != Double.POSITIVE_INFINITY) {
                 if (viewToBitmapWidthRatio <= viewToBitmapHeightRatio) {
                     desiredWidth = widthSize;
@@ -187,12 +184,9 @@ public class CropImageView extends FrameLayout {
                     desiredHeight = heightSize;
                     desiredWidth = (int) (mBitmap.getWidth() * viewToBitmapHeightRatio);
                 }
-            }
-
-            // Otherwise, the picture is within frame layout bounds. Desired
-            // width is
-            // simply picture size
-            else {
+            } else {
+                // Otherwise, the picture is within frame layout bounds. Desired width is simply picture size
+                // 否则，图片是在帧布局范围内。所需的宽度是简单的图片大小
                 desiredWidth = mBitmap.getWidth();
                 desiredHeight = mBitmap.getHeight();
             }
@@ -208,20 +202,17 @@ public class CropImageView extends FrameLayout {
 
             // MUST CALL THIS
             setMeasuredDimension(mLayoutWidth, mLayoutHeight);
-
         } else {
-
             mCropOverlayView.setBitmapRect(EMPTY_RECT);
             setMeasuredDimension(widthSize, heightSize);
         }
     }
 
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
-
         super.onLayout(changed, l, t, r, b);
-
         if (mLayoutWidth > 0 && mLayoutHeight > 0) {
             // Gets original parameters, and creates the new parameters
+            // 获取原始参数，并创建新参数
             final ViewGroup.LayoutParams origparams = this.getLayoutParams();
             origparams.width = mLayoutWidth;
             origparams.height = mLayoutHeight;
@@ -240,6 +231,7 @@ public class CropImageView extends FrameLayout {
 
     /**
      * Sets a Bitmap as the content of the CropImageView.
+     * 设置一个位图的cropimageview内容。
      *
      * @param bitmap the Bitmap to set
      */
@@ -247,13 +239,60 @@ public class CropImageView extends FrameLayout {
         mBitmap = bitmap;
         mImageView.setImageBitmap(mBitmap);
 
+        resetCropOverlayView();
+    }
+
+    /**
+     * 通过URI获取bitmap，显示到ImageView
+     *
+     * @param path 图片的绝对路径
+     */
+    public void setPathImage(String path) {
+        try {
+            mBitmap = BitmapFactory.decodeFile(path, setOption(1));
+            mImageView.setImageBitmap(mBitmap);
+            resetCropOverlayView();
+        } catch (OutOfMemoryError e) {
+            Log.e("OutOfMemoryError", "============================================");
+            if (mBitmap != null)
+                mBitmap.recycle();
+            mBitmap = BitmapFactory.decodeFile(path, setOption(2));
+            mImageView.setImageBitmap(mBitmap);
+            resetCropOverlayView();
+        }
+    }
+
+    /**
+     * 设置压缩参数
+     *
+     * @param inSampleSize 压缩尺寸 为1时，图片压缩为原来的1/2
+     * @return
+     */
+    public BitmapFactory.Options setOption(int inSampleSize) {
+        BitmapFactory.Options opts = new BitmapFactory.Options();
+        opts.inJustDecodeBounds = true;
+        if (inSampleSize == 1) {
+            opts.inSampleSize = ComuteSizeUtils.computeSampleSize(opts, -1, 128 * 128);
+        } else {
+            opts.inSampleSize = 2 * inSampleSize;
+        }
+        opts.inJustDecodeBounds = false;
+        return opts;
+    }
+
+    /**
+     * 重新设置CropOverlayView
+     */
+    private void resetCropOverlayView() {
         if (mCropOverlayView != null) {
             mCropOverlayView.resetCropOverlayView();
         }
     }
 
+
     /**
      * Sets a Bitmap and initializes the image rotation according to the EXIT data.
+     * 设置和初始化位图图像旋转根据出口数据。
      * <p/>
      * The EXIF can be retrieved by doing the following:
      * <code>ExifInterface exif = new ExifInterface(path);</code>
@@ -263,7 +302,6 @@ public class CropImageView extends FrameLayout {
      */
     @TargetApi(Build.VERSION_CODES.ECLAIR)
     public void setImageBitmap(Bitmap bitmap, ExifInterface exif) {
-
         if (bitmap == null) {
             return;
         }
@@ -293,13 +331,7 @@ public class CropImageView extends FrameLayout {
             setImageBitmap(bitmap);
         } else {
             matrix.postRotate(rotate);
-            final Bitmap rotatedBitmap = Bitmap.createBitmap(bitmap,
-                    0,
-                    0,
-                    bitmap.getWidth(),
-                    bitmap.getHeight(),
-                    matrix,
-                    true);
+            final Bitmap rotatedBitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
             setImageBitmap(rotatedBitmap);
             bitmap.recycle();
         }
@@ -326,85 +358,88 @@ public class CropImageView extends FrameLayout {
 
         final Rect displayedImageRect = ImageViewUtil.getBitmapRectCenterInside(mBitmap, mImageView);
 
-        // Get the scale factor between the actual Bitmap dimensions and the
-        // displayed dimensions for width.
+        // Get the scale factor between the actual Bitmap dimensions and the displayed dimensions for width.
+        // 获得实际的位图尺寸和宽度的显示尺寸之间的比例因子。
         final float actualImageWidth = mBitmap.getWidth();
         final float displayedImageWidth = displayedImageRect.width();
         final float scaleFactorWidth = actualImageWidth / displayedImageWidth;
 
-        // Get the scale factor between the actual Bitmap dimensions and the
-        // displayed dimensions for height.
+        // Get the scale factor between the actual Bitmap dimensions and the displayed dimensions for height.
+        // 获得实际的位图尺寸和高度的显示尺寸之间的比例因子。
         final float actualImageHeight = mBitmap.getHeight();
         final float displayedImageHeight = displayedImageRect.height();
         final float scaleFactorHeight = actualImageHeight / displayedImageHeight;
 
         // Get crop window position relative to the displayed image.
+        // 获取作物窗口位置相对于显示图像。
         final float cropWindowX = Edge.LEFT.getCoordinate() - displayedImageRect.left;
         final float cropWindowY = Edge.TOP.getCoordinate() - displayedImageRect.top;
         final float cropWindowWidth = Edge.getWidth();
         final float cropWindowHeight = Edge.getHeight();
 
         // Scale the crop window position to the actual size of the Bitmap.
+        // 将作物窗口定位到位图的实际大小。
         final float actualCropX = cropWindowX * scaleFactorWidth;
         final float actualCropY = cropWindowY * scaleFactorHeight;
         final float actualCropWidth = cropWindowWidth * scaleFactorWidth;
         final float actualCropHeight = cropWindowHeight * scaleFactorHeight;
 
         // Crop the subset from the original Bitmap.
+        // 作物from the the子集的原始位图。
         final Bitmap croppedBitmap = Bitmap.createBitmap(mBitmap, (int) actualCropX, (int) actualCropY, (int) actualCropWidth, (int) actualCropHeight);
-
         return croppedBitmap;
     }
 
     /**
-     * Gets the crop window's position relative to the source Bitmap (not the image
-     * displayed in the CropImageView).
+     * Gets the crop window's position relative to the source Bitmap (not the image displayed in the CropImageView).
+     * 获取作物窗口的位置相对于源位图（在cropimageview不显示图像）。
      *
      * @return a RectF instance containing cropped area boundaries of the source Bitmap
+     * 一个包含裁切区域边界的源位图rectf实例
      */
     public RectF getActualCropRect() {
-
         final Rect displayedImageRect = ImageViewUtil.getBitmapRectCenterInside(mBitmap, mImageView);
 
-        // Get the scale factor between the actual Bitmap dimensions and the
-        // displayed dimensions for width.
+        // Get the scale factor between the actual Bitmap dimensions and the displayed dimensions for width.
+        // 获得实际的位图尺寸和宽度的显示尺寸之间的比例因子。
         final float actualImageWidth = mBitmap.getWidth();
         final float displayedImageWidth = displayedImageRect.width();
         final float scaleFactorWidth = actualImageWidth / displayedImageWidth;
 
-        // Get the scale factor between the actual Bitmap dimensions and the
-        // displayed dimensions for height.
+        // Get the scale factor between the actual Bitmap dimensions and the displayed dimensions for height.
+        // 获得实际的位图尺寸和高度的显示尺寸之间的比例因子。
         final float actualImageHeight = mBitmap.getHeight();
         final float displayedImageHeight = displayedImageRect.height();
         final float scaleFactorHeight = actualImageHeight / displayedImageHeight;
 
         // Get crop window position relative to the displayed image.
+        // 获取作物窗口位置相对于显示图像。
         final float displayedCropLeft = Edge.LEFT.getCoordinate() - displayedImageRect.left;
         final float displayedCropTop = Edge.TOP.getCoordinate() - displayedImageRect.top;
         final float displayedCropWidth = Edge.getWidth();
         final float displayedCropHeight = Edge.getHeight();
 
         // Scale the crop window position to the actual size of the Bitmap.
+        // 将作物窗口定位到位图的实际大小。
         float actualCropLeft = displayedCropLeft * scaleFactorWidth;
         float actualCropTop = displayedCropTop * scaleFactorHeight;
         float actualCropRight = actualCropLeft + displayedCropWidth * scaleFactorWidth;
         float actualCropBottom = actualCropTop + displayedCropHeight * scaleFactorHeight;
 
-        // Correct for floating point errors. Crop rect boundaries should not
-        // exceed the source Bitmap bounds.
+        // Correct for floating point errors. Crop rect boundaries should not exceed the source Bitmap bounds.
+        // 浮点误差校正。作物矩形边界不应超过源位图的界限。
         actualCropLeft = Math.max(0f, actualCropLeft);
         actualCropTop = Math.max(0f, actualCropTop);
         actualCropRight = Math.min(mBitmap.getWidth(), actualCropRight);
         actualCropBottom = Math.min(mBitmap.getHeight(), actualCropBottom);
-
         final RectF actualCropRect = new RectF(actualCropLeft, actualCropTop, actualCropRight, actualCropBottom);
-
         return actualCropRect;
     }
 
     /**
      * Sets whether the aspect ratio is fixed or not; true fixes the aspect ratio, while
      * false allows it to be changed.
+     * 设置方面的比例是否是固定的；真正的修复方面的比例，而假允许它改变。
      *
      * @param fixAspectRatio Boolean that signals whether the aspect ratio should be
      *                       maintained.
@@ -445,7 +480,6 @@ public class CropImageView extends FrameLayout {
      * @param degrees Integer specifying the number of degrees to rotate.
      */
     public void rotateImage(int degrees) {
-
         Matrix matrix = new Matrix();
         matrix.postRotate(degrees);
         Bitmap bitmap = Bitmap.createBitmap(mBitmap, 0, 0, mBitmap.getWidth(), mBitmap.getHeight(), matrix, true);
@@ -456,19 +490,6 @@ public class CropImageView extends FrameLayout {
         mDegreesRotated = mDegreesRotated % 360;
     }
 
-    // Private Methods /////////////////////////////////////////////////////////
-
-    private void init(Context context) {
-
-        final LayoutInflater inflater = LayoutInflater.from(context);
-        final View v = inflater.inflate(R.layout.crop_image_view, this, true);
-
-        mImageView = (ImageView) v.findViewById(R.id.ImageView_image);
-
-        setImageResource(mImageResource);
-        mCropOverlayView = (CropOverlayView) v.findViewById(R.id.CropOverlayView);
-        mCropOverlayView.setInitialAttributeValues(mGuidelines, mFixAspectRatio, mAspectRatioX, mAspectRatioY);
-    }
 
     /**
      * Determines the specs for the onMeasure function. Calculates the width or height

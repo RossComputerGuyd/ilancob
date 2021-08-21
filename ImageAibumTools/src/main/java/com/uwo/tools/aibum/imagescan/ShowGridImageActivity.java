@@ -12,7 +12,7 @@ import com.uwo.tools.aibum.cropper.MyCropperActivity;
 
 import java.util.List;
 
-public class ShowImageActivity extends Activity implements AdapterView.OnItemClickListener {
+public class ShowGridImageActivity extends Activity implements AdapterView.OnItemClickListener {
 	private GridView mGridView;
 	private List<String> list;
 	private ChildAdapter adapter;
@@ -39,6 +39,6 @@ public class ShowImageActivity extends Activity implements AdapterView.OnItemCli
 
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-		MyCropperActivity.actionStart(ShowImageActivity.this, list.get(position));
+		MyCropperActivity.actionStart(ShowGridImageActivity.this, list.get(position));
 	}
 }

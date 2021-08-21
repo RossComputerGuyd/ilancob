@@ -82,7 +82,7 @@ public class GetPhotoMainActivity extends Activity {
                     // 可以直接显示图片,或者进行其他处理(如压缩或裁剪等)
 //                    iv.setImageURI(ImageBitmapUtils.imageUriFromCamera);
                     // 对图片进行裁剪
-                    ImageBitmapUtils.cropImage(this, ImageBitmapUtils.imageUriFromCamera);
+                    ImageBitmapUtils.cropUriImage(this, ImageBitmapUtils.imageUriFromCamera);
                     uriToFilepath(ImageBitmapUtils.imageUriFromCamera);
                     break;
                 }
@@ -100,7 +100,7 @@ public class GetPhotoMainActivity extends Activity {
 //                    startActivity(intent);
 
                     // 对图片进行裁剪
-                    ImageBitmapUtils.cropImage(this, data.getData());
+                    ImageBitmapUtils.cropUriImage(this, data.getData());
                 }
                 break;
             // 裁剪图片后结果

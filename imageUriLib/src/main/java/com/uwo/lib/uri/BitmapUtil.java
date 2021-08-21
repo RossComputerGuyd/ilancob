@@ -12,6 +12,13 @@ import java.io.FileNotFoundException;
  */
 public class BitmapUtil {
 
+    /**
+     * 将URI转成Bitmap
+     *
+     * @param context
+     * @param uri
+     * @return
+     */
     public static Bitmap decodeUriAsBitmap(Context context, Uri uri) {
         if (context == null || uri == null) return null;
 

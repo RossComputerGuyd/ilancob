@@ -4,9 +4,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -19,7 +19,8 @@ import android.widget.ToggleButton;
 
 import com.edmodo.cropper.CropImageView;
 import com.uwo.tools.aibum.R;
-import com.uwo.tools.aibum.getphoto.ImageBitmapUtils;
+import com.uwo.tools.aibum.ShowImageActivity;
+import com.uwo.tools.aibum.utils.ImageUtils;
 
 import java.io.File;
 
@@ -130,47 +131,29 @@ public class MyCropperActivity extends Activity implements SeekBar.OnSeekBarChan
         cropButton.setOnClickListener(this);
     }
 
-
-    private Bitmap bitmap = null;
     private String pathString = "";
 
     /**
      * 获取数据
      */
     private void initData() {
-        try {
-            pathString = this.getIntent().getStringExtra("filepath");
-            Log.e("filepath", pathString);
-            File file = new File(pathString);
-            if (file.exists()) {
-                bitmap = BitmapFactory.decodeFile(pathString);
-            }
-        } catch (Exception e) {
-            Log.e("e", e.toString());
-        }
-        cropImageView.setImageBitmap(bitmap);
+        pathString = this.getIntent().getStringExtra("filepath");
+        cropImageView.setPathImage(pathString);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.Button_crop:
-                Uri uri = filepathToURI(pathString);
-                ImageBitmapUtils.cropImage(MyCropperActivity.this, uri);
+                Uri oldUri = filepathToURI(pathString);
+//                ImageBitmapUtils.cropUriImage(MyCropperActivity.this, uri);
+                croppedBtimap = cropImageView.getCroppedImage();
+                cropImageView.setImageBitmap(croppedBtimap);
 
 
-//                croppedBtimap = cropImageView.getCroppedImage();
-//
-//                // 将Bitmap转换成二进制数组
-//                ByteArrayOutputStream baos = new ByteArrayOutputStream();
-//                croppedBtimap.compress(Bitmap.CompressFormat.PNG, 100, baos);
-//                byte[] bitmapByte = baos.toByteArray();
+                Uri cropUri = Uri.parse(MediaStore.Images.Media.insertImage(getContentResolver(), croppedBtimap, null, null));
 
-//                Intent intent = new Intent();
-//                intent.putExtra("photoFlag", this.getIntent().getIntExtra("photoFlag", 0));
-//                intent.putExtra("bitmap", bitmapByte);
-//                intent.setClass(MyCropperActivity.this, ShowUploadActivity.class);
-//                startActivityForResult(intent, StaticCode.SELECT_PHOTO_CODE);
+                ShowImageActivity.actionStart(MyCropperActivity.this, pathString, oldUri.toString(), ImageUtils.getRealFilePath(MyCropperActivity.this, cropUri), cropUri.toString());
                 break;
         }
     }
@@ -248,10 +231,6 @@ public class MyCropperActivity extends Activity implements SeekBar.OnSeekBarChan
         super.onDestroy();
         if (croppedBtimap != null) {
             croppedBtimap.recycle();
-        }
-
-        if (bitmap != null) {
-            bitmap.recycle();
         }
     }
 

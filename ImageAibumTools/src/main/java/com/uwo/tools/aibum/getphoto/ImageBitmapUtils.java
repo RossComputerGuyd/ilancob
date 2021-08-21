@@ -61,7 +61,7 @@ public class ImageBitmapUtils {
      * @param activity
      * @param srcUri   图片的uri
      */
-    public static void cropImage(Activity activity, Uri srcUri) {
+    public static void cropUriImage(Activity activity, Uri srcUri) {
         ImageBitmapUtils.cropImageUri = ImageBitmapUtils.createImagePathUri(activity);
         Intent intent = new Intent("com.android.camera.action.CROP");
         intent.setDataAndType(srcUri, "image/*");

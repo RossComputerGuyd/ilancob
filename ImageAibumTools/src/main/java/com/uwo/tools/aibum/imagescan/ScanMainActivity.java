@@ -75,7 +75,7 @@ public class ScanMainActivity extends Activity {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
                 List<String> childList = mGruopMap.get(list.get(position).getFolderName());
-                Intent mIntent = new Intent(ScanMainActivity.this, ShowImageActivity.class);
+                Intent mIntent = new Intent(ScanMainActivity.this, ShowGridImageActivity.class);
                 mIntent.putStringArrayListExtra("data", (ArrayList<String>) childList);
                 startActivity(mIntent);
             }

@@ -15,7 +15,6 @@ import com.uwo.lib.uri.CropHelper;
 import com.uwo.lib.uri.CropParams;
 import com.uwo.tools.aibum.R;
 
-
 /**
  * Created with Android Studio.
  * User: ryan@xisue.com
@@ -28,9 +27,9 @@ public class UriActivity extends AppCompatActivity implements CropHandler, View.
 
     public static final String TAG = "UriActivity";
 
-    ImageView mImageView;
+    private ImageView mImageView;
 
-    CropParams mCropParams;
+    private CropParams mCropParams;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +55,7 @@ public class UriActivity extends AppCompatActivity implements CropHandler, View.
                 startActivityForResult(intent, CropHelper.REQUEST_CAMERA);
             }
             break;
+
             case R.id.bt_crop_gallery: {
                 mCropParams.enable = true;
                 mCropParams.compress = false;
@@ -63,6 +63,7 @@ public class UriActivity extends AppCompatActivity implements CropHandler, View.
                 startActivityForResult(intent, CropHelper.REQUEST_CROP);
             }
             break;
+
             case R.id.bt_capture: {
                 mCropParams.enable = false;
                 mCropParams.compress = true;
@@ -70,6 +71,7 @@ public class UriActivity extends AppCompatActivity implements CropHandler, View.
                 startActivityForResult(intent, CropHelper.REQUEST_CAMERA);
             }
             break;
+
             case R.id.bt_gallery: {
                 mCropParams.enable = false;
                 mCropParams.compress = true;
@@ -101,7 +103,7 @@ public class UriActivity extends AppCompatActivity implements CropHandler, View.
 
     @Override
     public void onPhotoCropped(Uri uri) {
-        // Original or Cropped uri
+        // Original or Cropped uri 原或裁剪的URI
         Log.d(TAG, "Crop Uri in path: " + uri.getPath());
         if (!mCropParams.compress)
             mImageView.setImageBitmap(BitmapUtil.decodeUriAsBitmap(this, uri));
@@ -109,7 +111,7 @@ public class UriActivity extends AppCompatActivity implements CropHandler, View.
 
     @Override
     public void onCompressed(Uri uri) {
-        // Compressed uri
+        // Compressed uri 压缩URI
         mImageView.setImageBitmap(BitmapUtil.decodeUriAsBitmap(this, uri));
     }
 
