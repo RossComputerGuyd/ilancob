@@ -7,16 +7,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -31,7 +27,7 @@ import java.util.Locale;
  * 4.将bitmap保存至本地
  * 5.获取bitmap旋转角度
  */
-public class ImageUtils {
+public class ImageUriUtils {
 
     public static final int GET_IMAGE_BY_CAMERA = 5001;
     public static final int GET_IMAGE_FROM_PHONE = 5002;
@@ -39,7 +35,7 @@ public class ImageUtils {
     public static Uri imageUriFromCamera;
     public static Uri cropImageUri;
 
-    public static String Tag = "ImageUtils";
+    public static String Tag = "ImageUriUtils";
 
     /**
      * 打开系统相机
@@ -47,14 +43,14 @@ public class ImageUtils {
      * @param activity
      */
     public static void openCameraImage(final Activity activity) {
-        ImageUtils.imageUriFromCamera = ImageUtils.createImagePathUri(activity);
+        ImageUriUtils.imageUriFromCamera = ImageUriUtils.createImagePathUri(activity);
 
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         // MediaStore.EXTRA_OUTPUT参数不设置时,系统会自动生成一个uri,但是只会返回一个缩略图
         // 返回图片在onActivityResult中通过以下代码获取
         // Bitmap bitmap = (Bitmap) data.getExtras().get("data");
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, ImageUtils.imageUriFromCamera);
-        activity.startActivityForResult(intent, ImageUtils.GET_IMAGE_BY_CAMERA);
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, ImageUriUtils.imageUriFromCamera);
+        activity.startActivityForResult(intent, ImageUriUtils.GET_IMAGE_BY_CAMERA);
     }
 
     /**
@@ -66,7 +62,7 @@ public class ImageUtils {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        activity.startActivityForResult(intent, ImageUtils.GET_IMAGE_FROM_PHONE);
+        activity.startActivityForResult(intent, ImageUriUtils.GET_IMAGE_FROM_PHONE);
     }
 
     /**
@@ -76,7 +72,7 @@ public class ImageUtils {
      * @param srcUri
      */
     public static void cropImage(Activity activity, Uri srcUri) {
-        ImageUtils.cropImageUri = ImageUtils.createImagePathUri(activity);
+        ImageUriUtils.cropImageUri = ImageUriUtils.createImagePathUri(activity);
 
         Intent intent = new Intent("com.android.camera.action.CROP");
         intent.setDataAndType(srcUri, "image/*");
@@ -104,11 +100,39 @@ public class ImageUtils {
         // return-data为true时,会直接返回bitmap数据,但是大图裁剪时会出现问题,推荐下面为false时的方式
         // return-data为false时,不会返回bitmap,但需要指定一个MediaStore.EXTRA_OUTPUT保存图片uri
         Log.e("srcUri", srcUri.toString());
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, ImageUtils.cropImageUri);
-        Log.e("cropImageUri", ImageUtils.cropImageUri.toString());
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, ImageUriUtils.cropImageUri);
+        Log.e("cropImageUri", ImageUriUtils.cropImageUri.toString());
         intent.putExtra("return-data", true);
 
         activity.startActivityForResult(intent, CROP_IMAGE);
+    }
+
+    /**
+     * 读取图片属性：旋转的角度
+     *
+     * @param path 图片绝对路径
+     * @return degree旋转的角度
+     */
+    public static int readPictureDegree(String path) {
+        int degree = 0;
+        try {
+            ExifInterface exifInterface = new ExifInterface(path);
+            int orientation = exifInterface.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
+            switch (orientation) {
+                case ExifInterface.ORIENTATION_ROTATE_90:
+                    degree = 90;
+                    break;
+                case ExifInterface.ORIENTATION_ROTATE_180:
+                    degree = 180;
+                    break;
+                case ExifInterface.ORIENTATION_ROTATE_270:
+                    degree = 270;
+                    break;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return degree;
     }
 
     /**
@@ -140,7 +164,6 @@ public class ImageUtils {
         return imageFileUri;
     }
 
-    private String TAG = "ImageUtils";
 
     /**
      * 根据Uri获取文件的绝对路径
@@ -173,109 +196,24 @@ public class ImageUtils {
     }
 
     /**
-     * 将Bitmap保存文件至本地SDCard
-     */
-    public static String saveBitmapToFile(String dir, Bitmap bitmap) {
-        String filepath = "";
-        String sdStatus = Environment.getExternalStorageState();
-        if (!sdStatus.equals(Environment.MEDIA_MOUNTED)) { // 检测sd是否可用
-            Log.e("TestFile", "SD card is not avaiable/writeable right now.");
-            return filepath;
-        }
-        FileOutputStream outputStream = null;
-        File file = new File(dir);
-        if (!file.exists())
-            file.mkdirs();// 创建文件夹
-        filepath = dir + System.currentTimeMillis() + ".jpg";
-        try {
-            outputStream = new FileOutputStream(filepath);
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream);// 把数据写入文件
-            Log.e(Tag + "filepath", "ok" + filepath);
-        } catch (FileNotFoundException e) {
-            Log.e("FileNotFoundException", e.toString());
-            filepath = "";
-            Log.e(Tag + "filepath", filepath);
-        } finally {
-            try {
-                outputStream.flush();
-                outputStream.close();
-            } catch (IOException e) {
-                Log.e("IOException", e.toString());
-                filepath = "";
-                Log.e(Tag + "filepath", "finally:" + filepath);
-            }
-        }
-        return filepath;
-    }
-
-    /**
-     * 读取图片属性：旋转的角度
+     * get uri for filepath
      *
-     * @param path 图片绝对路径
-     * @return degree旋转的角度
+     * @param path
+     * @return uri
      */
-    public static int readPictureDegree(String path) {
-        int degree = 0;
-        try {
-            ExifInterface exifInterface = new ExifInterface(path);
-            int orientation = exifInterface.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
-            switch (orientation) {
-                case ExifInterface.ORIENTATION_ROTATE_90:
-                    degree = 90;
-                    break;
-                case ExifInterface.ORIENTATION_ROTATE_180:
-                    degree = 180;
-                    break;
-                case ExifInterface.ORIENTATION_ROTATE_270:
-                    degree = 270;
-                    break;
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return degree;
+    public static Uri getUriForPath(String path) {
+        Uri uri = null;
+        return uri;
     }
 
     /**
-     * Android提供的一种动态计算Bitmap所占空间大小的方法。
-     * @param options
-     * @param minSideLength
-     * @param maxNumOfPixels
-     * @return
+     * get uri for bitmap
+     * @param bitmap
+     * @return uri
      */
-    public static int computeSampleSize(BitmapFactory.Options options, int minSideLength, int maxNumOfPixels) {
-        int initialSize = computeInitialSampleSize(options, minSideLength, maxNumOfPixels);
-
-        int roundedSize;
-        if (initialSize <= 8) {
-            roundedSize = 1;
-            while (roundedSize < initialSize) {
-                roundedSize <<= 1;
-            }
-        } else {
-            roundedSize = (initialSize + 7) / 8 * 8;
-        }
-
-        return roundedSize;
+    public static Uri getUriForBitmap(Bitmap bitmap){
+        Uri uri = null;
+        return uri;
     }
 
-    private static int computeInitialSampleSize(BitmapFactory.Options options, int minSideLength, int maxNumOfPixels) {
-        double w = options.outWidth;
-        double h = options.outHeight;
-
-        int lowerBound = (maxNumOfPixels == -1) ? 1 : (int) Math.ceil(Math.sqrt(w * h / maxNumOfPixels));
-        int upperBound = (minSideLength == -1) ? 128 : (int) Math.min(Math.floor(w / minSideLength), Math.floor(h / minSideLength));
-        if (upperBound < lowerBound) {
-            // return the larger one when there is no overlapping zone.
-            return lowerBound;
-        }
-
-        if ((maxNumOfPixels == -1) && (minSideLength == -1)) {
-            return 1;
-        } else if (minSideLength == -1) {
-            return lowerBound;
-        } else {
-            return upperBound;
-        }
-    }
 }

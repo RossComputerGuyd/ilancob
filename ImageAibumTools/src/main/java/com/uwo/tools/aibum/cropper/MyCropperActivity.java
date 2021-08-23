@@ -20,7 +20,7 @@ import android.widget.ToggleButton;
 import com.edmodo.cropper.CropImageView;
 import com.uwo.tools.aibum.R;
 import com.uwo.tools.aibum.ShowImageActivity;
-import com.uwo.tools.aibum.utils.ImageUtils;
+import com.uwo.tools.aibum.utils.ImageUriUtils;
 
 import java.io.File;
 
@@ -152,7 +152,7 @@ public class MyCropperActivity extends Activity implements SeekBar.OnSeekBarChan
 
                 Uri cropUri = Uri.parse(MediaStore.Images.Media.insertImage(getContentResolver(), croppedBtimap, null, null));
 
-                ShowImageActivity.actionStart(MyCropperActivity.this, pathString, oldUri.toString(), ImageUtils.getRealFilePath(MyCropperActivity.this, cropUri), cropUri.toString());
+                ShowImageActivity.actionStart(MyCropperActivity.this, pathString, oldUri.toString(), ImageUriUtils.getRealFilePath(MyCropperActivity.this, cropUri), cropUri.toString());
                 break;
         }
     }

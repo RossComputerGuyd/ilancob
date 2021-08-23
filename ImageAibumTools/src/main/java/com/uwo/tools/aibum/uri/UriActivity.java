@@ -1,9 +1,9 @@
 package com.uwo.tools.aibum.uri;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -15,6 +15,8 @@ import com.uwo.lib.uri.CropHelper;
 import com.uwo.lib.uri.CropParams;
 import com.uwo.tools.aibum.R;
 
+//import android.support.v7.app.AppCompatActivity;
+
 /**
  * Created with Android Studio.
  * User: ryan@xisue.com
@@ -22,8 +24,9 @@ import com.uwo.tools.aibum.R;
  * Time: 11:44 AM
  * Desc: UriActivity
  * https://github.com/ryanhoo/PhotoCropper
+ * AppCompatActivity
  */
-public class UriActivity extends AppCompatActivity implements CropHandler, View.OnClickListener {
+public class UriActivity extends Activity implements CropHandler, View.OnClickListener {
 
     public static final String TAG = "UriActivity";
 
