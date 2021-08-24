@@ -1,57 +1,105 @@
 package com.uwo.tools.aibum.utils;
 
+import android.app.Activity;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Paint;
 import android.net.Uri;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.util.Log;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * Created by SRain on 15-12-8.
  * <p/>
  * image for bitmap
+ * <p/>
+ * 根据uri获取bitmap	getBitmapForUri
+ * 根据文件流获取bitmap	getBitmapForFileInputStream
+ * 根据文件路径获取bitmap	getBitmapForPath
+ * 根据资源id获取bitmap	getPathForBitmap
+ * 将bitmap保存至本地指定路径	saveFileForBitmap
+ * bitmap剪切	cropperBitmap
+ * bitmap旋转
+ * 将图片旋转成正位
+ * bitmap圆角/圆形	roundBitmap
+ * bitmap压缩
+ * bitmap大图片处理
+ * bitmap计算所在空间大小	computeSampleSize
+ * 设置图片压缩
  */
 public class ImageBitmapUtils {
-
     private static String Tag = "ImageBitmapUtils";
 
     /**
-     * get bitmap for uri
+     * 根据uri获取bitmap
      *
      * @param uri
      * @return bitmap
      */
-    public static Bitmap getBitmapForUri(Uri uri) {
-        Bitmap bitmap = null;
-        return bitmap;
+    public static Bitmap getBitmapForUri(Activity activity, Uri uri) {
+        try {
+            // 读取uri所在的图片
+            Bitmap bitmap = MediaStore.Images.Media.getBitmap(activity.getContentResolver(), uri);
+            return bitmap;
+        } catch (Exception e) {
+            Log.e("[Android]", e.getMessage());
+            Log.e("[Android]", "目录为：" + uri);
+            e.printStackTrace();
+            return null;
+        }
     }
 
     /**
-     * get Bitmap for filepath
+     * 根据文件路径获取bitmap
+     *
      * @param path
      * @return bitmap
      */
-    public static Bitmap getBitmapForPath(String path){
-        Bitmap bitmap = null;
+    public static Bitmap getBitmapForPath(String path) {
+        Bitmap bitmap = BitmapFactory.decodeFile(path);
         return bitmap;
     }
 
     /**
-     * get filepath for bitmap
+     * 根据文件流获取bitmap
      *
-     * @param bitmap
+     * @param filepath
+     * @return bitmap
+     */
+    public static Bitmap getBitmapForFileInputStream(String filepath) {
+        Bitmap bitmap = null;
+        try {
+            FileInputStream fis = new FileInputStream(filepath);
+            bitmap = BitmapFactory.decodeStream(fis);
+        } catch (Exception e) {
+
+        }
+        return bitmap;
+    }
+
+    /**
+     * 根据资源id获取bitmap
+     *
+     * @param id 资源id
      * @return filepath
      */
-    public static String getPathForBitmap(Bitmap bitmap) {
-        String path = "";
-        return path;
+    public static Bitmap getPathForBitmap(Context context, int id) {
+        InputStream is = context.getResources().openRawResource(id);
+        Bitmap bitmap = BitmapFactory.decodeStream(is);
+        Paint mPaint = new Paint();
+//        canvas.drawBitmap(bitmap, 40, 40, mPaint);
+        return bitmap;
     }
-    
+
     /**
      * 将Bitmap保存文件至本地SDCard
      *
@@ -102,7 +150,6 @@ public class ImageBitmapUtils {
      */
     public static int computeSampleSize(BitmapFactory.Options options, int minSideLength, int maxNumOfPixels) {
         int initialSize = computeInitialSampleSize(options, minSideLength, maxNumOfPixels);
-
         int roundedSize;
         if (initialSize <= 8) {
             roundedSize = 1;
@@ -112,10 +159,17 @@ public class ImageBitmapUtils {
         } else {
             roundedSize = (initialSize + 7) / 8 * 8;
         }
-
         return roundedSize;
     }
 
+    /**
+     * 动态计算Bitmap所占空间大小
+     *
+     * @param options
+     * @param minSideLength
+     * @param maxNumOfPixels
+     * @return
+     */
     private static int computeInitialSampleSize(BitmapFactory.Options options, int minSideLength, int maxNumOfPixels) {
         double w = options.outWidth;
         double h = options.outHeight;

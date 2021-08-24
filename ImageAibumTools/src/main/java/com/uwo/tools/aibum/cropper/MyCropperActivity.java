@@ -149,7 +149,6 @@ public class MyCropperActivity extends Activity implements SeekBar.OnSeekBarChan
 //                ImageBitmapUtils.cropUriImage(MyCropperActivity.this, uri);
                 croppedBtimap = cropImageView.getCroppedImage();
                 cropImageView.setImageBitmap(croppedBtimap);
-
                 Uri cropUri = Uri.parse(MediaStore.Images.Media.insertImage(getContentResolver(), croppedBtimap, null, null));
 
                 ShowImageActivity.actionStart(MyCropperActivity.this, pathString, oldUri.toString(), ImageUriUtils.getRealFilePath(MyCropperActivity.this, cropUri), cropUri.toString());

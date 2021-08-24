@@ -4,18 +4,13 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
 import com.uwo.tools.aibum.R;
-
-import java.io.File;
+import com.uwo.tools.aibum.utils.ImageUriUtils;
 
 /**
  * 通过Action实现
@@ -24,16 +19,13 @@ import java.io.File;
  * 图片剪切
  */
 public class GetPhotoMainActivity extends Activity {
-
-    private ImageView iv;
+    private ImageView image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_getphoto_main);
-
-        iv = (ImageView) findViewById(R.id.iv);
-
+        image = (ImageView) findViewById(R.id.image);
         findViewById(R.id.btn).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,10 +45,10 @@ public class GetPhotoMainActivity extends Activity {
                         dialog.dismiss();
                         switch (which) {
                             case 0:
-                                ImageBitmapUtils.openCameraImage(GetPhotoMainActivity.this);
+                                ImageUriUtils.openCameraImage(GetPhotoMainActivity.this);
                                 break;
                             case 1:
-                                ImageBitmapUtils.openLocalImage(GetPhotoMainActivity.this);
+                                ImageUriUtils.openLocalImage(GetPhotoMainActivity.this);
                                 break;
                         }
                     }
@@ -74,61 +66,36 @@ public class GetPhotoMainActivity extends Activity {
 
         switch (requestCode) {
             // 拍照获取图片
-            case ImageBitmapUtils.GET_IMAGE_BY_CAMERA:
+            case ImageUriUtils.GET_IMAGE_BY_CAMERA:
                 // uri传入与否影响图片获取方式,以下二选一
                 // 方式一,自定义Uri(ImageBitmapUtils.imageUriFromCamera),用于保存拍照后图片地址
-                if (ImageBitmapUtils.imageUriFromCamera != null) {
-
+                if (ImageUriUtils.imageUriFromCamera != null) {
                     // 可以直接显示图片,或者进行其他处理(如压缩或裁剪等)
 //                    iv.setImageURI(ImageBitmapUtils.imageUriFromCamera);
                     // 对图片进行裁剪
-                    ImageBitmapUtils.cropUriImage(this, ImageBitmapUtils.imageUriFromCamera);
-                    uriToFilepath(ImageBitmapUtils.imageUriFromCamera);
+                    ImageUriUtils.cropUriImage(this, ImageUriUtils.imageUriFromCamera);
+                    String path = ImageUriUtils.getPathForUri(this, ImageUriUtils.imageUriFromCamera);
                     break;
                 }
                 break;
             // 手机相册获取图片
-            case ImageBitmapUtils.GET_IMAGE_FROM_PHONE:
+            case ImageUriUtils.GET_IMAGE_FROM_PHONE:
                 if (data != null && data.getData() != null) {
                     // 可以直接显示图片,或者进行其他处理(如压缩或裁剪等)
-                    iv.setImageURI(data.getData());
-
-//                    Intent intent = new Intent(GetPhotoMainActivity.this, CropperMainActivity.class);
-////                    intent.putExtra("uri", data.getData().toString());
-//                    intent.setData(data.getData());
-//                    Log.e("uri", data.getData().toString());
-//                    startActivity(intent);
-
+                    image.setImageURI(data.getData());
                     // 对图片进行裁剪
-                    ImageBitmapUtils.cropUriImage(this, data.getData());
+                    ImageUriUtils.cropUriImage(this, data.getData());
                 }
                 break;
             // 裁剪图片后结果
-            case ImageBitmapUtils.CROP_IMAGE:
-                if (ImageBitmapUtils.cropImageUri != null) {
+            case ImageUriUtils.CROP_IMAGE:
+                if (ImageUriUtils.cropImageUri != null) {
                     // 可以直接显示图片,或者进行其他处理(如压缩等)
-                    iv.setImageURI(ImageBitmapUtils.cropImageUri);
+                    image.setImageURI(ImageUriUtils.cropImageUri);
                 }
                 break;
             default:
                 break;
         }
-    }
-
-    /**
-     * 根据URI获取文件路径
-     *
-     * @param uri
-     * @return
-     */
-    public String uriToFilepath(Uri uri) {
-        String[] proj = {MediaStore.Images.Media.DATA};
-        Cursor cursor = managedQuery(uri, proj, null, null, null);
-        int index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-        cursor.moveToFirst();
-        String img_path = cursor.getString(index);
-        File file = new File(img_path);
-        Log.e("file", file.isFile() + file.getPath());
-        return img_path;
     }
 }

@@ -51,11 +51,7 @@ public class CropHelper {
             }
         }
         String name = String.format("image-%d.jpg", System.currentTimeMillis());
-        return Uri
-                .fromFile(cacheFolder)
-                .buildUpon()
-                .appendPath(name)
-                .build();
+        return Uri.fromFile(cacheFolder).buildUpon().appendPath(name).build();
     }
 
     public static boolean isPhotoReallyCropped(Uri uri) {
@@ -140,12 +136,10 @@ public class CropHelper {
     }
 
     public static Intent buildCameraIntent(CropParams params) {
-        return new Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-                .putExtra(MediaStore.EXTRA_OUTPUT, params.uri);
+        return new Intent(MediaStore.ACTION_IMAGE_CAPTURE).putExtra(MediaStore.EXTRA_OUTPUT, params.uri);
     }
 
     // Crop Intents
-
     private static Intent buildCropFromUriIntent(CropParams params) {
         return buildCropIntent("com.android.camera.action.CROP", params);
     }

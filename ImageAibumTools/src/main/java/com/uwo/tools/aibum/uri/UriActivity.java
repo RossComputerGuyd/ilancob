@@ -15,8 +15,6 @@ import com.uwo.lib.uri.CropHelper;
 import com.uwo.lib.uri.CropParams;
 import com.uwo.tools.aibum.R;
 
-//import android.support.v7.app.AppCompatActivity;
-
 /**
  * Created with Android Studio.
  * User: ryan@xisue.com
