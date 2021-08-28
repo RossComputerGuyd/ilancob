@@ -1,4 +1,4 @@
-package com.uwo.tools.aibum;
+package com.uwo.tools.aibum.local;
 
 import android.app.Activity;
 import android.content.Context;
@@ -7,6 +7,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.uwo.tools.aibum.R;
 
 /**
  * Created by SRain on 2015/12/8.

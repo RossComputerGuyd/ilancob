@@ -58,7 +58,11 @@
 
         <activity android:name=".uri.UriActivity" />
 
-        <activity android:name=".ShowImageActivity" />
+        <activity android:name=".local.ShowImageActivity" />
+
+        <activity
+            android:name=".local.LocalActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

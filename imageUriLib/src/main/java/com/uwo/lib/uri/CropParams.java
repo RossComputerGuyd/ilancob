@@ -46,14 +46,14 @@ public class CropParams {
     /**
      * Default is true, if set false, crop function will not work,
      * it will only pick up images from gallery or take pictures from camera.
-     * 默认为true，打开相机或打开相册
+     * 榛樿涓簍rue锛屾墦寮�鐩告満鎴栨墦寮�鐩稿唽
      */
     public boolean enable;
 
     /**
      * Default is false, if it is from capture and without crop, the image could be large
      * enough to trigger OOM, it is better to compress image while enable is false
-     * 默认为false，否则会引发OOM
+     * 榛樿涓篺alse锛屽惁鍒欎細寮曞彂OOM
      */
     public boolean compress;
 

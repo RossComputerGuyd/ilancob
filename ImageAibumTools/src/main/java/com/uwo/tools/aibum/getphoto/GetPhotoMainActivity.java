@@ -10,6 +10,7 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
 import com.uwo.tools.aibum.R;
+import com.uwo.tools.aibum.utils.ActionUtils;
 import com.uwo.tools.aibum.utils.ImageUriUtils;
 
 /**
@@ -45,10 +46,10 @@ public class GetPhotoMainActivity extends Activity {
                         dialog.dismiss();
                         switch (which) {
                             case 0:
-                                ImageUriUtils.openCameraImage(GetPhotoMainActivity.this);
+                                ActionUtils.openCameraImage(GetPhotoMainActivity.this);
                                 break;
                             case 1:
-                                ImageUriUtils.openLocalImage(GetPhotoMainActivity.this);
+                                ActionUtils.openLocalImage(GetPhotoMainActivity.this);
                                 break;
                         }
                     }
@@ -66,29 +67,29 @@ public class GetPhotoMainActivity extends Activity {
 
         switch (requestCode) {
             // 拍照获取图片
-            case ImageUriUtils.GET_IMAGE_BY_CAMERA:
+            case ActionUtils.GET_IMAGE_BY_CAMERA:
                 // uri传入与否影响图片获取方式,以下二选一
                 // 方式一,自定义Uri(ImageBitmapUtils.imageUriFromCamera),用于保存拍照后图片地址
                 if (ImageUriUtils.imageUriFromCamera != null) {
                     // 可以直接显示图片,或者进行其他处理(如压缩或裁剪等)
 //                    iv.setImageURI(ImageBitmapUtils.imageUriFromCamera);
                     // 对图片进行裁剪
-                    ImageUriUtils.cropUriImage(this, ImageUriUtils.imageUriFromCamera);
+                    ActionUtils.cropUriImage(this, ImageUriUtils.imageUriFromCamera);
                     String path = ImageUriUtils.getPathForUri(this, ImageUriUtils.imageUriFromCamera);
                     break;
                 }
                 break;
             // 手机相册获取图片
-            case ImageUriUtils.GET_IMAGE_FROM_PHONE:
+            case ActionUtils.GET_IMAGE_FROM_PHONE:
                 if (data != null && data.getData() != null) {
                     // 可以直接显示图片,或者进行其他处理(如压缩或裁剪等)
                     image.setImageURI(data.getData());
                     // 对图片进行裁剪
-                    ImageUriUtils.cropUriImage(this, data.getData());
+                    ActionUtils.cropUriImage(this, data.getData());
                 }
                 break;
             // 裁剪图片后结果
-            case ImageUriUtils.CROP_IMAGE:
+            case ActionUtils.CROP_IMAGE:
                 if (ImageUriUtils.cropImageUri != null) {
                     // 可以直接显示图片,或者进行其他处理(如压缩等)
                     image.setImageURI(ImageUriUtils.cropImageUri);

@@ -1,15 +1,9 @@
 package com.uwo.tools.aibum.photo;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.provider.MediaStore.Images.Media;
 import android.util.Log;
 import android.view.View;
@@ -21,6 +15,11 @@ import com.uwo.tools.aibum.R;
 import com.uwo.tools.aibum.photo.adapter.PhotoAibumAdapter;
 import com.uwo.tools.aibum.photo.entities.PhotoAibum;
 import com.uwo.tools.aibum.photo.entities.PhotoItem;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 /****************************************** 
@@ -34,9 +33,9 @@ public class PhotoAlbumActivity extends Activity{
 	private GridView aibumGV;
 	private List<PhotoAibum> aibumList;
 
-	// 设置获取图片的字段信�?
+	// 设置获取图片的字段信息
 	private static final String[] STORE_IMAGES = {
-			Media.DISPLAY_NAME, // 显示的名�?
+			Media.DISPLAY_NAME, // 显示的名称
 			Media.DATA,
 			Media.LONGITUDE, // 经度
 			Media._ID, // id
@@ -61,8 +60,7 @@ public class PhotoAlbumActivity extends Activity{
 		@Override
 		public void onItemClick(AdapterView<?> parent, View view,
 				int position, long id) {
-			Intent intent = new Intent(PhotoAlbumActivity.this,
-					PhotoActivity.class);
+			Intent intent = new Intent(PhotoAlbumActivity.this, PhotoActivity.class);
 			intent.putExtra("aibum", aibumList.get(position));
 			startActivity(intent);
 		}
@@ -75,8 +73,7 @@ public class PhotoAlbumActivity extends Activity{
 	 */
 	private List<PhotoAibum> getPhotoAlbum() {
 		List<PhotoAibum> aibumList = new ArrayList<PhotoAibum>();
-		Cursor cursor = Media.query(getContentResolver(),
-				Media.EXTERNAL_CONTENT_URI, STORE_IMAGES);
+		Cursor cursor = Media.query(getContentResolver(), Media.EXTERNAL_CONTENT_URI, STORE_IMAGES);
 		Map<String, PhotoAibum> countMap = new HashMap<String, PhotoAibum>();
 		PhotoAibum pa = null;
 		while (cursor.moveToNext()) {

@@ -19,7 +19,7 @@ import android.widget.ToggleButton;
 
 import com.edmodo.cropper.CropImageView;
 import com.uwo.tools.aibum.R;
-import com.uwo.tools.aibum.ShowImageActivity;
+import com.uwo.tools.aibum.local.ShowImageActivity;
 import com.uwo.tools.aibum.utils.ImageUriUtils;
 
 import java.io.File;

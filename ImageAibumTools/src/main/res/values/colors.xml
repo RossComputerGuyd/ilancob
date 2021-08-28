@@ -9,6 +9,7 @@
     <color name="common_text">#fff8ac</color>
     <color name="white">#ffffff</color>
     <color name="gray">#84959d</color>
+    <color name="lightgrey">#cccccc</color>
     <color name="light_gray_1">#EEEEE0</color>
     <color name="light_gray_2">#A0A0A0</color>
     <color name="gold">#b89766</color>

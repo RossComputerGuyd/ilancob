@@ -6,7 +6,6 @@ import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.media.ExifInterface;
@@ -38,79 +37,10 @@ import java.util.Locale;
  * 打开本地图库	openLocalImage
  */
 public class ImageUriUtils {
-    public static final int GET_IMAGE_BY_CAMERA = 5001; // 拍照返回标识码
-    public static final int GET_IMAGE_FROM_PHONE = 5002; // 获取相册返回标识码
-    public static final int CROP_IMAGE = 5003;  // 剪切返回标识码
+
     public static Uri imageUriFromCamera;  // 拍照返回uri
     public static Uri cropImageUri; // 剪切返回uri
     public static String Tag = "ImageUriUtils";
-
-    /**
-     * 打开系统相机
-     *
-     * @param activity
-     */
-    public static void openCameraImage(final Activity activity) {
-        ImageUriUtils.imageUriFromCamera = ImageUriUtils.createImagePathUri(activity);
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, ImageUriUtils.imageUriFromCamera);
-        activity.startActivityForResult(intent, ImageUriUtils.GET_IMAGE_BY_CAMERA);
-        // MediaStore.EXTRA_OUTPUT参数不设置时,系统会自动生成一个uri,但是只会返回一个缩略图
-        // 返回图片在onActivityResult中通过以下代码获取
-        // Bitmap bitmap = (Bitmap) data.getExtras().get("data");
-    }
-
-    /**
-     * 打开本地相册
-     *
-     * @param activity
-     */
-    public static void openLocalImage(final Activity activity) {
-        Intent intent = new Intent();
-        intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        activity.startActivityForResult(intent, ImageUriUtils.GET_IMAGE_FROM_PHONE);
-    }
-
-    /**
-     * 图片剪裁
-     *
-     * @param activity
-     * @param srcUri
-     */
-    public static void cropUriImage(Activity activity, Uri srcUri) {
-        ImageUriUtils.cropImageUri = ImageUriUtils.createImagePathUri(activity);
-        Intent intent = new Intent("com.android.camera.action.CROP");
-        intent.setDataAndType(srcUri, "image/*");
-        intent.putExtra("crop", "true");
-
-        ////////////////////////////////////////////////////////////////
-        // 1.宽高和比例都不设置时,裁剪框可以自行调整(比例和大小都可以随意调整)
-        ////////////////////////////////////////////////////////////////
-        // 2.只设置裁剪框宽高比(aspect)后,裁剪框比例固定不可调整,只能调整大小
-        ////////////////////////////////////////////////////////////////
-        // 3.裁剪后生成图片宽高(output)的设置和裁剪框无关,只决定最终生成图片大小
-        ////////////////////////////////////////////////////////////////
-        // 4.裁剪框宽高比例(aspect)可以和裁剪后生成图片比例(output)不同,此时,
-        //	会以裁剪框的宽为准,按照裁剪宽高比例生成一个图片,该图和框选部分可能不同,
-        //  不同的情况可能是截取框选的一部分,也可能超出框选部分,向下延伸补足
-        ////////////////////////////////////////////////////////////////
-
-        // aspectX aspectY 是裁剪框宽高的比例
-//        intent.putExtra("aspectX", 1);
-//        intent.putExtra("aspectY", 1);
-        // outputX outputY 是裁剪后生成图片的宽高
-//		intent.putExtra("outputX", 300);
-//		intent.putExtra("outputY", 100);
-
-        // return-data为true时,会直接返回bitmap数据,但是大图裁剪时会出现问题,推荐下面为false时的方式
-        // return-data为false时,不会返回bitmap,但需要指定一个MediaStore.EXTRA_OUTPUT保存图片uri
-        Log.e("srcUri", srcUri.toString());
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, ImageUriUtils.cropImageUri);
-        Log.e("cropImageUri", ImageUriUtils.cropImageUri.toString());
-        intent.putExtra("return-data", true);
-        activity.startActivityForResult(intent, CROP_IMAGE);
-    }
 
     /**
      * 读取图片属性：旋转的角度
@@ -146,7 +76,7 @@ public class ImageUriUtils {
      * @param context
      * @return 图片的uri
      */
-    private static Uri createImagePathUri(Context context) {
+    public static Uri createImagePathUri(Context context) {
         Uri imageFileUri = null;
         String status = Environment.getExternalStorageState();
         SimpleDateFormat timeFormatter = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.CHINA);

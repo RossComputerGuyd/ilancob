@@ -5,4 +5,21 @@
     <string name="choose_photo">选择</string>
     <string name="loadphoto_tip">相册加载中...</string>
 
+    <string name="selectLocalAlbumType">选择本地相册方式</string>
+
+    <string name="selectSCanType">选择拍照方式</string>
+
+    <array name="selectAlbumType">
+        <item>Action获取本地相册</item>
+        <item>SQL获取本地相册</item>
+    </array>
+
+    <array name="selectSCanType">
+        <item>Action拍照,直接返回拍照后的URI</item>
+        <item>Action拍照,传入返回图片的保存路径</item>
+        <item>Action拍照,返回缩略图</item>
+        <item>Action拍照,无返回值</item>
+        <item>Camera拍照,利用SurfaceView</item>
+    </array>
+
 </resources>
