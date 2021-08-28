@@ -19,12 +19,15 @@ import java.io.File;
  */
 public class ActionUtils {
 
-    public static final int GET_IMAGE_BY_CAMERA = 5001; // 拍照返回标识码
     public static final int GET_IMAGE_FROM_PHONE = 5002; // 获取相册返回标识码
     public static final int CROP_IMAGE = 5003;  // 剪切返回标识码
 
-    public static final int GET_IMAGE_BY_CAMERA_PATH = 5004; // 指定文件路径拍照返回标识码
-    public static final int GET_IMAGE_BY_CAMERA_THUMB = 5005; // 调用系统相机拍照返回缩略图
+
+    public static final int OPEN_CAMERA_IMAGE_URI = 5100; // 拍照直接返回uri
+    public static final int OPEN_CAMERA_IMAGE_PATH = 5101; // 拍照传入返回文件路径
+    public static final int OPEN_CAMERA_IMAGE_THUMB = 5102; // 拍照返回缩略图
+    public static final int OPEN_CAMERA_IMAGE_NO_RESULT = 5103; // 拍照无返回值
+
 
     /**
      * 使用系统相机拍照
@@ -36,7 +39,7 @@ public class ActionUtils {
         ImageUriUtils.imageUriFromCamera = ImageUriUtils.createImagePathUri(activity);
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, ImageUriUtils.imageUriFromCamera);
-        activity.startActivityForResult(intent, GET_IMAGE_BY_CAMERA);
+        activity.startActivityForResult(intent, OPEN_CAMERA_IMAGE_URI);
     }
 
     /**
@@ -55,7 +58,7 @@ public class ActionUtils {
         ImageUriUtils.imageUriFromCamera = ImageUriUtils.createImagePathUri(activity);
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
-        activity.startActivityForResult(intent, GET_IMAGE_BY_CAMERA_PATH);
+        activity.startActivityForResult(intent, OPEN_CAMERA_IMAGE_PATH);
     }
 
     /**
@@ -69,7 +72,7 @@ public class ActionUtils {
     public static void openCameraImageThumb(final Activity activity) {
         ImageUriUtils.imageUriFromCamera = ImageUriUtils.createImagePathUri(activity);
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        activity.startActivityForResult(intent, GET_IMAGE_BY_CAMERA_THUMB);
+        activity.startActivityForResult(intent, OPEN_CAMERA_IMAGE_THUMB);
     }
 
     /**
@@ -80,7 +83,6 @@ public class ActionUtils {
         intent.setAction("android.media.action.STILL_IMAGE_CAMERA");
         activity.startActivity(intent);
     }
-
 
 
     /**

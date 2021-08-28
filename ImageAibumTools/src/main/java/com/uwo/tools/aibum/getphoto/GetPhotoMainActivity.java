@@ -67,7 +67,7 @@ public class GetPhotoMainActivity extends Activity {
 
         switch (requestCode) {
             // 拍照获取图片
-            case ActionUtils.GET_IMAGE_BY_CAMERA:
+            case ActionUtils.OPEN_CAMERA_IMAGE_URI:
                 // uri传入与否影响图片获取方式,以下二选一
                 // 方式一,自定义Uri(ImageBitmapUtils.imageUriFromCamera),用于保存拍照后图片地址
                 if (ImageUriUtils.imageUriFromCamera != null) {

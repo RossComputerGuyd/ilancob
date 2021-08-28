@@ -122,7 +122,7 @@ public class LocalActivity extends BasicActivity implements View.OnClickListener
          */
         switch (requestCode) {
             // 调用系统相机拍照，直接返回uri
-            case ActionUtils.GET_IMAGE_BY_CAMERA:
+            case ActionUtils.OPEN_CAMERA_IMAGE_URI:
                 if (ImageUriUtils.imageUriFromCamera != null) {
                     // 可以直接显示图片,或者进行其他处理(如压缩或裁剪等)
                     image.setImageURI(ImageUriUtils.imageUriFromCamera);
@@ -130,7 +130,7 @@ public class LocalActivity extends BasicActivity implements View.OnClickListener
                 break;
 
             // 调用系统相机拍照,传入返回路径
-            case ActionUtils.GET_IMAGE_BY_CAMERA_PATH:
+            case ActionUtils.OPEN_CAMERA_IMAGE_PATH:
                 // 当传入文件路径的的情况下，data返回参数是null值，
                 // 只要resultCode为RESULT_OK，则上述代码中/sdcard/srainTest.jpg的图片文件就是最新的照片文件。
                 // MediaStore.EXTRA_OUTPUT的方法，经过手机实测除了我们设定的路径下有照片外，
@@ -142,7 +142,7 @@ public class LocalActivity extends BasicActivity implements View.OnClickListener
                 break;
 
             // 调用系统相机拍照,返回缩略图
-            case ActionUtils.GET_IMAGE_BY_CAMERA_THUMB:
+            case ActionUtils.OPEN_CAMERA_IMAGE_THUMB:
                 Bitmap bitmap = (Bitmap) data.getExtras().get("data");
                 image.setImageBitmap(bitmap);
                 break;
