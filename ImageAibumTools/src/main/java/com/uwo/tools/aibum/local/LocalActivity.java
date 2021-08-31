@@ -107,6 +107,9 @@ public class LocalActivity extends BasicActivity implements View.OnClickListener
                     case 3:
                         ActionUtils.openCameraImageNoResult(LocalActivity.this);
                         break;
+                    case 4:
+                        CameraActivity.actionStart(LocalActivity.this);
+                        break;
                 }
             }
         }
