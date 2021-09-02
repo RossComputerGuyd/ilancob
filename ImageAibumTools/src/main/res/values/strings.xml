@@ -6,8 +6,13 @@
     <string name="loadphoto_tip">相册加载中...</string>
 
     <string name="selectLocalAlbumType">选择本地相册方式</string>
-
     <string name="selectSCanType">选择拍照方式</string>
+    <string name="selectDateType">日期/时间</string>
+    <string name="map">地图</string>
+    <string name="dialog">对话框</string>
+
+    <string name="startDateTime">开始日期时间</string>
+    <string name="endDateTime">结束日期时间</string>
 
     <array name="selectAlbumType">
         <item>Action获取本地相册</item>
@@ -20,6 +25,35 @@
         <item>Action拍照,返回缩略图</item>
         <item>Action拍照,无返回值</item>
         <item>Camera拍照,利用SurfaceView</item>
+        <item>Camera拍照,前置摄像头</item>
     </array>
 
+    <array name="selectDateType">
+        <item>SilkCal实现IOS7</item>
+        <item>SlideDateTimePicker时间选择器</item>
+        <item>时间选择器utils</item>
+        <item>CalendarCard</item>
+        <item>Square</item>
+    </array>
+
+    <string name="sans_serif" translatable="false">sans-serif</string>
+
+    <string name="title">Calendar Card Sample</string>
+    <string name="card">Calendar Card</string>
+    <string name="card_pager">Calendar Card Pager</string>
+    <string name="sel_date">Selected date: %s</string>
+
+    <string name="day_name_format">EEE</string>
+    <string name="invalid_date">Date must be between %1$s and %2$s.</string>
+    <string name="month_name_format">MMMM yyyy</string>
+
+    <string name="Done">Done</string>
+    <string name="Customized">Customized</string>
+    <string name="Decorator">Decorator</string>
+    <string name="RTL">RTL</string>
+    <string name="Dialog">Dialog</string>
+    <string name="DisplayOnly">DisplayOnly</string>
+    <string name="Range">Range</string>
+    <string name="Multi">Multi</string>
+    <string name="Single">Single</string>
 </resources>

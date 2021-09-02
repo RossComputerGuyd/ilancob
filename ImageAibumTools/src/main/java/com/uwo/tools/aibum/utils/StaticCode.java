@@ -6,4 +6,5 @@ package com.uwo.tools.aibum.utils;
 public class StaticCode {
     public static int SELECT_BUTTON_STATE_ALBUM = 1000;
     public static int SELECT_BUTTON_STATE_SCAN = 1001;
+    public static int SELECT_BUTTON_STATE_DATE = 1002;
 }

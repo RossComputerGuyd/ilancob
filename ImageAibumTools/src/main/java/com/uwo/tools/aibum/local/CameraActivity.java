@@ -46,12 +46,14 @@ public class CameraActivity extends BasicActivity implements View.OnClickListene
 
     @Override
     protected void initView() {
-        // Create our Preview view and set it as the content of our activity.
+        /**
+         * 预览区域我们采用的是FrameLayout,但是预览效果其实和FrameLayout没什么关系，
+         * 能在FrameLayout中产生预览效果是因为我们往FrameLayout中添加了上面提到的一个继承自的SurfaceView相机图像预览类。
+         */
         FrameLayout preview = (FrameLayout) findViewById(R.id.camera_preview);
         mCameraSurPreview = new CameraSurfacePreview(this);
         preview.addView(mCameraSurPreview);
 
-        // Add a listener to the Capture button
         mCaptureButton = (Button) findViewById(R.id.button_capture);
         mCaptureButton.setOnClickListener(this);
     }
@@ -107,5 +109,13 @@ public class CameraActivity extends BasicActivity implements View.OnClickListene
         //get the current time
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         return new File(picDir.getPath() + File.separator + "IMAGE_" + timeStamp + ".jpg");
+    }
+
+    @Override
+
+    public void onPause() {
+        super.onPause();
+
+        mCameraSurPreview.release();
     }
 }

@@ -14,6 +14,9 @@ import android.widget.TextView;
 import com.uwo.tools.aibum.R;
 import com.uwo.tools.aibum.imagescan.ScanMainActivity;
 import com.uwo.tools.aibum.local.basic.BasicActivity;
+import com.uwo.tools.aibum.local.card.CalendarCardActivity;
+import com.uwo.tools.aibum.local.dialog.DialogMainActivity;
+import com.uwo.tools.aibum.local.square.SampleTimesSquareActivity;
 import com.uwo.tools.aibum.utils.ActionUtils;
 import com.uwo.tools.aibum.utils.DialogUtils;
 import com.uwo.tools.aibum.utils.ImageUriUtils;
@@ -28,7 +31,7 @@ import java.io.File;
  */
 public class LocalActivity extends BasicActivity implements View.OnClickListener {
 
-    private Button btnAlbum, btnScan;
+    private Button btnAlbum, btnScan, btnMap, btnDialog, btnDateTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +51,12 @@ public class LocalActivity extends BasicActivity implements View.OnClickListener
         btnAlbum.setOnClickListener(this);
         btnScan = (Button) findViewById(R.id.btnScan);
         btnScan.setOnClickListener(this);
+        btnMap = (Button) findViewById(R.id.btnMap);
+        btnMap.setOnClickListener(this);
+        btnDialog = (Button) findViewById(R.id.btnDialog);
+        btnDialog.setOnClickListener(this);
+        btnDateTime = (Button) findViewById(R.id.btnDateTime);
+        btnDateTime.setOnClickListener(this);
     }
 
     /**
@@ -68,6 +77,16 @@ public class LocalActivity extends BasicActivity implements View.OnClickListener
                 break;
             case R.id.btnScan:
                 DialogUtils.createListDialog(this, this.getResources().getString(R.string.selectSCanType), this.getResources().getStringArray(R.array.selectSCanType), new ItemClickListener(StaticCode.SELECT_BUTTON_STATE_SCAN));
+                break;
+            case R.id.btnMap:
+                break;
+            case R.id.btnDialog:
+                Intent intent = new Intent();
+                intent.setClass(LocalActivity.this, DialogMainActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.btnDateTime:
+                DialogUtils.createListDialog(this, this.getResources().getString(R.string.selectDateType), this.getResources().getStringArray(R.array.selectDateType), new ItemClickListener(StaticCode.SELECT_BUTTON_STATE_DATE));
                 break;
         }
     }
@@ -109,6 +128,27 @@ public class LocalActivity extends BasicActivity implements View.OnClickListener
                         break;
                     case 4:
                         CameraActivity.actionStart(LocalActivity.this);
+                        break;
+                    case 5:
+                        Camera1Activity.actionStart(LocalActivity.this);
+                        break;
+                }
+            } else if (state == StaticCode.SELECT_BUTTON_STATE_DATE) {
+                switch (which) {
+                    case 0:
+                        DateDialogActivity.actionStart(LocalActivity.this);
+                        break;
+                    case 1:
+                        SlideActivity.actionStart(LocalActivity.this);
+                        break;
+                    case 2:
+                        DateTimePickerActivity.actionStart(LocalActivity.this);
+                        break;
+                    case 3:
+                        CalendarCardActivity.actionStart(LocalActivity.this);
+                        break;
+                    case 4:
+                        SampleTimesSquareActivity.actionStart(LocalActivity.this);
                         break;
                 }
             }

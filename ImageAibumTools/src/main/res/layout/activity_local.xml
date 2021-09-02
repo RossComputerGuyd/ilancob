@@ -9,21 +9,30 @@
 
     <Button
         android:id="@+id/btnAlbum"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        style="@style/ButtonStyle"
         android:layout_marginTop="20dp"
-        android:gravity="center"
         android:text="@string/selectLocalAlbumType" />
+
 
     <Button
         android:id="@+id/btnScan"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="20dp"
-        android:gravity="center"
+        style="@style/ButtonStyle"
         android:text="@string/selectSCanType" />
+
+    <Button
+        android:id="@+id/btnMap"
+        style="@style/ButtonStyle"
+        android:text="@string/map" />
+
+    <Button
+        android:id="@+id/btnDialog"
+        style="@style/ButtonStyle"
+        android:text="@string/dialog" />
+
+    <Button
+        android:id="@+id/btnDateTime"
+        style="@style/ButtonStyle"
+        android:text="时间控件" />
 
     <ImageView
         android:id="@+id/image"

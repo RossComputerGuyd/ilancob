@@ -5,9 +5,13 @@
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
+    <!--<uses-feature-->
+    <!--android:name="android.hardware.camera"-->
+    <!--android:required="false" />-->
 
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.hardware.camera.autofocus" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <!-- 往SDCard写入数据权限 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -71,6 +75,25 @@
         <activity
             android:name=".local.CameraActivity"
             android:screenOrientation="landscape" />
+
+        <activity android:name=".local.Camera1Activity" />
+
+        <activity android:name=".local.dialog.DialogMainActivity" />
+
+        <!--DateTime-->
+        <activity android:name=".local.DateDialogActivity" />
+
+        <activity android:name=".local.SlideActivity" />
+
+        <activity android:name=".local.DateTimePickerActivity" />
+
+        <activity android:name=".local.card.CalendarCardActivity" />
+        <activity android:name=".local.card.Sample1" />
+        <activity android:name=".local.card.Sample2" />
+
+        <activity
+            android:name=".local.square.SampleTimesSquareActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
     </application>
 
 </manifest>
