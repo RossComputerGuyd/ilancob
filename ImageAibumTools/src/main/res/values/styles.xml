@@ -85,4 +85,36 @@
         <item name="android:clickable">true</item>
         <item name="android:textStyle">bold</item>
     </style>
+
+    <style name="Hint">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@color/hint_color</item>
+    </style>
+
+    <style name="HintButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">15dp</item>
+        <item name="android:paddingBottom">15dp</item>
+        <item name="android:paddingLeft">35dp</item>
+        <item name="android:paddingRight">35dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:background">@drawable/hint_button_bg</item>
+    </style>
+
+    <style name="time_label">
+        <item name="android:textSize">@dimen/time_label_size</item>
+        <item name="android:textColor">@color/numbers_text_color</item>
+    </style>
+
+    <style name="ampm_label">
+        <item name="android:textSize">@dimen/ampm_label_size</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/ampm_text_color</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="day_of_week_label_condensed" />
 </resources>

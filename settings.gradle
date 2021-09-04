@@ -1,1 +1,1 @@
-include ':app', ':roundImageLib', ':imageLib', ':cropImage', ':FaceCrop-Lib', ':Loader-Lib', ':android-common-master', ':ImageAibumTools', ':AsynchronousLoadImage', ':cropper', ':imageUriLib'
+include ':app', ':roundImageLib', ':imageLib', ':cropImage', ':FaceCrop-Lib', ':Loader-Lib', ':android-common-master', ':ImageAibumTools', ':AsynchronousLoadImage', ':cropper', ':imageUriLib', ':GoogleDateTimePickers'

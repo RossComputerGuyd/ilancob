@@ -92,6 +92,9 @@
         <activity android:name=".CuterActivity" />
 
         <activity android:name=".mycropper.MyCropperActivity" />
+
+        <activity android:name=".google.MainGoogleActivity" />
+        <activity android:name=".google.Hint" />
     </application>
 
 </manifest>

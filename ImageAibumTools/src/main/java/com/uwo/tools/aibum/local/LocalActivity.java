@@ -15,6 +15,7 @@ import com.uwo.tools.aibum.R;
 import com.uwo.tools.aibum.imagescan.ScanMainActivity;
 import com.uwo.tools.aibum.local.basic.BasicActivity;
 import com.uwo.tools.aibum.local.card.CalendarCardActivity;
+import com.uwo.tools.aibum.local.datetime.google.MainGoogleActivity;
 import com.uwo.tools.aibum.local.dialog.DialogMainActivity;
 import com.uwo.tools.aibum.local.square.SampleTimesSquareActivity;
 import com.uwo.tools.aibum.utils.ActionUtils;
@@ -149,6 +150,9 @@ public class LocalActivity extends BasicActivity implements View.OnClickListener
                         break;
                     case 4:
                         SampleTimesSquareActivity.actionStart(LocalActivity.this);
+                        break;
+                    case 5:
+                        MainGoogleActivity.actionStart(LocalActivity.this);
                         break;
                 }
             }

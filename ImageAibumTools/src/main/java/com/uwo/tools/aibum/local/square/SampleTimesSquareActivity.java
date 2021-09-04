@@ -27,6 +27,11 @@ import java.util.Set;
 
 import static android.widget.Toast.LENGTH_SHORT;
 
+/**
+ * 日期控件
+ *
+ * https://github.com/square/android-times-square
+ */
 public class SampleTimesSquareActivity extends Activity {
     private static final String TAG = "SampleTimesSquareActivi";
     private CalendarPickerView calendar;
@@ -41,13 +46,11 @@ public class SampleTimesSquareActivity extends Activity {
 
         final Calendar nextYear = Calendar.getInstance();
         nextYear.add(Calendar.YEAR, 1);
-
         final Calendar lastYear = Calendar.getInstance();
         lastYear.add(Calendar.YEAR, -1);
 
         calendar = (CalendarPickerView) findViewById(R.id.calendar_view);
         calendar.init(lastYear.getTime(), nextYear.getTime()).inMode(SelectionMode.SINGLE).withSelectedDate(new Date());
-
         initButtonListeners(nextYear, lastYear);
     }
 
@@ -60,18 +63,13 @@ public class SampleTimesSquareActivity extends Activity {
         final Button customized = (Button) findViewById(R.id.button_customized);
         final Button decorator = (Button) findViewById(R.id.button_decorator);
         final Button rtl = (Button) findViewById(R.id.button_rtl);
-
         modeButtons.addAll(Arrays.asList(single, multi, range, displayOnly, decorator));
-
         single.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 setButtonsEnabled(single);
-
                 calendar.setDecorators(Collections.<CalendarCellDecorator>emptyList());
-                calendar.init(lastYear.getTime(), nextYear.getTime()) //
-                        .inMode(SelectionMode.SINGLE) //
-                        .withSelectedDate(new Date());
+                calendar.init(lastYear.getTime(), nextYear.getTime()).inMode(SelectionMode.SINGLE).withSelectedDate(new Date());
             }
         });
 
@@ -87,9 +85,7 @@ public class SampleTimesSquareActivity extends Activity {
                     dates.add(today.getTime());
                 }
                 calendar.setDecorators(Collections.<CalendarCellDecorator>emptyList());
-                calendar.init(new Date(), nextYear.getTime()) //
-                        .inMode(SelectionMode.MULTIPLE) //
-                        .withSelectedDates(dates);
+                calendar.init(new Date(), nextYear.getTime()).inMode(SelectionMode.MULTIPLE).withSelectedDates(dates);
             }
         });
 
@@ -97,7 +93,6 @@ public class SampleTimesSquareActivity extends Activity {
             @Override
             public void onClick(View v) {
                 setButtonsEnabled(range);
-
                 Calendar today = Calendar.getInstance();
                 ArrayList<Date> dates = new ArrayList<Date>();
                 today.add(Calendar.DATE, 3);
@@ -105,9 +100,7 @@ public class SampleTimesSquareActivity extends Activity {
                 today.add(Calendar.DATE, 5);
                 dates.add(today.getTime());
                 calendar.setDecorators(Collections.<CalendarCellDecorator>emptyList());
-                calendar.init(new Date(), nextYear.getTime()) //
-                        .inMode(SelectionMode.RANGE) //
-                        .withSelectedDates(dates);
+                calendar.init(new Date(), nextYear.getTime()).inMode(SelectionMode.RANGE).withSelectedDates(dates);
             }
         });
 

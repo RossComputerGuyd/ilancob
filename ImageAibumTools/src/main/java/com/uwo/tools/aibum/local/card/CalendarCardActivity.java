@@ -8,6 +8,9 @@ import android.view.View;
 import com.uwo.tools.aibum.R;
 import com.uwo.tools.aibum.local.LocalActivity;
 
+/**
+ * https://github.com/kenumir/android-calendar-card
+ */
 public class CalendarCardActivity extends Activity {
 
 	public static void actionStart(LocalActivity activity){
