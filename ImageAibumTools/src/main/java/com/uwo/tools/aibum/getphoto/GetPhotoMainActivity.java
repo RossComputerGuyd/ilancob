@@ -10,8 +10,8 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
 import com.uwo.tools.aibum.R;
-import com.uwo.tools.aibum.utils.ActionUtils;
-import com.uwo.tools.aibum.utils.ImageUriUtils;
+import com.uwo.tools.aibum.local.utils.ActionUtils;
+import com.uwo.tools.aibum.local.utils.ImageUriUtils;
 
 /**
  * 通过Action实现

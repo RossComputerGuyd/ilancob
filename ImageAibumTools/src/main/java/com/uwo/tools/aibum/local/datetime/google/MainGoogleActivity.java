@@ -28,6 +28,9 @@ import com.uwo.tools.aibum.local.datetime.google.picker.time.TimePickerDialog.On
 import java.util.Calendar;
 //import com.inscription.CreditsDialog;
 
+/**
+ * https://github.com/Mirkoddd/GoogleDateTimePickers
+ */
 public class MainGoogleActivity extends Activity {
 
     private TextView tvDisplayTime;

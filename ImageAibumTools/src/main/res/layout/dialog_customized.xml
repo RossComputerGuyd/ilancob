@@ -1,4 +1,4 @@
-<com.uwo.tools.aibum.local.square.CalendarPickerView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.uwo.tools.aibum.local.datetime.square.CalendarPickerView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/calendar_view"
     android:layout_width="match_parent"

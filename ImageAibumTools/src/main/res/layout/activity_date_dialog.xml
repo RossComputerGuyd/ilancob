@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.uwo.tools.aibum.local.silkcal.DayPickerView
+    <com.uwo.tools.aibum.local.datetime.silkcal.DayPickerView
         xmlns:calendar="http://schemas.android.com/apk/res-auto"
         android:id="@+id/calendar_view"
         android:layout_width="match_parent"

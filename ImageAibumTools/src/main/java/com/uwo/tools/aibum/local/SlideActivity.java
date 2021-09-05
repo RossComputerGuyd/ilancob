@@ -8,8 +8,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.uwo.tools.aibum.R;
-import com.uwo.tools.aibum.local.slide.SlideDateTimeListener;
-import com.uwo.tools.aibum.local.slide.SlideDateTimePicker;
+import com.uwo.tools.aibum.local.datetime.slide.SlideDateTimeListener;
+import com.uwo.tools.aibum.local.datetime.slide.SlideDateTimePicker;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

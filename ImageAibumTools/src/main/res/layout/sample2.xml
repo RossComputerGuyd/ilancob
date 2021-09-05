@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
 
-    <com.uwo.tools.aibum.local.card.CalendarCardPager
+    <com.uwo.tools.aibum.local.datetime.card.CalendarCardPager
         android:id="@+id/calendarCard1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

@@ -66,7 +66,7 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-    <com.uwo.tools.aibum.local.square.CalendarPickerView
+    <com.uwo.tools.aibum.local.datetime.square.CalendarPickerView
         android:id="@+id/calendar_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"

@@ -7,7 +7,9 @@
 
     <string name="selectLocalAlbumType">选择本地相册方式</string>
     <string name="selectSCanType">选择拍照方式</string>
+    <string name="selectImageCropperType">选择图片剪切方式</string>
     <string name="selectDateType">日期/时间</string>
+    <string name="selectPlayerType">播放器</string>
     <string name="map">地图</string>
     <string name="dialog">对话框</string>
 
@@ -28,6 +30,11 @@
         <item>Camera拍照,前置摄像头</item>
     </array>
 
+    <array name="selectImageCropperType">
+        <item>Cropper剪切图片/简介版</item>
+        <item>Cropper剪切图片</item>
+    </array>
+
     <array name="selectDateType">
         <item>SilkCal实现IOS7</item>
         <item>SlideDateTimePicker时间选择器</item>
@@ -35,6 +42,10 @@
         <item>CalendarCard</item>
         <item>Square</item>
         <item>Google</item>
+    </array>
+
+    <array name="selectPlayerType">
+        <item>InteractivePlayerView</item>
     </array>
 
     <string name="sans_serif" translatable="false">sans-serif</string>

@@ -14,7 +14,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <!-- 往SDCard写入数据权限 -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
     <!-- 往SDCard读取数据权限 -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
@@ -26,7 +26,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:name=".MyApplication"
@@ -88,16 +88,21 @@
 
         <activity android:name=".local.DateTimePickerActivity" />
 
-        <activity android:name=".local.card.CalendarCardActivity" />
-        <activity android:name=".local.card.Sample1" />
-        <activity android:name=".local.card.Sample2" />
+        <activity android:name=".local.datetime.card.CalendarCardActivity" />
+        <activity android:name=".local.datetime.card.Sample1" />
+        <activity android:name=".local.datetime.card.Sample2" />
 
         <activity
-            android:name=".local.square.SampleTimesSquareActivity"
+            android:name=".local.datetime.square.SampleTimesSquareActivity"
             android:configChanges="orientation|screenSize|keyboardHidden" />
 
         <activity android:name=".local.datetime.google.MainGoogleActivity" />
         <activity android:name=".local.datetime.google.Hint" />
+
+        <activity android:name=".cropper2.SimpleCropperActivity" />
+        <activity android:name=".cropper2.ResultActivity" />
+
+        <activity android:name=".local.player.InteractivePlayerActivity" />
     </application>
 
 </manifest>

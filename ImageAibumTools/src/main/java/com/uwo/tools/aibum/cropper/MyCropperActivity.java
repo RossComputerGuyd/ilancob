@@ -20,7 +20,7 @@ import android.widget.ToggleButton;
 import com.edmodo.cropper.CropImageView;
 import com.uwo.tools.aibum.R;
 import com.uwo.tools.aibum.local.ShowImageActivity;
-import com.uwo.tools.aibum.utils.ImageUriUtils;
+import com.uwo.tools.aibum.local.utils.ImageUriUtils;
 
 import java.io.File;
 
@@ -28,6 +28,12 @@ import java.io.File;
  * Created by SRain on 2015/12/7.
  */
 public class MyCropperActivity extends Activity implements SeekBar.OnSeekBarChangeListener, CompoundButton.OnCheckedChangeListener, AdapterView.OnItemSelectedListener, View.OnClickListener {
+
+    public static void actionStart(Context context) {
+        Intent intent = new Intent();
+        intent.setClass(context, MyCropperActivity.class);
+        context.startActivity(intent);
+    }
 
     /**
      * 启动activity另一种写法
@@ -137,8 +143,12 @@ public class MyCropperActivity extends Activity implements SeekBar.OnSeekBarChan
      * 获取数据
      */
     private void initData() {
-        pathString = this.getIntent().getStringExtra("filepath");
-        cropImageView.setPathImage(pathString);
+        if (this.getIntent().hasExtra("filepath")) {
+            pathString = this.getIntent().getStringExtra("filepath");
+            cropImageView.setPathImage(pathString);
+        } else {
+            cropImageView.setImageResource(R.drawable.butterfly);
+        }
     }
 
     @Override

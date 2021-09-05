@@ -12,7 +12,7 @@ import android.widget.FrameLayout;
 
 import com.uwo.tools.aibum.R;
 import com.uwo.tools.aibum.local.basic.BasicActivity;
-import com.uwo.tools.aibum.utils.CameraSurfacePreview;
+import com.uwo.tools.aibum.local.utils.CameraSurfacePreview;
 
 import java.io.File;
 import java.io.FileNotFoundException;

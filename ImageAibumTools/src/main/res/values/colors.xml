@@ -111,4 +111,14 @@
     <color name="calendar_header">#999999</color>
     <color name="date_picker_view_animator">#f2f2f2</color>
     <color name="calendar_selected_date_text">#FFD1D2D4</color>
+
+    <color name="base">#FFFFFB</color>
+    <color name="overlay">#AA1C1C1C</color>
+    <color name="text">#1C1C1C</color>
+    <color name="handle">#86C166</color>
+    <color name="frame">#86C166</color>
+    <color name="guide">#AA86C166</color>
+    <color name="menu_bg">#FFFFFB</color>
+
+    <color name="color_red">#F44336</color>
 </resources>

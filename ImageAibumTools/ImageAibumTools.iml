@@ -88,9 +88,12 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="android-support-v7-recyclerview" level="project" />
     <orderEntry type="library" exported="" name="universalimageloaderlibrary1.9.0" level="project" />
+    <orderEntry type="library" exported="" name="picasso-2.5.2" level="project" />
     <orderEntry type="library" exported="" name="volley" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-23.0.1" level="project" />
     <orderEntry type="module" module-name="cropper" exported="" />
     <orderEntry type="module" module-name="imageUriLib" exported="" />
+    <orderEntry type="module" module-name="simplecropview" exported="" />
+    <orderEntry type="library" name="android-support-v4" level="project" />
   </component>
 </module>

@@ -1,8 +1,8 @@
 package com.uwo.tools.aibum;
 
 import android.content.Intent;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.uwo.tools.aibum.cropper.MyCropperActivity;
+import com.uwo.tools.aibum.cropper2.SimpleCropperActivity;
 import com.uwo.tools.aibum.getphoto.GetPhotoMainActivity;
 import com.uwo.tools.aibum.imagescan.ScanMainActivity;
 import com.uwo.tools.aibum.local.LocalActivity;
@@ -20,7 +21,6 @@ import com.uwo.tools.aibum.photos.PhotosMainActivity;
 import com.uwo.tools.aibum.recylcler.HomeActivity;
 import com.uwo.tools.aibum.uri.UriActivity;
 import com.uwo.tools.aibum.volley.VolleyActivity;
-
 
 /**
  * A placeholder fragment containing a simple view.
@@ -48,9 +48,10 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
         adapter.add("4.照片墙");
         adapter.add("5.Volley框架获取网络图片");
         adapter.add("6.图片剪裁/lib");
-        adapter.add("7.通过Action获取本地相册");
-        adapter.add("8.用URI处理大图片剪切");
-        adapter.add("9.获取本地相册(整理)");
+        adapter.add("7.图片剪裁/lib/简洁");
+        adapter.add("8.通过Action获取本地相册");
+        adapter.add("9.用URI处理大图片剪切");
+        adapter.add("10.获取本地相册(整理)");
         ListView listView = (ListView) view.findViewById(R.id.listView);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(this);
@@ -82,9 +83,12 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
                 cls = MyCropperActivity.class;
                 break;
             case 7:
-                cls = GetPhotoMainActivity.class;
+                cls = SimpleCropperActivity.class;
                 break;
             case 8:
+                cls = GetPhotoMainActivity.class;
+                break;
+            case 9:
                 cls = UriActivity.class;
                 break;
             default:

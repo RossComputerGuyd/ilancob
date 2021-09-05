@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.uwo.tools.aibum.local.square.CalendarRowView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.uwo.tools.aibum.local.datetime.square.CalendarRowView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-    <com.uwo.tools.aibum.local.square.CalendarCellView
+    <com.uwo.tools.aibum.local.datetime.square.CalendarCellView
         style="@style/CalendarCell.CalendarDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <com.uwo.tools.aibum.local.square.CalendarCellView
+    <com.uwo.tools.aibum.local.datetime.square.CalendarCellView
         style="@style/CalendarCell.CalendarDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <com.uwo.tools.aibum.local.square.CalendarCellView
+    <com.uwo.tools.aibum.local.datetime.square.CalendarCellView
         style="@style/CalendarCell.CalendarDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <com.uwo.tools.aibum.local.square.CalendarCellView
+    <com.uwo.tools.aibum.local.datetime.square.CalendarCellView
         style="@style/CalendarCell.CalendarDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <com.uwo.tools.aibum.local.square.CalendarCellView
+    <com.uwo.tools.aibum.local.datetime.square.CalendarCellView
         style="@style/CalendarCell.CalendarDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <com.uwo.tools.aibum.local.square.CalendarCellView
+    <com.uwo.tools.aibum.local.datetime.square.CalendarCellView
         style="@style/CalendarCell.CalendarDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <com.uwo.tools.aibum.local.square.CalendarCellView
+    <com.uwo.tools.aibum.local.datetime.square.CalendarCellView
         style="@style/CalendarCell.CalendarDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-</com.uwo.tools.aibum.local.square.CalendarRowView>
+</com.uwo.tools.aibum.local.datetime.square.CalendarRowView>

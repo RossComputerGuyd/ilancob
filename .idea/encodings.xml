@@ -1,32 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/GoogleDateTimePickers/libs/android-support-v4.jar" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/java/com/uwo/tools/aibum/local/datetime/google/picker/AccessibleLinearLayout.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/java/com/uwo/tools/aibum/local/datetime/google/picker/AccessibleTextView.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/java/com/uwo/tools/aibum/local/datetime/google/picker/TouchExplorationHelper.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/java/com/uwo/tools/aibum/local/datetime/google/picker/Utils.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/java/com/uwo/tools/aibum/local/datetime/google/picker/date/AccessibleDateAnimator.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/java/com/uwo/tools/aibum/local/datetime/google/picker/date/DatePickerController.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/java/com/uwo/tools/aibum/local/datetime/google/picker/date/DatePickerDialog.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/java/com/uwo/tools/aibum/local/datetime/google/picker/date/DayPickerView.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/java/com/uwo/tools/aibum/local/datetime/google/picker/date/SimpleMonthAdapter.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/java/com/uwo/tools/aibum/local/datetime/google/picker/date/SimpleMonthView.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/java/com/uwo/tools/aibum/local/datetime/google/picker/date/TextViewWithCircularIndicator.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/java/com/uwo/tools/aibum/local/datetime/google/picker/date/YearPickerView.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/java/com/uwo/tools/aibum/local/datetime/google/picker/time/AmPmCirclesView.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/java/com/uwo/tools/aibum/local/datetime/google/picker/time/CircleView.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/java/com/uwo/tools/aibum/local/datetime/google/picker/time/RadialPickerLayout.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/java/com/uwo/tools/aibum/local/datetime/google/picker/time/RadialSelectorView.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/java/com/uwo/tools/aibum/local/datetime/google/picker/time/RadialTextsView.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/java/com/uwo/tools/aibum/local/datetime/google/picker/time/TimePickerDialog.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/res/menu/menu_google_main.xml" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_date.png" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_left.png" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_right.png" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_time.png" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main_google.xml" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/hint.xml" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/menu/menu_google_main.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/assets/robotothin.ttf" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/java/com/uwo/tools/aibum/local/player/InteractivePlayerActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/java/com/uwo/tools/aibum/local/player/interactive/InteractivePlayerView.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/java/com/uwo/tools/aibum/local/player/interactive/OnActionClickedListener.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/res/drawable-hdpi/blurbg.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/res/drawable-hdpi/icon_arrow_down.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/res/drawable-hdpi/icon_back.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/res/drawable-hdpi/icon_forward.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/res/drawable-hdpi/icon_share.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/res/drawable-hdpi/imagetest.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/res/drawable-hdpi/like_selected.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/res/drawable-hdpi/like_unselected.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/res/drawable-hdpi/pause.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/res/drawable-hdpi/play.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/res/drawable-hdpi/replay_selected.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/res/drawable-hdpi/replay_unselected.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/res/drawable-hdpi/shuffle_selected.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/res/drawable-hdpi/shuffle_unselected.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/res/drawable/circle.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/res/layout/activity_interactive_player.xml" charset="UTF-8" />
   </component>
 </project>

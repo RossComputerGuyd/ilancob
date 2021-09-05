@@ -12,16 +12,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.uwo.tools.aibum.R;
+import com.uwo.tools.aibum.cropper.MyCropperActivity;
+import com.uwo.tools.aibum.cropper2.SimpleCropperActivity;
 import com.uwo.tools.aibum.imagescan.ScanMainActivity;
 import com.uwo.tools.aibum.local.basic.BasicActivity;
-import com.uwo.tools.aibum.local.card.CalendarCardActivity;
+import com.uwo.tools.aibum.local.datetime.card.CalendarCardActivity;
 import com.uwo.tools.aibum.local.datetime.google.MainGoogleActivity;
 import com.uwo.tools.aibum.local.dialog.DialogMainActivity;
-import com.uwo.tools.aibum.local.square.SampleTimesSquareActivity;
-import com.uwo.tools.aibum.utils.ActionUtils;
-import com.uwo.tools.aibum.utils.DialogUtils;
-import com.uwo.tools.aibum.utils.ImageUriUtils;
-import com.uwo.tools.aibum.utils.StaticCode;
+import com.uwo.tools.aibum.local.player.InteractivePlayerActivity;
+import com.uwo.tools.aibum.local.datetime.square.SampleTimesSquareActivity;
+import com.uwo.tools.aibum.local.utils.ActionUtils;
+import com.uwo.tools.aibum.local.utils.DialogUtils;
+import com.uwo.tools.aibum.local.utils.ImageUriUtils;
+import com.uwo.tools.aibum.local.utils.StaticCode;
 
 import java.io.File;
 
@@ -32,7 +35,7 @@ import java.io.File;
  */
 public class LocalActivity extends BasicActivity implements View.OnClickListener {
 
-    private Button btnAlbum, btnScan, btnMap, btnDialog, btnDateTime;
+    private Button btnAlbum, btnScan, btnImageCropper, btnMap, btnDialog, btnDateTime, btnPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,12 +55,16 @@ public class LocalActivity extends BasicActivity implements View.OnClickListener
         btnAlbum.setOnClickListener(this);
         btnScan = (Button) findViewById(R.id.btnScan);
         btnScan.setOnClickListener(this);
+        btnImageCropper = (Button) findViewById(R.id.btnImageCropper);
+        btnImageCropper.setOnClickListener(this);
         btnMap = (Button) findViewById(R.id.btnMap);
         btnMap.setOnClickListener(this);
         btnDialog = (Button) findViewById(R.id.btnDialog);
         btnDialog.setOnClickListener(this);
         btnDateTime = (Button) findViewById(R.id.btnDateTime);
         btnDateTime.setOnClickListener(this);
+        btnPlayer = (Button) findViewById(R.id.btnPlayer);
+        btnPlayer.setOnClickListener(this);
     }
 
     /**
@@ -79,6 +86,9 @@ public class LocalActivity extends BasicActivity implements View.OnClickListener
             case R.id.btnScan:
                 DialogUtils.createListDialog(this, this.getResources().getString(R.string.selectSCanType), this.getResources().getStringArray(R.array.selectSCanType), new ItemClickListener(StaticCode.SELECT_BUTTON_STATE_SCAN));
                 break;
+            case R.id.btnImageCropper:
+                DialogUtils.createListDialog(this, this.getResources().getString(R.string.selectImageCropperType), this.getResources().getStringArray(R.array.selectImageCropperType), new ItemClickListener(StaticCode.SELECT_BUTTON_STATE_CROPPER));
+                break;
             case R.id.btnMap:
                 break;
             case R.id.btnDialog:
@@ -88,6 +98,9 @@ public class LocalActivity extends BasicActivity implements View.OnClickListener
                 break;
             case R.id.btnDateTime:
                 DialogUtils.createListDialog(this, this.getResources().getString(R.string.selectDateType), this.getResources().getStringArray(R.array.selectDateType), new ItemClickListener(StaticCode.SELECT_BUTTON_STATE_DATE));
+                break;
+            case R.id.btnPlayer:
+                DialogUtils.createListDialog(this, this.getResources().getString(R.string.selectPlayerType), this.getResources().getStringArray(R.array.selectPlayerType), new ItemClickListener(StaticCode.SELECT_BUTTON_STATE_PLAYER));
                 break;
         }
     }
@@ -110,6 +123,15 @@ public class LocalActivity extends BasicActivity implements View.OnClickListener
                     case 1:
                         Intent intent = new Intent(LocalActivity.this, ScanMainActivity.class);
                         startActivity(intent);
+                        break;
+                }
+            } else if (state == StaticCode.SELECT_BUTTON_STATE_CROPPER) {
+                switch (which) {
+                    case 0:
+                        SimpleCropperActivity.actionStart(LocalActivity.this);
+                        break;
+                    case 1:
+                        MyCropperActivity.actionStart(LocalActivity.this);
                         break;
                 }
             } else if (state == StaticCode.SELECT_BUTTON_STATE_SCAN) {
@@ -153,6 +175,14 @@ public class LocalActivity extends BasicActivity implements View.OnClickListener
                         break;
                     case 5:
                         MainGoogleActivity.actionStart(LocalActivity.this);
+                        break;
+                }
+            }
+
+            if (state == StaticCode.SELECT_BUTTON_STATE_PLAYER) {
+                switch (which) {
+                    case 0:
+                        InteractivePlayerActivity.actionStart(LocalActivity.this);
                         break;
                 }
             }
