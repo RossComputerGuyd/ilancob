@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/C:/Users/SRain/Desktop/GitHub_Demo/progress/android-square-progressbar-master/android-square-progressbar-master/squareprogressbar/build/intermediates/bundles/debug/res/values/values.xml -->
+    <eat-comment/>
+    <string name="app_name">android-square-progressbar</string>
+    <string name="description">That&amp;apos;s the image to draw the progressbar around.</string>
+</resources>

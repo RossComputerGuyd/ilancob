@@ -18,4 +18,7 @@
     <color name="red">#ff0000</color>
     <color name="red_1">#E70012</color>
     <color name="green_forlist">#49BA52</color>
+
+    <color name="floating_action_button_bg">#D94818</color>
+    <color name="floating_action_button_pressed_bg">#212121</color>
 </resources>

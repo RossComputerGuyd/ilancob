@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/AVLoadProessLib/AVLoadProessLib.iml" filepath="$PROJECT_DIR$/AVLoadProessLib/AVLoadProessLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/AsynchronousLoadImage/AsynchronousLoadImage.iml" filepath="$PROJECT_DIR$/AsynchronousLoadImage/AsynchronousLoadImage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DatePicker/DatePicker.iml" filepath="$PROJECT_DIR$/DatePicker/DatePicker.iml" />
       <module fileurl="file://$PROJECT_DIR$/FaceCrop-Lib/FaceCrop-Lib.iml" filepath="$PROJECT_DIR$/FaceCrop-Lib/FaceCrop-Lib.iml" />
       <module fileurl="file://$PROJECT_DIR$/GoogleDateTimePickers/GoogleDateTimePickers.iml" filepath="$PROJECT_DIR$/GoogleDateTimePickers/GoogleDateTimePickers.iml" />
       <module fileurl="file://$PROJECT_DIR$/ImageAibumTools/ImageAibumTools.iml" filepath="$PROJECT_DIR$/ImageAibumTools/ImageAibumTools.iml" />
@@ -15,8 +17,12 @@
       <module fileurl="file://$PROJECT_DIR$/cropper/cropper.iml" filepath="$PROJECT_DIR$/cropper/cropper.iml" />
       <module fileurl="file://$PROJECT_DIR$/imageLib/imageLib.iml" filepath="$PROJECT_DIR$/imageLib/imageLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/imageUriLib/imageUriLib.iml" filepath="$PROJECT_DIR$/imageUriLib/imageUriLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
       <module fileurl="file://$PROJECT_DIR$/roundImageLib/roundImageLib.iml" filepath="$PROJECT_DIR$/roundImageLib/roundImageLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/simplecropview/simplecropview.iml" filepath="$PROJECT_DIR$/simplecropview/simplecropview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/squareprogressbar/squareprogressbar.iml" filepath="$PROJECT_DIR$/squareprogressbar/squareprogressbar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sublimepickerlibrary/sublimepickerlibrary.iml" filepath="$PROJECT_DIR$/sublimepickerlibrary/sublimepickerlibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/velocimeterlibrary/velocimeterlibrary.iml" filepath="$PROJECT_DIR$/velocimeterlibrary/velocimeterlibrary.iml" />
     </modules>
   </component>
 </project>

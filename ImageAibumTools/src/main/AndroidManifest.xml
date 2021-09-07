@@ -9,12 +9,14 @@
     <!--android:name="android.hardware.camera"-->
     <!--android:required="false" />-->
 
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-feature android:name="android.hardware.camera.autofocus" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <!-- 往SDCard写入数据权限 -->
-    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!-- 往SDCard读取数据权限 -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
@@ -82,11 +84,11 @@
         <activity android:name=".local.dialog.DialogMainActivity" />
 
         <!--DateTime-->
-        <activity android:name=".local.DateDialogActivity" />
+        <activity android:name=".local.datetime.DateDialogActivity" />
 
-        <activity android:name=".local.SlideActivity" />
+        <activity android:name=".local.datetime.SlideActivity" />
 
-        <activity android:name=".local.DateTimePickerActivity" />
+        <activity android:name=".local.datetime.DateTimePickerActivity" />
 
         <activity android:name=".local.datetime.card.CalendarCardActivity" />
         <activity android:name=".local.datetime.card.Sample1" />
@@ -99,10 +101,30 @@
         <activity android:name=".local.datetime.google.MainGoogleActivity" />
         <activity android:name=".local.datetime.google.Hint" />
 
+        <activity android:name=".local.datetime.aige.AigeMainActivity" />
+
         <activity android:name=".cropper2.SimpleCropperActivity" />
         <activity android:name=".cropper2.ResultActivity" />
 
         <activity android:name=".local.player.InteractivePlayerActivity" />
+
+        <activity android:name=".local.progressbar.VelocimeterActivity" />
+        <activity
+            android:name=".local.progressbar.squareprobar.SquprobarMainActivity"
+            android:theme="@android:style/Theme.Holo.Light" />
+        <activity
+            android:name=".local.progressbar.avloading.AVLoadMainActivity"
+            android:theme="@style/AVLoadTheme" />
+
+        <activity android:name=".local.skin.SinkMainActivity" />
+
+        <!--友盟-->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5694b54be0f55a0df80019c6" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="main" />
     </application>
 
 </manifest>

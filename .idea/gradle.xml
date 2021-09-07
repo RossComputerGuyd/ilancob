@@ -9,7 +9,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/AVLoadProessLib" />
             <option value="$PROJECT_DIR$/AsynchronousLoadImage" />
+            <option value="$PROJECT_DIR$/DatePicker" />
             <option value="$PROJECT_DIR$/FaceCrop-Lib" />
             <option value="$PROJECT_DIR$/GoogleDateTimePickers" />
             <option value="$PROJECT_DIR$/ImageAibumTools" />
@@ -21,8 +23,12 @@
             <option value="$PROJECT_DIR$/cropper" />
             <option value="$PROJECT_DIR$/imageLib" />
             <option value="$PROJECT_DIR$/imageUriLib" />
+            <option value="$PROJECT_DIR$/library" />
             <option value="$PROJECT_DIR$/roundImageLib" />
             <option value="$PROJECT_DIR$/simplecropview" />
+            <option value="$PROJECT_DIR$/squareprogressbar" />
+            <option value="$PROJECT_DIR$/sublimepickerlibrary" />
+            <option value="$PROJECT_DIR$/velocimeterlibrary" />
           </set>
         </option>
       </GradleProjectSettings>

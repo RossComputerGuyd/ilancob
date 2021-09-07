@@ -71,8 +71,12 @@
             android:name=".uninversa.activity.ComplexImageActivity"
             android:label="@string/ac_name_complex" />
 
+        <activity
+            android:name=".adate.Sampler"
+            android:theme="@style/SublimeAppTheme" />
+
         <!-- Widget -->
-        <receiver android:name=".uninversa.widget.UILWidgetProvider" >
+        <receiver android:name=".uninversa.widget.UILWidgetProvider">
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/widget_provider" />

@@ -10,6 +10,8 @@
     <string name="selectImageCropperType">选择图片剪切方式</string>
     <string name="selectDateType">日期/时间</string>
     <string name="selectPlayerType">播放器</string>
+    <string name="selectProgressType">进度条</string>
+    <string name="selectSkinType">皮肤</string>
     <string name="map">地图</string>
     <string name="dialog">对话框</string>
 
@@ -42,10 +44,23 @@
         <item>CalendarCard</item>
         <item>Square</item>
         <item>Google</item>
+        <item>Aige</item>
+        <item>SublimePicker</item>
+        <item>SublimePicker1</item>
     </array>
 
     <array name="selectPlayerType">
         <item>InteractivePlayerView</item>
+    </array>
+
+    <array name="selectProgressType">
+        <item>velocimeter-view</item>
+        <item>图片边框加载条</item>
+        <item>AVLoading</item>
+    </array>
+
+    <array name="selectSkinType">
+        <item>selectSkinType</item>
     </array>
 
     <string name="sans_serif" translatable="false">sans-serif</string>
@@ -120,4 +135,48 @@
 
     <!-- DO NOT TRANSLATE -->
     <string name="day_of_week_label_typeface">sans-serif</string>
+
+    <string name="progress">Progress:</string>
+    <string name="width">Width:</string>
+    <string name="opacity">Opacity</string>
+
+    <!-- navigation drawer -->
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+
+    <string-array name="drawer_titel">
+        <item>Colour</item>
+        <item>Subitem One</item>
+        <item>Subitem Two</item>
+        <item>Style</item>
+        <item>Subitem Three</item>
+        <item>Title Three</item>
+        <item>Subitem Four</item>
+        <item>Subitem Five</item>
+    </string-array>
+    <string-array name="drawer_descriptions">
+        <item></item>
+        <item>Description One</item>
+        <item>Description Two</item>
+        <item></item>
+        <item>Description Three</item>
+        <item></item>
+        <item>Description Four</item>
+        <item>Description Five</item>
+    </string-array>
+    <string-array name="alignstyle">
+        <item>CENTER</item>
+        <item>RIGHT</item>
+        <item>LEFT</item>
+    </string-array>
+
+    <string name="signer_pro">by Yannick Signer (halcyon.ch)</string>
+    <string name="img_desc">main image of the progressbar</string>
+    <string name="defaultrgbvalue">(000,000,000)</string>
+    <string name="green_">Green:</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="blue_">Blue:</string>
+    <string name="rgb_colour_">RGB COLOUR:</string>
+    <string name="red_">Red:</string>
 </resources>

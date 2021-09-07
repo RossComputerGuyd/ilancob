@@ -10,17 +10,26 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.uwo.tools.aibum.R;
 import com.uwo.tools.aibum.cropper.MyCropperActivity;
 import com.uwo.tools.aibum.cropper2.SimpleCropperActivity;
 import com.uwo.tools.aibum.imagescan.ScanMainActivity;
 import com.uwo.tools.aibum.local.basic.BasicActivity;
+import com.uwo.tools.aibum.local.datetime.DateDialogActivity;
+import com.uwo.tools.aibum.local.datetime.DateTimePickerActivity;
+import com.uwo.tools.aibum.local.datetime.SlideActivity;
+import com.uwo.tools.aibum.local.datetime.aige.AigeMainActivity;
 import com.uwo.tools.aibum.local.datetime.card.CalendarCardActivity;
 import com.uwo.tools.aibum.local.datetime.google.MainGoogleActivity;
+import com.uwo.tools.aibum.local.datetime.square.SampleTimesSquareActivity;
 import com.uwo.tools.aibum.local.dialog.DialogMainActivity;
 import com.uwo.tools.aibum.local.player.InteractivePlayerActivity;
-import com.uwo.tools.aibum.local.datetime.square.SampleTimesSquareActivity;
+import com.uwo.tools.aibum.local.progressbar.VelocimeterActivity;
+import com.uwo.tools.aibum.local.progressbar.avloading.AVLoadMainActivity;
+import com.uwo.tools.aibum.local.progressbar.squareprobar.SquprobarMainActivity;
+import com.uwo.tools.aibum.local.skin.SinkMainActivity;
 import com.uwo.tools.aibum.local.utils.ActionUtils;
 import com.uwo.tools.aibum.local.utils.DialogUtils;
 import com.uwo.tools.aibum.local.utils.ImageUriUtils;
@@ -35,7 +44,7 @@ import java.io.File;
  */
 public class LocalActivity extends BasicActivity implements View.OnClickListener {
 
-    private Button btnAlbum, btnScan, btnImageCropper, btnMap, btnDialog, btnDateTime, btnPlayer;
+    private Button btnAlbum, btnScan, btnImageCropper, btnMap, btnDialog, btnDateTime, btnPlayer, btnProgress, btnSkin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +74,10 @@ public class LocalActivity extends BasicActivity implements View.OnClickListener
         btnDateTime.setOnClickListener(this);
         btnPlayer = (Button) findViewById(R.id.btnPlayer);
         btnPlayer.setOnClickListener(this);
+        btnProgress = (Button) findViewById(R.id.btnProgress);
+        btnProgress.setOnClickListener(this);
+        btnSkin = (Button) findViewById(R.id.btnSkin);
+        btnSkin.setOnClickListener(this);
     }
 
     /**
@@ -101,6 +114,12 @@ public class LocalActivity extends BasicActivity implements View.OnClickListener
                 break;
             case R.id.btnPlayer:
                 DialogUtils.createListDialog(this, this.getResources().getString(R.string.selectPlayerType), this.getResources().getStringArray(R.array.selectPlayerType), new ItemClickListener(StaticCode.SELECT_BUTTON_STATE_PLAYER));
+                break;
+            case R.id.btnProgress:
+                DialogUtils.createListDialog(this, this.getResources().getString(R.string.selectProgressType), this.getResources().getStringArray(R.array.selectProgressType), new ItemClickListener(StaticCode.SELECT_BUTTON_STATE_PROGRESS));
+                break;
+            case R.id.btnSkin:
+                DialogUtils.createListDialog(this, this.getResources().getString(R.string.selectSkinType), this.getResources().getStringArray(R.array.selectSkinType), new ItemClickListener(StaticCode.SELECT_BUTTON_STATE_SKIN));
                 break;
         }
     }
@@ -176,6 +195,14 @@ public class LocalActivity extends BasicActivity implements View.OnClickListener
                     case 5:
                         MainGoogleActivity.actionStart(LocalActivity.this);
                         break;
+                    case 6:
+                        AigeMainActivity.actionStart(LocalActivity.this);
+                        break;
+                    case 7:
+                        Toast.makeText(LocalActivity.this, "此demo在AsynchronousLoadImage中", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 8:
+                        break;
                 }
             }
 
@@ -183,6 +210,28 @@ public class LocalActivity extends BasicActivity implements View.OnClickListener
                 switch (which) {
                     case 0:
                         InteractivePlayerActivity.actionStart(LocalActivity.this);
+                        break;
+                }
+            }
+
+            if (state == StaticCode.SELECT_BUTTON_STATE_PROGRESS) {
+                switch (which) {
+                    case 0:
+                        VelocimeterActivity.actionStart(LocalActivity.this);
+                        break;
+                    case 1:
+                        SquprobarMainActivity.actionStart(LocalActivity.this);
+                        break;
+                    case 2:
+                        AVLoadMainActivity.actionStart(LocalActivity.this);
+                        break;
+                }
+            }
+
+            if (state == StaticCode.SELECT_BUTTON_STATE_SKIN) {
+                switch (which) {
+                    case 0:
+                        SinkMainActivity.actionStart(LocalActivity.this);
                         break;
                 }
             }

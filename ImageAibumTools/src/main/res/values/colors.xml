@@ -121,4 +121,26 @@
     <color name="menu_bg">#FFFFFB</color>
 
     <color name="color_red">#F44336</color>
+
+    <color name="floating_action_button_bg">#D94818</color>
+    <color name="floating_action_button_pressed_bg">#212121</color>
+
+    <color name="inside_progress">#ff6c4d70</color>
+    <color name="external_progress">#9C27B0</color>
+    <color name="bottom_velocimeter">#e515171d</color>
+    <color name="internal_velocimeter">#ffb4b4b4</color>
+    <color name="needle">#6200EA</color>
+    <color name="digital_number">#ffdcefff</color>
+
+    <color name="day_btn_color">#E61ABD</color>
+    <color name="day_background">#38F709</color>
+
+    <color name="night_btn_color">#000000</color>
+    <color name="night_background">#FFFFFF</color>
+
+    <color name="lvHeaderTextColor">#168686</color>
+    <color name="primaryTextColor">#333333</color>
+    <color name="secondaryTextColor">#777777</color>
+    <color name="lvHeaderDividerColor">#168686</color>
+    <color name="lvDividerColor">#FFFFFF</color>
 </resources>

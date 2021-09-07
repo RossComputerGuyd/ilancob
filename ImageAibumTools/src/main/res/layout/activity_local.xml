@@ -54,6 +54,16 @@
                 style="@style/ButtonStyle"
                 android:text="@string/selectPlayerType" />
 
+            <Button
+                android:id="@+id/btnProgress"
+                style="@style/ButtonStyle"
+                android:text="@string/selectProgressType" />
+
+            <Button
+                android:id="@+id/btnSkin"
+                style="@style/ButtonStyle"
+                android:text="@string/selectSkinType" />
+
             <ImageView
                 android:id="@+id/image"
                 android:layout_width="match_parent"

@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.uwo.tools.load.adate.Sampler;
 import com.uwo.tools.load.fresco.FrescoMainActivity;
 import com.uwo.tools.load.hy.HYMainActivity;
 import com.uwo.tools.load.lazy.LazyMainActivity;
@@ -52,6 +53,7 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
         adapter.add("图片加载，包括ListView显示图片加载使用");
         adapter.add("ASimpleCache");
         adapter.add("图片异步加载缓存类");
+        adapter.add("弹出框");
         ListView listView = (ListView) view.findViewById(R.id.listview);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(this);
@@ -90,6 +92,9 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
                 break;
             case 9:
                 cls = HomeActivity.class;
+                break;
+            case 10:
+                cls = Sampler.class;
                 break;
         }
         staActivity(cls);

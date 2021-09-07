@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.uwo.tools.aibum"
-        minSdkVersion 8
+        minSdkVersion 16
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -19,14 +19,26 @@ android {
     }
 }
 
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    //    compile 'com.android.support:appcompat-v7:23.0.1'
+    compile 'com.android.support:appcompat-v7:23.0.1'
     compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.nineoldandroids:library:2.4.0'
     compile files('libs/android-support-v7-recyclerview.jar')
     compile files('libs/universalimageloaderlibrary1.9.0.jar')
     compile files('libs/volley.jar')
     compile project(':cropper')
     compile project(':imageUriLib')
     compile project(':simplecropview')
+    compile project(':DatePicker')
+    compile project(':velocimeterlibrary')
+    compile 'com.umeng.analytics:analytics:latest.integration'
+    compile files('libs/umeng-analytics-v5.6.4.jar')
+    compile project(':squareprogressbar')
 }
