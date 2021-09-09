@@ -11,4 +11,5 @@ public class StaticCode {
     public static int SELECT_BUTTON_STATE_PLAYER = 1004;
     public static int SELECT_BUTTON_STATE_PROGRESS = 1005;
     public static int SELECT_BUTTON_STATE_SKIN = 1006;
+    public static int SELECT_BUTTON_STATE_GUIDE = 1007;
 }

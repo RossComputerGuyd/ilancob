@@ -14,6 +14,7 @@
     <string name="selectSkinType">皮肤</string>
     <string name="map">地图</string>
     <string name="dialog">对话框</string>
+    <string name="selectGuideType">引导页</string>
 
     <string name="startDateTime">开始日期时间</string>
     <string name="endDateTime">结束日期时间</string>
@@ -46,7 +47,8 @@
         <item>Google</item>
         <item>Aige</item>
         <item>SublimePicker</item>
-        <item>SublimePicker1</item>
+        <item>CicleTimer倒计时</item>
+        <item>CountdownWidget</item>
     </array>
 
     <array name="selectPlayerType">
@@ -57,6 +59,15 @@
         <item>velocimeter-view</item>
         <item>图片边框加载条</item>
         <item>AVLoading</item>
+        <item>WaveView</item>
+        <item>WaveView2</item>
+        <item>水滴加载条</item>
+        <item>CircleProgress实现自定义loading动画效果</item>
+        <item>LoadIndicators进度条</item>
+    </array>
+
+    <array name="selectGuideType">
+        <item>ProductTour</item>
     </array>
 
     <array name="selectSkinType">
@@ -179,4 +190,28 @@
     <string name="blue_">Blue:</string>
     <string name="rgb_colour_">RGB COLOUR:</string>
     <string name="red_">Red:</string>
+
+    <string name="border">Border</string>
+    <string name="shape">Shape</string>
+    <string name="circle">Circle</string>
+    <string name="square">Square</string>
+    <string name="color">Color</string>
+    <string name="red">Red</string>
+    <string name="green">Green</string>
+    <string name="blue">Blue</string>
+    <string name="defaultColor">Default</string>
+
+    <string name="btn_change_color">Change the color</string>
+
+    <string name="button_product_tour">product tour</string>
+
+    <string name="welcom_head_01">Spreadsheets on the go</string>
+    <string name="welcom_content_01">Get stuff done with or without an internet connection.</string>
+    <string name="welcom_head_02">Share and edit together</string>
+    <string name="welcom_content_02">Write on your own or invite more people to contribute.</string>
+    <string name="welcom_head_03">Automatically save to the web</string>
+    <string name="welcom_content_03">Never lose your progress, so you can keep working from any computer or device.</string>
+    <string name="welcom_head_04">Edit Excel spreadsheets</string>
+    <string name="welcom_content_04">Open, edit, and save Excel files - all within Sheets.</string>
+
 </resources>

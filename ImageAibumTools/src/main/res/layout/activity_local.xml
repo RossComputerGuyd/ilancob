@@ -64,6 +64,11 @@
                 style="@style/ButtonStyle"
                 android:text="@string/selectSkinType" />
 
+            <Button
+                android:id="@+id/btnGuide"
+                style="@style/ButtonStyle"
+                android:text="@string/selectGuideType" />
+
             <ImageView
                 android:id="@+id/image"
                 android:layout_width="match_parent"

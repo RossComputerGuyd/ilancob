@@ -32,4 +32,13 @@ public class MyApplication extends Application {
 	public static Context getCtx() {
 		return instance;
 	}
+
+//	private static final String PROPERTY_ID = "UA-47453015-3";
+//	synchronized Tracker getTracker() {
+//
+//		GoogleAnalytics analytics = GoogleAnalytics.getInstance(this);
+//		Tracker t = analytics.newTracker(PROPERTY_ID);
+//
+//		return t;
+//	}
 }

@@ -22,13 +22,21 @@ import com.uwo.tools.aibum.local.datetime.DateTimePickerActivity;
 import com.uwo.tools.aibum.local.datetime.SlideActivity;
 import com.uwo.tools.aibum.local.datetime.aige.AigeMainActivity;
 import com.uwo.tools.aibum.local.datetime.card.CalendarCardActivity;
+import com.uwo.tools.aibum.local.datetime.circle.CircleMainActivity;
+import com.uwo.tools.aibum.local.datetime.countdownview.CuntdownMainActivity;
 import com.uwo.tools.aibum.local.datetime.google.MainGoogleActivity;
 import com.uwo.tools.aibum.local.datetime.square.SampleTimesSquareActivity;
 import com.uwo.tools.aibum.local.dialog.DialogMainActivity;
+import com.uwo.tools.aibum.local.guide.producttour.SplashActivity;
 import com.uwo.tools.aibum.local.player.InteractivePlayerActivity;
 import com.uwo.tools.aibum.local.progressbar.VelocimeterActivity;
 import com.uwo.tools.aibum.local.progressbar.avloading.AVLoadMainActivity;
+import com.uwo.tools.aibum.local.progressbar.circleprogress.CircleProgressActivity;
+import com.uwo.tools.aibum.local.progressbar.loadindicators.LoaderMainActivity;
 import com.uwo.tools.aibum.local.progressbar.squareprobar.SquprobarMainActivity;
+import com.uwo.tools.aibum.local.progressbar.waveswipe.WaveSwipeMainActivity;
+import com.uwo.tools.aibum.local.progressbar.waveview.WaveMainActivity;
+import com.uwo.tools.aibum.local.progressbar.waveview.WaveMainActivity2;
 import com.uwo.tools.aibum.local.skin.SinkMainActivity;
 import com.uwo.tools.aibum.local.utils.ActionUtils;
 import com.uwo.tools.aibum.local.utils.DialogUtils;
@@ -44,7 +52,7 @@ import java.io.File;
  */
 public class LocalActivity extends BasicActivity implements View.OnClickListener {
 
-    private Button btnAlbum, btnScan, btnImageCropper, btnMap, btnDialog, btnDateTime, btnPlayer, btnProgress, btnSkin;
+    private Button btnAlbum, btnScan, btnImageCropper, btnMap, btnDialog, btnDateTime, btnPlayer, btnProgress, btnSkin, btnGuide;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +86,8 @@ public class LocalActivity extends BasicActivity implements View.OnClickListener
         btnProgress.setOnClickListener(this);
         btnSkin = (Button) findViewById(R.id.btnSkin);
         btnSkin.setOnClickListener(this);
+        btnGuide = (Button) findViewById(R.id.btnGuide);
+        btnGuide.setOnClickListener(this);
     }
 
     /**
@@ -120,6 +130,9 @@ public class LocalActivity extends BasicActivity implements View.OnClickListener
                 break;
             case R.id.btnSkin:
                 DialogUtils.createListDialog(this, this.getResources().getString(R.string.selectSkinType), this.getResources().getStringArray(R.array.selectSkinType), new ItemClickListener(StaticCode.SELECT_BUTTON_STATE_SKIN));
+                break;
+            case R.id.btnGuide:
+                DialogUtils.createListDialog(this, this.getResources().getString(R.string.selectGuideType), this.getResources().getStringArray(R.array.selectGuideType), new ItemClickListener(StaticCode.SELECT_BUTTON_STATE_GUIDE));
                 break;
         }
     }
@@ -202,6 +215,10 @@ public class LocalActivity extends BasicActivity implements View.OnClickListener
                         Toast.makeText(LocalActivity.this, "此demo在AsynchronousLoadImage中", Toast.LENGTH_SHORT).show();
                         break;
                     case 8:
+                        CircleMainActivity.actionStart(LocalActivity.this);
+                        break;
+                    case 9:
+                        CuntdownMainActivity.actionStart(LocalActivity.this);
                         break;
                 }
             }
@@ -225,6 +242,25 @@ public class LocalActivity extends BasicActivity implements View.OnClickListener
                     case 2:
                         AVLoadMainActivity.actionStart(LocalActivity.this);
                         break;
+                    case 3:
+                        WaveMainActivity.actionStart(LocalActivity.this);
+                        break;
+                    case 4:
+                        WaveMainActivity2.actionStart(LocalActivity.this);
+                        break;
+
+                    case 5:
+                        WaveSwipeMainActivity.actionStart(LocalActivity.this);
+                        break;
+
+                    case 6:
+                        LoaderMainActivity.actionStart(LocalActivity.this);
+                        break;
+
+                    case 7:
+                        CircleProgressActivity.actionStart(LocalActivity.this);
+                        break;
+
                 }
             }
 
@@ -232,6 +268,14 @@ public class LocalActivity extends BasicActivity implements View.OnClickListener
                 switch (which) {
                     case 0:
                         SinkMainActivity.actionStart(LocalActivity.this);
+                        break;
+                }
+            }
+
+            if (state == StaticCode.SELECT_BUTTON_STATE_GUIDE) {
+                switch (which) {
+                    case 0:
+                        SplashActivity.actionStart(LocalActivity.this);
                         break;
                 }
             }

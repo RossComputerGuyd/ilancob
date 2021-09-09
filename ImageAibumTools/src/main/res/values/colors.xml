@@ -143,4 +143,12 @@
     <color name="secondaryTextColor">#777777</color>
     <color name="lvHeaderDividerColor">#168686</color>
     <color name="lvDividerColor">#FFFFFF</color>
+
+    <color name="holo_purple">#ffaa66cc</color>
+
+    <color name="primary">#FF5930</color>
+    <color name="primary_dark">#B23E22</color>
+
+    <color name="text_selected">#888</color>
+
 </resources>

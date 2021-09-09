@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AVLoadProessLib/AVLoadProessLib.iml" filepath="$PROJECT_DIR$/AVLoadProessLib/AVLoadProessLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/AsynchronousLoadImage/AsynchronousLoadImage.iml" filepath="$PROJECT_DIR$/AsynchronousLoadImage/AsynchronousLoadImage.iml" />
       <module fileurl="file://$PROJECT_DIR$/DatePicker/DatePicker.iml" filepath="$PROJECT_DIR$/DatePicker/DatePicker.iml" />
       <module fileurl="file://$PROJECT_DIR$/FaceCrop-Lib/FaceCrop-Lib.iml" filepath="$PROJECT_DIR$/FaceCrop-Lib/FaceCrop-Lib.iml" />

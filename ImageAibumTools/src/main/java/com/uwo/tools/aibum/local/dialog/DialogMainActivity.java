@@ -59,8 +59,7 @@ public class DialogMainActivity extends Activity implements LoginDialogFragment.
             // To make it fullscreen, use the 'content' root view as the
             // container
             // for the fragment, which is always the root view for the activity
-            transaction.replace(R.id.id_ly, newFragment)
-                    .commit();
+            transaction.replace(R.id.id_ly, newFragment).commit();
         }
     }
 
@@ -84,8 +83,7 @@ public class DialogMainActivity extends Activity implements LoginDialogFragment.
 
     @Override
     public void onLoginInputComplete(String username, String password) {
-        Toast.makeText(this, "帐号：" + username + ",  密码 :" + password,
-                Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "帐号：" + username + ",  密码 :" + password, Toast.LENGTH_SHORT).show();
     }
 
 }

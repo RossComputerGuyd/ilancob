@@ -103,6 +103,10 @@
 
         <activity android:name=".local.datetime.aige.AigeMainActivity" />
 
+        <activity android:name=".local.datetime.circle.CircleMainActivity" />
+
+        <activity android:name=".local.datetime.countdownview.CuntdownMainActivity" />
+
         <activity android:name=".cropper2.SimpleCropperActivity" />
         <activity android:name=".cropper2.ResultActivity" />
 
@@ -115,8 +119,26 @@
         <activity
             android:name=".local.progressbar.avloading.AVLoadMainActivity"
             android:theme="@style/AVLoadTheme" />
+        <activity android:name=".local.progressbar.waveview.WaveMainActivity" />
+        <activity android:name=".local.progressbar.waveview.WaveMainActivity2" />
+
+        <activity android:name=".local.progressbar.circleprogress.CircleProgressActivity" />
+
+        <activity android:name=".local.progressbar.loadindicators.LoaderMainActivity" />
+
+        <activity android:name=".local.progressbar.waveswipe.WaveSwipeMainActivity" />
 
         <activity android:name=".local.skin.SinkMainActivity" />
+
+        <activity android:name=".local.guide.producttour.ProductTourMainActivity" />
+        <activity android:name=".local.guide.producttour.ProductTourActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".local.guide.producttour.ProductTour2Activity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".local.guide.producttour.ProductTour3Activity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".local.guide.producttour.SplashActivity"
+            android:theme="@style/SplashTheme"/>
 
         <!--友盟-->
         <meta-data
