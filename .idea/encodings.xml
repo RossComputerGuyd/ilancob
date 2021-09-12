@@ -2,8 +2,11 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/ImageAibumTools/build.gradle" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/java/com/uwo/tools/aibum/local/fragment/MyFragmentActivity.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/java/com/uwo/tools/aibum/local/guide/producttour/ProductTourMainActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/java/com/uwo/tools/aibum/local/guide/producttour/SplashActivity.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/java/com/uwo/tools/aibum/local/progressbar/loadindicators/LoaderMainActivity.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/java/com/uwo/tools/aibum/local/progressbar/loadindicators/utils/LoaderView.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ImageAibumTools/src/main/java/com/uwo/tools/aibum/refresh/flyrefresh/SampleItemAnimator.java" charset="UTF-8" />
   </component>
 </project>

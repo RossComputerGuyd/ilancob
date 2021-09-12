@@ -213,5 +213,5 @@
     <string name="welcom_content_03">Never lose your progress, so you can keep working from any computer or device.</string>
     <string name="welcom_head_04">Edit Excel spreadsheets</string>
     <string name="welcom_content_04">Open, edit, and save Excel files - all within Sheets.</string>
-
+    <string name="action_search">Search</string>
 </resources>

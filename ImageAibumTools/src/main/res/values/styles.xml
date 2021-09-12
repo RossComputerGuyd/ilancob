@@ -167,6 +167,13 @@
         <item name="android:textColor">@android:color/white</item>
     </style>
 
+    <style name="FlyRefreshTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#00BCD4</item>
+        <item name="colorPrimaryDark">#0097A7</item>
+        <item name="colorAccent">#61B3DD</item>
+    </style>
+
     <!--
     <style name="listViewVerticalDivider" >
         <item name="android:layout_marginTop">@dimen/lvDividerMargin</item>

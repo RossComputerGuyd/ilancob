@@ -8,7 +8,15 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.uwo.tools.aibum.R;
 
+/**
+ * https://github.com/matrixxun/ProductTour
+ * ProductTour实现很帅气d引导页
+ */
 public class SplashActivity extends AppCompatActivity {
+
+    public static void actionStart(Activity activity) {
+        activity.startActivity(new Intent(activity, SplashActivity.class));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +40,5 @@ public class SplashActivity extends AppCompatActivity {
         }, 500);
     }
 
-    public static void actionStart(Activity activity) {
-        activity.startActivity(new Intent(activity, SplashActivity.class));
-    }
+
 }

@@ -11,7 +11,9 @@ import android.widget.Button;
 import com.uwo.tools.aibum.R;
 import com.uwo.tools.aibum.local.basic.BasicActivity;
 
-
+/**
+ * 
+ */
 //public class ProductTourMainActivity extends AppCompatActivity {
 public class ProductTourMainActivity extends BasicActivity {
     @Override

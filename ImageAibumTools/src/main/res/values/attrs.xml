@@ -147,4 +147,13 @@
         <attr name="loaderType" format="string" />
         <attr name="loaderFrameDelay" format="integer" />
     </declare-styleable>
+
+    <declare-styleable name="PullHeaderLayout">
+        <attr name="phl_header_height" format="dimension" />
+        <attr name="phl_header_expand_height" format="dimension" />
+        <attr name="phl_header_shrink_height" format="dimension" />
+        <attr name="phl_header" format="reference" />
+        <attr name="phl_content" format="reference" />
+        <attr name="phl_action" format="reference" />
+    </declare-styleable>
 </resources>
