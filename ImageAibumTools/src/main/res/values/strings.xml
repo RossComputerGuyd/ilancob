@@ -64,6 +64,7 @@
         <item>水滴加载条</item>
         <item>CircleProgress实现自定义loading动画效果</item>
         <item>LoadIndicators进度条</item>
+        <item>58同城加载动画</item>
     </array>
 
     <array name="selectGuideType">
@@ -205,13 +206,6 @@
 
     <string name="button_product_tour">product tour</string>
 
-    <string name="welcom_head_01">Spreadsheets on the go</string>
-    <string name="welcom_content_01">Get stuff done with or without an internet connection.</string>
-    <string name="welcom_head_02">Share and edit together</string>
-    <string name="welcom_content_02">Write on your own or invite more people to contribute.</string>
-    <string name="welcom_head_03">Automatically save to the web</string>
-    <string name="welcom_content_03">Never lose your progress, so you can keep working from any computer or device.</string>
-    <string name="welcom_head_04">Edit Excel spreadsheets</string>
-    <string name="welcom_content_04">Open, edit, and save Excel files - all within Sheets.</string>
-    <string name="action_search">Search</string>
+    <string name="title_activity_view_demo">ViewDemoActivity</string>
+    <string name="title_activity_dialog_demo">DialogDemoActivity</string>
 </resources>

@@ -27,12 +27,12 @@ import com.uwo.tools.aibum.local.datetime.countdownview.CuntdownMainActivity;
 import com.uwo.tools.aibum.local.datetime.google.MainGoogleActivity;
 import com.uwo.tools.aibum.local.datetime.square.SampleTimesSquareActivity;
 import com.uwo.tools.aibum.local.dialog.DialogMainActivity;
-import com.uwo.tools.aibum.local.guide.producttour.SplashActivity;
 import com.uwo.tools.aibum.local.player.InteractivePlayerActivity;
 import com.uwo.tools.aibum.local.progressbar.VelocimeterActivity;
 import com.uwo.tools.aibum.local.progressbar.avloading.AVLoadMainActivity;
 import com.uwo.tools.aibum.local.progressbar.circleprogress.CircleProgressActivity;
 import com.uwo.tools.aibum.local.progressbar.loadindicators.LoaderMainActivity;
+import com.uwo.tools.aibum.local.progressbar.shape.ShapeMainActivity;
 import com.uwo.tools.aibum.local.progressbar.squareprobar.SquprobarMainActivity;
 import com.uwo.tools.aibum.local.progressbar.waveswipe.WaveSwipeMainActivity;
 import com.uwo.tools.aibum.local.progressbar.waveview.WaveMainActivity;
@@ -261,6 +261,9 @@ public class LocalActivity extends BasicActivity implements View.OnClickListener
                         CircleProgressActivity.actionStart(LocalActivity.this);
                         break;
 
+                    case 8:
+                        ShapeMainActivity.actionStart(LocalActivity.this);
+                        break;
                 }
             }
 
@@ -272,13 +275,6 @@ public class LocalActivity extends BasicActivity implements View.OnClickListener
                 }
             }
 
-            if (state == StaticCode.SELECT_BUTTON_STATE_GUIDE) {
-                switch (which) {
-                    case 0:
-                        SplashActivity.actionStart(LocalActivity.this);
-                        break;
-                }
-            }
         }
     }
 

@@ -18,6 +18,7 @@
       <module fileurl="file://$PROJECT_DIR$/imageUriLib/imageUriLib.iml" filepath="$PROJECT_DIR$/imageUriLib/imageUriLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
       <module fileurl="file://$PROJECT_DIR$/roundImageLib/roundImageLib.iml" filepath="$PROJECT_DIR$/roundImageLib/roundImageLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shapeloading/shapeloading.iml" filepath="$PROJECT_DIR$/shapeloading/shapeloading.iml" />
       <module fileurl="file://$PROJECT_DIR$/simplecropview/simplecropview.iml" filepath="$PROJECT_DIR$/simplecropview/simplecropview.iml" />
       <module fileurl="file://$PROJECT_DIR$/squareprogressbar/squareprogressbar.iml" filepath="$PROJECT_DIR$/squareprogressbar/squareprogressbar.iml" />
       <module fileurl="file://$PROJECT_DIR$/sublimepickerlibrary/sublimepickerlibrary.iml" filepath="$PROJECT_DIR$/sublimepickerlibrary/sublimepickerlibrary.iml" />
