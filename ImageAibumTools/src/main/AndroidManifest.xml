@@ -130,13 +130,11 @@
 
         <activity android:name=".local.skin.SinkMainActivity" />
 
-        <activity
-            android:name=".local.guide.producttour.ProductTourActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-
         <activity android:name=".local.progressbar.shape.DialogDemoActivity" />
         <activity android:name=".local.progressbar.shape.ShapeMainActivity" />
         <activity android:name=".local.progressbar.shape.ViewDemoActivity" />
+
+        <activity android:name=".local.player.SaulmnMainActivity" />
 
         <!--友盟-->
         <meta-data

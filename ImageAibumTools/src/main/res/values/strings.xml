@@ -53,6 +53,7 @@
 
     <array name="selectPlayerType">
         <item>InteractivePlayerView</item>
+        <item>SaulmnPlayerView</item>
     </array>
 
     <array name="selectProgressType">

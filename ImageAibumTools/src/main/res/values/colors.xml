@@ -157,4 +157,8 @@
     <color name="secondary_text">#727272</color>
     <color name="icons">#FFFFFF</color>
     <color name="divider">#B6B6B6</color>
+
+    <color name="brand_primary">#FF5620</color>
+    <color name="brand_primary_dark">#E74800</color>
+    <color name="brand_accent">#FE9700</color>
 </resources>

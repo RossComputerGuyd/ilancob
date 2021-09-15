@@ -28,6 +28,7 @@ import com.uwo.tools.aibum.local.datetime.google.MainGoogleActivity;
 import com.uwo.tools.aibum.local.datetime.square.SampleTimesSquareActivity;
 import com.uwo.tools.aibum.local.dialog.DialogMainActivity;
 import com.uwo.tools.aibum.local.player.InteractivePlayerActivity;
+import com.uwo.tools.aibum.local.player.SaulmnMainActivity;
 import com.uwo.tools.aibum.local.progressbar.VelocimeterActivity;
 import com.uwo.tools.aibum.local.progressbar.avloading.AVLoadMainActivity;
 import com.uwo.tools.aibum.local.progressbar.circleprogress.CircleProgressActivity;
@@ -227,6 +228,9 @@ public class LocalActivity extends BasicActivity implements View.OnClickListener
                 switch (which) {
                     case 0:
                         InteractivePlayerActivity.actionStart(LocalActivity.this);
+                        break;
+                    case 1:
+                        SaulmnMainActivity.actionStart(LocalActivity.this);
                         break;
                 }
             }
