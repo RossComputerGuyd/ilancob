@@ -33,6 +33,7 @@ import com.uwo.tools.aibum.local.progressbar.VelocimeterActivity;
 import com.uwo.tools.aibum.local.progressbar.avloading.AVLoadMainActivity;
 import com.uwo.tools.aibum.local.progressbar.circleprogress.CircleProgressActivity;
 import com.uwo.tools.aibum.local.progressbar.loadindicators.LoaderMainActivity;
+import com.uwo.tools.aibum.local.progressbar.loadtoast.LoadToastMainActivity;
 import com.uwo.tools.aibum.local.progressbar.shape.ShapeMainActivity;
 import com.uwo.tools.aibum.local.progressbar.squareprobar.SquprobarMainActivity;
 import com.uwo.tools.aibum.local.progressbar.waveswipe.WaveSwipeMainActivity;
@@ -267,6 +268,10 @@ public class LocalActivity extends BasicActivity implements View.OnClickListener
 
                     case 8:
                         ShapeMainActivity.actionStart(LocalActivity.this);
+                        break;
+
+                    case 9:
+                        LoadToastMainActivity.actionStart(LocalActivity.this);
                         break;
                 }
             }

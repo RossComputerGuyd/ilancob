@@ -66,6 +66,7 @@
         <item>CircleProgress实现自定义loading动画效果</item>
         <item>LoadIndicators进度条</item>
         <item>58同城加载动画</item>
+        <item>LoadToast</item>
     </array>
 
     <array name="selectGuideType">

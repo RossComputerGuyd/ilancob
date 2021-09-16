@@ -136,6 +136,8 @@
 
         <activity android:name=".local.player.SaulmnMainActivity" />
 
+        <activity android:name=".local.progressbar.loadtoast.LoadToastMainActivity" />
+
         <!--友盟-->
         <meta-data
             android:name="UMENG_APPKEY"
