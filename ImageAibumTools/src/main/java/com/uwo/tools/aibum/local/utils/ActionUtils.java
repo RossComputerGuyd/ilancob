@@ -22,12 +22,10 @@ public class ActionUtils {
     public static final int GET_IMAGE_FROM_PHONE = 5002; // 获取相册返回标识码
     public static final int CROP_IMAGE = 5003;  // 剪切返回标识码
 
-
     public static final int OPEN_CAMERA_IMAGE_URI = 5100; // 拍照直接返回uri
     public static final int OPEN_CAMERA_IMAGE_PATH = 5101; // 拍照传入返回文件路径
     public static final int OPEN_CAMERA_IMAGE_THUMB = 5102; // 拍照返回缩略图
     public static final int OPEN_CAMERA_IMAGE_NO_RESULT = 5103; // 拍照无返回值
-
 
     /**
      * 使用系统相机拍照
@@ -83,7 +81,6 @@ public class ActionUtils {
         intent.setAction("android.media.action.STILL_IMAGE_CAMERA");
         activity.startActivity(intent);
     }
-
 
     /**
      * 打开本地相册
