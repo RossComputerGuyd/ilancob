@@ -35,6 +35,9 @@ import android.widget.ImageView;
 
 import com.tools.bitmap.R;
 
+/**
+ * 圆角ImageView
+ */
 @SuppressWarnings("UnusedDeclaration")
 public class RoundedImageView extends ImageView {
 

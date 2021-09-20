@@ -8,7 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.tools.bitmap.circle.CircleActivity;
 import com.tools.bitmap.circleheader.CHeaderMainActivity;
@@ -36,9 +38,13 @@ import com.tools.bitmap.shape.SampleActivity;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class MainActivityFragment extends Fragment implements AdapterView.OnItemClickListener {
+public class MainActivityFragment extends Fragment implements AdapterView.OnItemClickListener, View.OnClickListener {
 
     private View view;
+
+    private TextView textTest, textTest1;
+
+    private EditText editTest;
 
     private ListView listView;
 
@@ -82,6 +88,13 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
         listView = (ListView) view.findViewById(R.id.listView);
         listView.setOnItemClickListener(this);
         listView.setAdapter(adapter);
+
+        textTest = (TextView) view.findViewById(R.id.text_test);
+        textTest1 = (TextView) view.findViewById(R.id.text_test1);
+        editTest = (EditText) view.findViewById(R.id.edit_test);
+
+        textTest.setOnClickListener(this);
+        textTest1.setOnClickListener(this);
     }
 
     @Override
@@ -163,6 +176,16 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
             Intent intent = new Intent();
             intent.setClass(getActivity(), cls);
             startActivity(intent);
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.text_test:
+                break;
+            case R.id.text_test1:
+                break;
         }
     }
 }

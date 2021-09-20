@@ -63,7 +63,4 @@ public class MyScrollView extends ScrollView {
 	public interface OnScrollListener{
 		public void onScroll(int scrollY);
 	}
-	
-	
-
 }

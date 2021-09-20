@@ -25,6 +25,8 @@ import com.tools.bitmap.R;
 
 /**
  * Created by SRain on 2015/10/23.
+ *
+ * 圆形ImageView
  */
 public class CircleImageView extends ImageView {
 

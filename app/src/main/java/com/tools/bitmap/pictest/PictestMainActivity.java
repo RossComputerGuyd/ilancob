@@ -54,7 +54,6 @@ public class PictestMainActivity extends Activity implements OnClickListener{
 		if(v==ivHead){//点击更换头像按钮
 			ShowPickDialog();
 		}
-		
 	}
 	
 	/**

@@ -22,6 +22,6 @@ public class SampleData {
     public static Integer[] imageIds = {
             R.drawable.transatlanticism, R.drawable.jim_noir,
             R.drawable.ping_pong_orchestra, R.drawable.the_point,
-            R.drawable.hotel_shampoo, R.drawable.gimme_fiction
+            R.drawable.hotel_shampoo, R.drawable.gimme_fiction, R.drawable.ic_home_bg
     };
 }

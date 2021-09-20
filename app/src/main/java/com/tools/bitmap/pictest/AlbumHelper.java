@@ -59,10 +59,8 @@ public class AlbumHelper {
 	 * 得到缩略图
 	 */
 	private void getThumbnail() {
-		String[] projection = { Thumbnails._ID, Thumbnails.IMAGE_ID,
-				Thumbnails.DATA };
-		Cursor cursor = cr.query(Thumbnails.EXTERNAL_CONTENT_URI, projection,
-				null, null, null);
+		String[] projection = { Thumbnails._ID, Thumbnails.IMAGE_ID, Thumbnails.DATA };
+		Cursor cursor = cr.query(Thumbnails.EXTERNAL_CONTENT_URI, projection, null, null, null);
 		getThumbnailColumnData(cursor);
 	}
 

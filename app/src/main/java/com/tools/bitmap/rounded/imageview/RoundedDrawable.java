@@ -39,6 +39,9 @@ import android.widget.ImageView.ScaleType;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * 圆角Drawable
+ */
 @SuppressWarnings("UnusedDeclaration")
 public class RoundedDrawable extends Drawable {
 

@@ -9,11 +9,23 @@
     tools:context=".MainActivityFragment">
 
     <TextView
+        android:id="@+id/text_test"
         android:layout_width="match_parent"
-        android:gravity="center"
         android:layout_height="50dp"
+        android:gravity="center"
         android:text="圆形图片"
         android:textSize="18dp" />
+
+    <EditText
+        android:id="@+id/edit_test"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="test" />
+
+    <TextView
+        android:id="@+id/text_test1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
 
     <ListView
         android:id="@+id/listView"
