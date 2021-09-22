@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="oval" >
+    android:shape="oval">
 
     <!-- 定义填充渐变颜色 -->
     <gradient
@@ -12,7 +12,6 @@
     <stroke
         android:width="4dp"
         android:color="#06B8D9" />
-
     <solid android:color="#00000000" />
 
 </shape>

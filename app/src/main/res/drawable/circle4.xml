@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="ring" >
+    android:shape="ring">
 
     <!--
     矩形：默认矩形 
     shape="line"是线行
     -->
-
 
     <!-- 定义填充渐变颜色 -->
     <gradient
@@ -20,5 +19,4 @@
         android:color="#06B8D9" />
 
     <solid android:color="@color/bg_color1" />
-
 </shape>

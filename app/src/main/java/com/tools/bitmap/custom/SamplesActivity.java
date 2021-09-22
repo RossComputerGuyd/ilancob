@@ -61,9 +61,8 @@ public class SamplesActivity extends Activity {
 
         @Override
         public View getView(int i, View view, ViewGroup viewGroup) {
-            return new CustomShapeSquareImageView(mContext, R.drawable.sample_1, CustomShapeImageView.Shape.SVG, getItem(i));// It is just a sample ;)
+            // It is just a sample ;)
+            return new CustomShapeSquareImageView(mContext, R.drawable.sample_1, CustomShapeImageView.Shape.SVG, getItem(i));
         }
-
     }
-
 }
