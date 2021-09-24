@@ -52,7 +52,6 @@ public class PhotoCatMainActivity extends Activity implements OnClickListener {
     //点击事件
     @Override
     public void onClick(View v) {
-        // TODO Auto-generated method stub
         switch (v.getId()) {
             case R.id.img_btn:
                 showDialog();
@@ -62,7 +61,6 @@ public class PhotoCatMainActivity extends Activity implements OnClickListener {
                 showDialog();
                 break;
         }
-
     }
 
 
@@ -98,8 +96,6 @@ public class PhotoCatMainActivity extends Activity implements OnClickListener {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        // TODO Auto-generated method stub
-
         switch (requestCode) {
             case PHOTO_REQUEST_TAKEPHOTO:
                 startPhotoZoom(Uri.fromFile(tempFile), 150);

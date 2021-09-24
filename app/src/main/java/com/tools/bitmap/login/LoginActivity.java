@@ -29,6 +29,7 @@ public class LoginActivity extends Activity {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);//不随屏幕旋转
         setContentView(R.layout.activity_login_main);
+
         mIconPerson = getResources().getDrawable(R.drawable.txt_person_icon);
         mIconPerson.setBounds(5, 1, 60, 50);
         mIconLock = getResources().getDrawable(R.drawable.txt_lock_icon);
