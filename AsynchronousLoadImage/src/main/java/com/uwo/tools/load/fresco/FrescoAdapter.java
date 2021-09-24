@@ -45,14 +45,14 @@ public class FrescoAdapter extends BaseAdapter {
         if (convertView == null) {
             holder = new ViewHolder();
             convertView = mInflater.inflate(R.layout.item_fresco, null);
-            holder.draweeView = (SimpleDraweeView) convertView.findViewById(R.id.my_image_view);
+//            holder.draweeView = (SimpleDraweeView) convertView.findViewById(R.id.my_image_view);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
 
         Uri uri = Uri.parse(Images.imageUrls[position]);
-        holder.draweeView.setImageURI(uri);
+//        holder.draweeView.setImageURI(uri);
         return convertView;
     }
 

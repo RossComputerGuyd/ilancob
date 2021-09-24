@@ -33,4 +33,5 @@ dependencies {
     compile files('libs/disklrucache-2.0.1.jar')
     compile files('libs/cuter.jar')
     compile project(':cropper')
+    compile 'com.android.support:support-v4:22.2.0'
 }

@@ -63,8 +63,8 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
     private void init() {
         adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1);
         adapter.add("0.拍照和相册选择图片裁剪后更换头像demo");
-        adapter.add("1.git圆形的ImageView/ImageView处理");
-        adapter.add("2.git带圆角的ImageView/ImageView处理");
+        adapter.add("1.git圆形的ImageView / ImageView处理");
+        adapter.add("2.git带圆角的ImageView / ImageView处理");
         adapter.add("3.支持双击或双指缩放的ImageView，在ViewPager等Scrolling view中正常使用，相比上面的AndroidTouchGallery，不仅支持ViewPager，同时支持单个ImageView");
         adapter.add("4.根据图片的均色设置背景色显示文字和图片，类似itune11中效果");
         adapter.add("5.实现Ken Burns effect效果，达到身临其境效果的ImageView");
@@ -75,15 +75,15 @@ public class MainActivityFragment extends Fragment implements AdapterView.OnItem
         adapter.add("10.图片脸部自动识别，将识别后的局部图片返回");
         adapter.add("11.非常简单的圆形图片处理工具(zhx)");
         adapter.add("12.Android自定义圆形+圆角控件(修改布局样式)");
-        adapter.add("13.图片裁剪，代码精简(带拍照，简单实用)/使用系统拍照和截图功能");
+        adapter.add("13.图片裁剪，代码精简(带拍照，简单实用) / 使用系统拍照和截图功能");
         adapter.add("14.ImageScan");
         adapter.add("15.拍照和相册获取图片并进行裁剪(带大图片处理)");
-        adapter.add("16.圆形，圆角图片，已经封装好的方法，直接调用！/Bitmap圆形处理");
-        adapter.add("17.Android创建抗锯齿透明背景圆角图像");
+        adapter.add("16.圆形，圆角图片，已经封装好的方法，直接调用！/ Bitmap圆形处理");
+        adapter.add("17.Android创建抗锯齿透明背景圆角图像 / ImageView处理 与2相似");
         adapter.add("18.带自定义编辑功能的圆形头像");
-        adapter.add("19.高仿qq我的资料头像裁剪");
-        adapter.add("20.很多项目中用到了用户头像，但是系统的ImageView 是四方形的 ，自己写了个处理的方法， 把bitmap处理成圆角的 。很方便");
-        adapter.add("21.自定义图片剪切功能");
+        adapter.add("19.高仿qq我的资料头像裁剪 / 圆形图片");
+        adapter.add("20.很多项目中用到了用户头像，但是系统的ImageView 是四方形的 ，自己写了个处理的方法， 把bitmap处理成圆角的 。很方便 / BitmapUtils");
+        adapter.add("21.自定义图片剪切功能 / 图片处理，剪切、旋转等");
         adapter.add("22.图片剪切/旋转-lib");
         listView = (ListView) view.findViewById(R.id.listView);
         listView.setOnItemClickListener(this);
