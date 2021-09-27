@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AsynchronousLoadImage/AsynchronousLoadImage.iml" filepath="$PROJECT_DIR$/AsynchronousLoadImage/AsynchronousLoadImage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BitmapProces/BitmapProces.iml" filepath="$PROJECT_DIR$/BitmapProces/BitmapProces.iml" />
       <module fileurl="file://$PROJECT_DIR$/DatePicker/DatePicker.iml" filepath="$PROJECT_DIR$/DatePicker/DatePicker.iml" />
       <module fileurl="file://$PROJECT_DIR$/FaceCrop-Lib/FaceCrop-Lib.iml" filepath="$PROJECT_DIR$/FaceCrop-Lib/FaceCrop-Lib.iml" />
       <module fileurl="file://$PROJECT_DIR$/GoogleDateTimePickers/GoogleDateTimePickers.iml" filepath="$PROJECT_DIR$/GoogleDateTimePickers/GoogleDateTimePickers.iml" />
